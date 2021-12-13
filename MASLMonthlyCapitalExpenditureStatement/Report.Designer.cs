@@ -69,7 +69,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnSelectedYear = new Guna.UI2.WinForms.Guna2Button();
             this.btnSelectMonth = new Guna.UI2.WinForms.Guna2Button();
@@ -83,7 +82,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.CumulativeUpTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExpandTableMain = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2CustomCheckBox1 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.MainTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.BudgetTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton5 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.TableBudget = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -94,7 +93,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExpandTableBudget = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2CustomCheckBox2 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.BudgetTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.IncomeTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.TableIncome = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +104,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.IncomePercentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExpandTableIncome = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.guna2CustomCheckBox3 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.IncomeTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.ExpenditureTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.TableExpenditure = new Guna.UI2.WinForms.Guna2DataGridView();
             this.BudgetCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,7 +117,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.Percentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExpandTableExpenditure = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2CustomCheckBox4 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.ExpenditureTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.BtnExpandAll = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
@@ -153,7 +152,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Panel1.Controls.Add(this.guna2Button4);
             this.guna2Panel1.Controls.Add(this.guna2Button3);
             this.guna2Panel1.Controls.Add(this.guna2Button2);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -328,40 +326,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Button2.TextOffset = new System.Drawing.Point(7, 0);
             this.guna2Button2.Click += new System.EventHandler(this.btnNavigationButton_Click);
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button1.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.dashboardWhite;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.dashboard;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(5, 0);
-            this.guna2Button1.Location = new System.Drawing.Point(15, 212);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Tag = "Dash";
-            this.guna2Button1.Text = "Dashboard";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.TextOffset = new System.Drawing.Point(7, 0);
-            this.guna2Button1.Visible = false;
-            this.guna2Button1.Click += new System.EventHandler(this.btnNavigationButton_Click);
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -481,7 +445,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.MainTableBackPanel.Controls.Add(this.TableMain);
             this.MainTableBackPanel.Controls.Add(this.btnExpandTableMain);
             this.MainTableBackPanel.Controls.Add(this.label2);
-            this.MainTableBackPanel.Controls.Add(this.guna2CustomCheckBox1);
+            this.MainTableBackPanel.Controls.Add(this.MainTableCheckBox);
             this.MainTableBackPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.MainTableBackPanel.Location = new System.Drawing.Point(40, 20);
             this.MainTableBackPanel.Margin = new System.Windows.Forms.Padding(40, 20, 10, 10);
@@ -548,6 +512,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableMain.Size = new System.Drawing.Size(934, 54);
             this.TableMain.TabIndex = 4;
+            this.TableMain.Tag = "Main";
             this.TableMain.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.TableMain.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.TableMain.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -642,26 +607,26 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.label2.TabIndex = 1;
             this.label2.Text = "Table Last Month Total Expenditure";
             // 
-            // guna2CustomCheckBox1
+            // MainTableCheckBox
             // 
-            this.guna2CustomCheckBox1.Animated = true;
-            this.guna2CustomCheckBox1.Checked = true;
-            this.guna2CustomCheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CustomCheckBox1.CheckedState.BorderRadius = 7;
-            this.guna2CustomCheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CustomCheckBox1.CheckedState.Parent = this.guna2CustomCheckBox1;
-            this.guna2CustomCheckBox1.Location = new System.Drawing.Point(23, 16);
-            this.guna2CustomCheckBox1.Name = "guna2CustomCheckBox1";
-            this.guna2CustomCheckBox1.ShadowDecoration.Parent = this.guna2CustomCheckBox1;
-            this.guna2CustomCheckBox1.Size = new System.Drawing.Size(23, 23);
-            this.guna2CustomCheckBox1.TabIndex = 0;
-            this.guna2CustomCheckBox1.Text = "guna2CustomCheckBox1";
-            this.guna2CustomCheckBox1.UncheckedState.BorderColor = System.Drawing.Color.Silver;
-            this.guna2CustomCheckBox1.UncheckedState.BorderRadius = 7;
-            this.guna2CustomCheckBox1.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox1.UncheckedState.FillColor = System.Drawing.Color.Silver;
-            this.guna2CustomCheckBox1.UncheckedState.Parent = this.guna2CustomCheckBox1;
+            this.MainTableCheckBox.Animated = true;
+            this.MainTableCheckBox.Checked = true;
+            this.MainTableCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.MainTableCheckBox.CheckedState.BorderRadius = 7;
+            this.MainTableCheckBox.CheckedState.BorderThickness = 0;
+            this.MainTableCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.MainTableCheckBox.CheckedState.Parent = this.MainTableCheckBox;
+            this.MainTableCheckBox.Location = new System.Drawing.Point(23, 16);
+            this.MainTableCheckBox.Name = "MainTableCheckBox";
+            this.MainTableCheckBox.ShadowDecoration.Parent = this.MainTableCheckBox;
+            this.MainTableCheckBox.Size = new System.Drawing.Size(23, 23);
+            this.MainTableCheckBox.TabIndex = 0;
+            this.MainTableCheckBox.Text = "guna2CustomCheckBox1";
+            this.MainTableCheckBox.UncheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.MainTableCheckBox.UncheckedState.BorderRadius = 7;
+            this.MainTableCheckBox.UncheckedState.BorderThickness = 0;
+            this.MainTableCheckBox.UncheckedState.FillColor = System.Drawing.Color.Silver;
+            this.MainTableCheckBox.UncheckedState.Parent = this.MainTableCheckBox;
             // 
             // BudgetTableBackPanel
             // 
@@ -672,7 +637,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.BudgetTableBackPanel.Controls.Add(this.TableBudget);
             this.BudgetTableBackPanel.Controls.Add(this.btnExpandTableBudget);
             this.BudgetTableBackPanel.Controls.Add(this.label3);
-            this.BudgetTableBackPanel.Controls.Add(this.guna2CustomCheckBox2);
+            this.BudgetTableBackPanel.Controls.Add(this.BudgetTableCheckBox);
             this.BudgetTableBackPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.BudgetTableBackPanel.Location = new System.Drawing.Point(40, 201);
             this.BudgetTableBackPanel.Margin = new System.Windows.Forms.Padding(40, 10, 10, 10);
@@ -768,6 +733,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableBudget.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableBudget.Size = new System.Drawing.Size(934, 108);
             this.TableBudget.TabIndex = 5;
+            this.TableBudget.Tag = "Budget";
             this.TableBudget.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.TableBudget.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.TableBudget.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -868,26 +834,26 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.label3.TabIndex = 1;
             this.label3.Text = "Table Budget Details";
             // 
-            // guna2CustomCheckBox2
+            // BudgetTableCheckBox
             // 
-            this.guna2CustomCheckBox2.Animated = true;
-            this.guna2CustomCheckBox2.Checked = true;
-            this.guna2CustomCheckBox2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CustomCheckBox2.CheckedState.BorderRadius = 7;
-            this.guna2CustomCheckBox2.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CustomCheckBox2.CheckedState.Parent = this.guna2CustomCheckBox2;
-            this.guna2CustomCheckBox2.Location = new System.Drawing.Point(23, 16);
-            this.guna2CustomCheckBox2.Name = "guna2CustomCheckBox2";
-            this.guna2CustomCheckBox2.ShadowDecoration.Parent = this.guna2CustomCheckBox2;
-            this.guna2CustomCheckBox2.Size = new System.Drawing.Size(23, 23);
-            this.guna2CustomCheckBox2.TabIndex = 0;
-            this.guna2CustomCheckBox2.Text = "guna2CustomCheckBox2";
-            this.guna2CustomCheckBox2.UncheckedState.BorderColor = System.Drawing.Color.Silver;
-            this.guna2CustomCheckBox2.UncheckedState.BorderRadius = 7;
-            this.guna2CustomCheckBox2.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox2.UncheckedState.FillColor = System.Drawing.Color.Silver;
-            this.guna2CustomCheckBox2.UncheckedState.Parent = this.guna2CustomCheckBox2;
+            this.BudgetTableCheckBox.Animated = true;
+            this.BudgetTableCheckBox.Checked = true;
+            this.BudgetTableCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.BudgetTableCheckBox.CheckedState.BorderRadius = 7;
+            this.BudgetTableCheckBox.CheckedState.BorderThickness = 0;
+            this.BudgetTableCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.BudgetTableCheckBox.CheckedState.Parent = this.BudgetTableCheckBox;
+            this.BudgetTableCheckBox.Location = new System.Drawing.Point(23, 16);
+            this.BudgetTableCheckBox.Name = "BudgetTableCheckBox";
+            this.BudgetTableCheckBox.ShadowDecoration.Parent = this.BudgetTableCheckBox;
+            this.BudgetTableCheckBox.Size = new System.Drawing.Size(23, 23);
+            this.BudgetTableCheckBox.TabIndex = 0;
+            this.BudgetTableCheckBox.Text = "guna2CustomCheckBox2";
+            this.BudgetTableCheckBox.UncheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.BudgetTableCheckBox.UncheckedState.BorderRadius = 7;
+            this.BudgetTableCheckBox.UncheckedState.BorderThickness = 0;
+            this.BudgetTableCheckBox.UncheckedState.FillColor = System.Drawing.Color.Silver;
+            this.BudgetTableCheckBox.UncheckedState.Parent = this.BudgetTableCheckBox;
             // 
             // IncomeTableBackPanel
             // 
@@ -897,7 +863,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.IncomeTableBackPanel.Controls.Add(this.TableIncome);
             this.IncomeTableBackPanel.Controls.Add(this.btnExpandTableIncome);
             this.IncomeTableBackPanel.Controls.Add(this.label4);
-            this.IncomeTableBackPanel.Controls.Add(this.guna2CustomCheckBox3);
+            this.IncomeTableBackPanel.Controls.Add(this.IncomeTableCheckBox);
             this.IncomeTableBackPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.IncomeTableBackPanel.Location = new System.Drawing.Point(40, 441);
             this.IncomeTableBackPanel.Margin = new System.Windows.Forms.Padding(40, 10, 10, 10);
@@ -965,6 +931,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableIncome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableIncome.Size = new System.Drawing.Size(934, 156);
             this.TableIncome.TabIndex = 33;
+            this.TableIncome.Tag = "Income";
             this.TableIncome.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.TableIncome.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.TableIncome.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1073,26 +1040,26 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.label4.TabIndex = 1;
             this.label4.Text = "Table Income Details";
             // 
-            // guna2CustomCheckBox3
+            // IncomeTableCheckBox
             // 
-            this.guna2CustomCheckBox3.Animated = true;
-            this.guna2CustomCheckBox3.Checked = true;
-            this.guna2CustomCheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CustomCheckBox3.CheckedState.BorderRadius = 7;
-            this.guna2CustomCheckBox3.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CustomCheckBox3.CheckedState.Parent = this.guna2CustomCheckBox3;
-            this.guna2CustomCheckBox3.Location = new System.Drawing.Point(23, 16);
-            this.guna2CustomCheckBox3.Name = "guna2CustomCheckBox3";
-            this.guna2CustomCheckBox3.ShadowDecoration.Parent = this.guna2CustomCheckBox3;
-            this.guna2CustomCheckBox3.Size = new System.Drawing.Size(23, 23);
-            this.guna2CustomCheckBox3.TabIndex = 0;
-            this.guna2CustomCheckBox3.Text = "guna2CustomCheckBox2";
-            this.guna2CustomCheckBox3.UncheckedState.BorderColor = System.Drawing.Color.Silver;
-            this.guna2CustomCheckBox3.UncheckedState.BorderRadius = 7;
-            this.guna2CustomCheckBox3.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox3.UncheckedState.FillColor = System.Drawing.Color.Silver;
-            this.guna2CustomCheckBox3.UncheckedState.Parent = this.guna2CustomCheckBox3;
+            this.IncomeTableCheckBox.Animated = true;
+            this.IncomeTableCheckBox.Checked = true;
+            this.IncomeTableCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.IncomeTableCheckBox.CheckedState.BorderRadius = 7;
+            this.IncomeTableCheckBox.CheckedState.BorderThickness = 0;
+            this.IncomeTableCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.IncomeTableCheckBox.CheckedState.Parent = this.IncomeTableCheckBox;
+            this.IncomeTableCheckBox.Location = new System.Drawing.Point(23, 16);
+            this.IncomeTableCheckBox.Name = "IncomeTableCheckBox";
+            this.IncomeTableCheckBox.ShadowDecoration.Parent = this.IncomeTableCheckBox;
+            this.IncomeTableCheckBox.Size = new System.Drawing.Size(23, 23);
+            this.IncomeTableCheckBox.TabIndex = 0;
+            this.IncomeTableCheckBox.Text = "guna2CustomCheckBox2";
+            this.IncomeTableCheckBox.UncheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.IncomeTableCheckBox.UncheckedState.BorderRadius = 7;
+            this.IncomeTableCheckBox.UncheckedState.BorderThickness = 0;
+            this.IncomeTableCheckBox.UncheckedState.FillColor = System.Drawing.Color.Silver;
+            this.IncomeTableCheckBox.UncheckedState.Parent = this.IncomeTableCheckBox;
             // 
             // ExpenditureTableBackPanel
             // 
@@ -1102,7 +1069,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ExpenditureTableBackPanel.Controls.Add(this.TableExpenditure);
             this.ExpenditureTableBackPanel.Controls.Add(this.btnExpandTableExpenditure);
             this.ExpenditureTableBackPanel.Controls.Add(this.label5);
-            this.ExpenditureTableBackPanel.Controls.Add(this.guna2CustomCheckBox4);
+            this.ExpenditureTableBackPanel.Controls.Add(this.ExpenditureTableCheckBox);
             this.ExpenditureTableBackPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.ExpenditureTableBackPanel.Location = new System.Drawing.Point(40, 730);
             this.ExpenditureTableBackPanel.Margin = new System.Windows.Forms.Padding(40, 10, 10, 25);
@@ -1172,6 +1139,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableExpenditure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableExpenditure.Size = new System.Drawing.Size(934, 383);
             this.TableExpenditure.TabIndex = 34;
+            this.TableExpenditure.Tag = "Expenditure";
             this.TableExpenditure.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.TableExpenditure.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.TableExpenditure.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1294,26 +1262,26 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.label5.TabIndex = 1;
             this.label5.Text = "Table Details of Expenditures of Activties";
             // 
-            // guna2CustomCheckBox4
+            // ExpenditureTableCheckBox
             // 
-            this.guna2CustomCheckBox4.Animated = true;
-            this.guna2CustomCheckBox4.Checked = true;
-            this.guna2CustomCheckBox4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CustomCheckBox4.CheckedState.BorderRadius = 7;
-            this.guna2CustomCheckBox4.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CustomCheckBox4.CheckedState.Parent = this.guna2CustomCheckBox4;
-            this.guna2CustomCheckBox4.Location = new System.Drawing.Point(23, 16);
-            this.guna2CustomCheckBox4.Name = "guna2CustomCheckBox4";
-            this.guna2CustomCheckBox4.ShadowDecoration.Parent = this.guna2CustomCheckBox4;
-            this.guna2CustomCheckBox4.Size = new System.Drawing.Size(23, 23);
-            this.guna2CustomCheckBox4.TabIndex = 0;
-            this.guna2CustomCheckBox4.Text = "guna2CustomCheckBox2";
-            this.guna2CustomCheckBox4.UncheckedState.BorderColor = System.Drawing.Color.Silver;
-            this.guna2CustomCheckBox4.UncheckedState.BorderRadius = 7;
-            this.guna2CustomCheckBox4.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox4.UncheckedState.FillColor = System.Drawing.Color.Silver;
-            this.guna2CustomCheckBox4.UncheckedState.Parent = this.guna2CustomCheckBox4;
+            this.ExpenditureTableCheckBox.Animated = true;
+            this.ExpenditureTableCheckBox.Checked = true;
+            this.ExpenditureTableCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.ExpenditureTableCheckBox.CheckedState.BorderRadius = 7;
+            this.ExpenditureTableCheckBox.CheckedState.BorderThickness = 0;
+            this.ExpenditureTableCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.ExpenditureTableCheckBox.CheckedState.Parent = this.ExpenditureTableCheckBox;
+            this.ExpenditureTableCheckBox.Location = new System.Drawing.Point(23, 16);
+            this.ExpenditureTableCheckBox.Name = "ExpenditureTableCheckBox";
+            this.ExpenditureTableCheckBox.ShadowDecoration.Parent = this.ExpenditureTableCheckBox;
+            this.ExpenditureTableCheckBox.Size = new System.Drawing.Size(23, 23);
+            this.ExpenditureTableCheckBox.TabIndex = 0;
+            this.ExpenditureTableCheckBox.Text = "guna2CustomCheckBox2";
+            this.ExpenditureTableCheckBox.UncheckedState.BorderColor = System.Drawing.Color.Silver;
+            this.ExpenditureTableCheckBox.UncheckedState.BorderRadius = 7;
+            this.ExpenditureTableCheckBox.UncheckedState.BorderThickness = 0;
+            this.ExpenditureTableCheckBox.UncheckedState.FillColor = System.Drawing.Color.Silver;
+            this.ExpenditureTableCheckBox.UncheckedState.Parent = this.ExpenditureTableCheckBox;
             // 
             // flowLayoutPanel2
             // 
@@ -1414,27 +1382,26 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         public Guna.UI2.WinForms.Guna2Button btnSelectedYear;
         public Guna.UI2.WinForms.Guna2Button btnSelectMonth;
         public Guna.UI2.WinForms.Guna2Button btnExport;
         private Guna.UI2.WinForms.Guna2Panel MainTableBackPanel;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox1;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox MainTableCheckBox;
         private Guna.UI2.WinForms.Guna2CircleButton btnExpandTableMain;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel BudgetTableBackPanel;
         private Guna.UI2.WinForms.Guna2CircleButton btnExpandTableBudget;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox2;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox BudgetTableCheckBox;
         private Guna.UI2.WinForms.Guna2Panel IncomeTableBackPanel;
         private Guna.UI2.WinForms.Guna2CircleButton btnExpandTableIncome;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox3;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox IncomeTableCheckBox;
         private Guna.UI2.WinForms.Guna2Panel ExpenditureTableBackPanel;
         private Guna.UI2.WinForms.Guna2CircleButton btnExpandTableExpenditure;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox4;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox ExpenditureTableCheckBox;
         private Guna.UI2.WinForms.Guna2DataGridView TableMain;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton5;

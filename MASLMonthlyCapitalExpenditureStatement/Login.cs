@@ -17,13 +17,13 @@ namespace MASLMonthlyCapitalExpenditureStatement
             InitializeComponent();
         }
 
-        CommenMethods MainFunctions = new CommenMethods();
+        CommenMethods commenMethods = new CommenMethods();
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             UseWaitCursor = true;
 
-            List<string> sqlRead = MainFunctions.SQLRead("SELECT * FROM login WHERE Username='" + txtUserName.Text + "' " +
+            List<string> sqlRead = commenMethods.SQLRead("SELECT * FROM login WHERE Username='" + txtUserName.Text + "' " +
                 "AND Password='" + txtPassword.Text + "' ;", "Username Password");
 
             if (sqlRead == null)
@@ -51,6 +51,13 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private void Login_Load(object sender, EventArgs e)
         {
             txtUserName.Focus();
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+            commenMethods.ExecuteSQL("CREATE TABLE [dbo].[AllocationBudget]([Year] INT NOT NULL PRIMARY KEY,[Capital] FLOAT NULL,[Recurrent] FLOAT NULL)");
+            commenMethods.ExecuteSQL("CREATE TABLE [dbo].[MonthyBudget]([Year] INT NOT NULL,[Month] INT NOT NULL,[RecurrentExpenditure] FLOAT NULL,[RecurrentFundReceived] FLOAT NULL,[CapitalFundReceived] FLOAT NULL,PRIMARY KEY([Year], [Month]), CONSTRAINT[FK_Table_AllocationBudget] FOREIGN KEY([Year]) REFERENCES[AllocationBudget]([Year]))");
+
         }
     }
 }

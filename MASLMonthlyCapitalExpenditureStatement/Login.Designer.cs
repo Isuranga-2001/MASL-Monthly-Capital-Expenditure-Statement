@@ -115,6 +115,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(333, 52);
             this.guna2HtmlLabel1.TabIndex = 4;
             this.guna2HtmlLabel1.Text = "<center>Monthly Capital Expenditure Statement <br> MASL";
+            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
             // txtUserName
             // 

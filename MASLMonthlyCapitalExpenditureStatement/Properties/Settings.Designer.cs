@@ -25,7 +25,7 @@ namespace MASLMonthlyCapitalExpenditureStatement.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\user\\source\\repos\\Projects\\C# Programming Projects\\My Projects\\MASL Mont" +
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\user\\OneDrive\\Programming\\Programming Projects\\Custom Projects\\MASL Mont" +
             "hly Capital Expenditure Statement\\MASLMonthlyCapitalExpenditureStatement\\Monthly" +
             "CapitalExpenditureStatementSystemDB.mdf")]
         public string DatabaseLocation {

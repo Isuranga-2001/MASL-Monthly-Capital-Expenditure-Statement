@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DatabaseLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\user\source\repos\Projects\C# Programming Projects\My Projects\MASL Monthly Capital Expenditure Statement\MASLMonthlyCapitalExpenditureStatement\MonthlyCapitalExpenditureStatementSystemDB.mdf</Value>
+      <Value Profile="(Default)">C:\Users\user\OneDrive\Programming\Programming Projects\Custom Projects\MASL Monthly Capital Expenditure Statement\MASLMonthlyCapitalExpenditureStatement\MonthlyCapitalExpenditureStatementSystemDB.mdf</Value>
     </Setting>
     <Setting Name="MonthlyCapitalExpenditureStatementSystemDBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

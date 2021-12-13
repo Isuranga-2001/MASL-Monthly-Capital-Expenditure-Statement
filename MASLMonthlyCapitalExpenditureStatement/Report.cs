@@ -20,9 +20,13 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         CommenMethods commenMethods = new CommenMethods();
         ExpenditureSummery expenditureSummeryform = new ExpenditureSummery();
+        ExportWindow exportForm = new ExportWindow();
 
         // Declear LocationList Dictionary for find locations of btnDownArrows in expand mode of each table
         Dictionary<char, int> expandLocationList = new Dictionary<char, int> { { 'M', 117 }, { 'B', 171 }, { 'I', 219 }, { 'E', 445 } };
+
+        List<Guna2DataGridView> tableList; // table List
+        List<Guna2CustomCheckBox> checkBoxList; // checkBoxList
 
         const byte collapseLocation = 13; // locatin of btnDownArrows in collapse mode of any table
 
@@ -54,6 +58,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
         {
             btnSelectedYear.Text = DateTime.Now.Year.ToString();
             btnSelectMonth.Text = commenMethods.MonthList[DateTime.Now.Month - 1];
+
+            tableList = new List<Guna2DataGridView> { TableMain, TableBudget, TableIncome, TableExpenditure };
+            checkBoxList = new List<Guna2CustomCheckBox> { MainTableCheckBox, BudgetTableCheckBox, IncomeTableCheckBox, ExpenditureTableCheckBox };
 
             FillTables(new List<bool> { true, true, true, true });
 
@@ -97,13 +104,14 @@ namespace MASLMonthlyCapitalExpenditureStatement
             }
         }
 
-        void FillTables(List<bool> tableList)
+        void FillTables(List<bool> avaiableTableList)
         {
             List<string> returnValue_Expend, // get monthly expenditure for each month
                 returnValue_CumExpend, // get cumulative expenditure form Jan to each month
-                returnValue_RecurrentDetails, // get annual capital, recurrent, monthly fund recieved, recurrent expenditure
+                returnValue_BudgetDetails, // get annual capital, recurrent, monthly fund recieved, recurrent expenditure
                 returnValue_RecurrentExpend, // get recurrent expenditure
-                returnValue_CumRecurrentExpend; // get cumulative recurrent expenditure form Jan to each month
+                returnValue_CumRecurrentExpend, // get cumulative recurrent expenditure form Jan to each month
+                returnValue_FundReceived; // get Fund received value for selected month 
 
             string query;
 
@@ -112,18 +120,26 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
             int previouseMonth = SelectedMonth - 1;
 
-            // clear rows of all tables
-            foreach (Guna2DataGridView table in new List<Guna2DataGridView> { TableMain, TableBudget, TableIncome, TableExpenditure }) 
+            // clear rows of all avaiable tables
+            for (byte k = 0; k < tableList.Count; k++)
             {
-                table.Rows.Clear();
+                if (avaiableTableList[k])
+                {
+                    tableList[k].Rows.Clear();
+                }
             }
 
             // Fill second table (Budget Details)
             // rename headers
             TableBudget.Columns[2].HeaderText = "Expenditure For " + btnSelectMonth.Text;
 
-            if (tableList[1])
+            if (avaiableTableList[1])
             {
+                // find budget for year
+                returnValue_BudgetDetails = commenMethods.SQLRead(String.Format(
+                    "SELECT Capital,Recurrent FROM AllocationBudget WHERE Year='{0}'", SelectedYear),
+                    "Capital Recurrent");
+
                 // find cumulative expenditure for each year
                 query = String.Format(
                     "SELECT SUM(ExpenditureMonth.Expenditure) AS TotalExpenditure " +
@@ -141,15 +157,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 returnValue_Expend = commenMethods.SQLRead(query, "TotalExpenditure");
 
                 // find recurrent details
-                returnValue_RecurrentDetails = commenMethods.SQLRead(String.Format(
-                    "SELECT AllocationBudget.Capital,AllocationBudget.Recurrent," +
-                    "MonthyBudget.CapitalFundReceived,MonthyBudget.RecurrentFundReceived " +
-                    "FROM AllocationBudget,MonthyBudget " +
-                    "WHERE AllocationBudget.Year=MonthyBudget.Year " +
-                    "AND AllocationBudget.Year='{0}'", SelectedYear),
-                    "Capital Recurrent RecurrentExpenditure CapitalFundReceived RecurrentFundReceived");
-
-                // find recurrent expenditure
                 returnValue_RecurrentExpend = commenMethods.SQLRead(String.Format(
                     "SELECT RecurrentExpenditure FROM MonthyBudget WHERE Year='{0}' AND Month='{1}'",
                     SelectedYear, SelectedMonth), "RecurrentExpenditure");
@@ -159,68 +166,57 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     "SELECT SUM(RecurrentExpenditure) AS CumulativeRecurrentExpenditure " +
                     "FROM MonthyBudget WHERE Year='{0}'", SelectedYear), "CumulativeRecurrentExpenditure");
 
-                if (!commenMethods.ReturnListHasError(returnValue_CumExpend)
-                   && !commenMethods.ReturnListHasError(returnValue_Expend))
+                // find fund received data
+                returnValue_FundReceived = commenMethods.SQLRead(String.Format(
+                    "SELECT MonthyBudget.CapitalFundReceived,MonthyBudget.RecurrentFundReceived " +
+                    "FROM AllocationBudget,MonthyBudget " +
+                    "WHERE AllocationBudget.Year=MonthyBudget.Year " +
+                    "AND AllocationBudget.Year='{0}' AND MonthyBudget.Month='{1}'",
+                    SelectedYear, SelectedMonth), "CapitalFundReceived RecurrentFundReceived");
+
+                TableBudget.Rows.Add();
+                AddToTable(TableBudget.Rows[0], new List<string> { "Capital", "0.00", "0.00", "0.00", "0.00" });
+
+                TableBudget.Rows.Add();
+                AddToTable(TableBudget.Rows[1], new List<string> { "Recurrent", "0.00", "0.00", "0.00", "0.00" });
+
+                if (!commenMethods.ReturnListHasError(returnValue_BudgetDetails))
                 {
-                    TableBudget.Rows.Add();
+                    TableBudget.Rows[0].Cells[1].Value = returnValue_BudgetDetails[0];
+                    TableBudget.Rows[1].Cells[1].Value = returnValue_BudgetDetails[1];
 
-                    if (!commenMethods.ReturnListHasError(returnValue_RecurrentDetails))
+                    if (!commenMethods.ReturnListHasError(returnValue_CumExpend))
                     {
-                        // show in table selected values
-
-                        // first row of the tablebudget
-                        AddToTable(TableBudget.Rows[0],
-                            new List<string> 
-                            { 
-                                "Capital", returnValue_RecurrentDetails[0], returnValue_Expend[0],
-                                returnValue_CumExpend[0], returnValue_RecurrentDetails[3] 
-                            });
-
-                        TableBudget.Rows.Add();
-
-                        if (!commenMethods.ReturnListHasError(returnValue_CumRecurrentExpend) 
-                            && !commenMethods.ReturnListHasError(returnValue_RecurrentExpend))
-                        {
-                            AddToTable(TableBudget.Rows[1],
-                                new List<string>
-                                {
-                                    "Recurrent", returnValue_RecurrentDetails[1], returnValue_RecurrentExpend[0],
-                                    returnValue_CumRecurrentExpend[0], returnValue_RecurrentDetails[4]
-                                });
-
-                        }
-                        else
-                        {
-                            AddToTable(TableBudget.Rows[1],
-                                new List<string>
-                                {
-                                    "Recurrent", returnValue_RecurrentDetails[1], returnValue_RecurrentDetails[2],
-                                    "0.00", returnValue_RecurrentDetails[4]
-                                });
-                        }
+                        TableBudget.Rows[0].Cells[3].Value = returnValue_CumExpend[0];
                     }
-                    else
+
+                    if (!commenMethods.ReturnListHasError(returnValue_CumExpend))
                     {
-                        // show in table selected values
-                        AddToTable(TableBudget.Rows[0],
-                            new List<string> { "Capital", "0.00", returnValue_Expend[0], returnValue_CumExpend[0], "0.00" });
+                        TableBudget.Rows[0].Cells[2].Value = returnValue_Expend[0];
+                    }
+                    
+                    if (!commenMethods.ReturnListHasError(returnValue_CumRecurrentExpend))
+                    {
+                        TableBudget.Rows[1].Cells[3].Value = returnValue_CumRecurrentExpend[0];
+                    }
 
-                        AddToTable(TableBudget.Rows[1], new List<string> { "Recurrent", "0.00", "0.00", "0.00", "0.00" });
-                    }                    
+                    if (!commenMethods.ReturnListHasError(returnValue_RecurrentExpend))
+                    {
+                        TableBudget.Rows[1].Cells[2].Value = returnValue_RecurrentExpend[0];
+                    }
+
+                    if (!commenMethods.ReturnListHasError(returnValue_FundReceived))
+                    {
+                        TableBudget.Rows[0].Cells[4].Value = returnValue_FundReceived[0];
+                        TableBudget.Rows[1].Cells[4].Value = returnValue_FundReceived[1];
+                    }
                 }
-                else
-                {
-                    AddToTable(TableBudget.Rows[0], new List<string> { "Capital", "0.00", "0.00", "0.00", "0.00" });
-
-                    TableBudget.Rows.Add();
-                    AddToTable(TableBudget.Rows[1], new List<string> { "Recurrent", "0.00", "0.00", "0.00", "0.00" });
-                }                
 
                 // find total
                 FindTotal(TableBudget, TableBudget.Rows[2], new List<byte> { 1, 2, 3, 4 }, new List<short> { 0, 1 }, 0);
             }
 
-            if (tableList[0])
+            if (avaiableTableList[0])
             {
                 // Fill first table (Main Table)
                 // Rename headers
@@ -239,11 +235,11 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 }
                 else
                 {
-                    AddToTable(TableMain.Rows[0], new List<string> { "MASL", "CF", "Total", "", "" });
+                    AddToTable(TableMain.Rows[0], new List<string> { "MASL", "CF", "Total", "0.00", "0.00" });
                 }
             }
 
-            if (tableList[2])
+            if (avaiableTableList[2])
             {
                 // fill third table (Income Table)
                 // rename headers
@@ -302,7 +298,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
             }
 
-            if (tableList[3])
+            if (avaiableTableList[3])
             {
                 // forth table (expenditure table)
                 // rename headers
@@ -428,7 +424,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     lastRow.Cells[0].Value = lastRow.Cells[1].Value = "";
 
                     // deselect selected row
-                    TableExpenditure.SelectedRows[0].Selected = false;
+                    if (TableExpenditure.SelectedRows.Count > 0) 
+                        TableExpenditure.SelectedRows[0].Selected = false;
                 }
                 else
                 {
@@ -671,7 +668,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
         {
             for (int i = 0; i < cellValueList.Count; i++) 
             {
-                SelectedRow.Cells[i].Value = SetAsNumber(cellValueList[i]);
+                SelectedRow.Cells[i].Value = cellValueList[i];
             }
         }
 
@@ -682,13 +679,18 @@ namespace MASLMonthlyCapitalExpenditureStatement
             if (selectedTable.Name == TableBudget.Name 
                 && e.RowIndex > -1 && e.RowIndex < 2 && e.ColumnIndex > 0 
                 && selectedTable.Rows.Count >= 3)
-            { 
-                // true all conditions of budget table
-                AddComma();
+            {
+                if (selectedTable.Rows[2].DefaultCellStyle.BackColor == Color.FromArgb(254, 210, 21)) 
+                {
+                    // true all conditions of budget table
+                    AddComma();
 
-                // update total row
-                FindTotal(TableBudget, TableBudget.Rows[2],
-                    new List<byte> { Convert.ToByte(e.ColumnIndex) }, new List<short> { 0, 1 }, 0);
+                    // update total row
+                    FindTotal(TableBudget, TableBudget.Rows[2],
+                        new List<byte> { Convert.ToByte(e.ColumnIndex) }, new List<short> { 0, 1 }, 0);
+
+                    FillTables(new List<bool> { true, false, false, false });
+                }
             }
             else if (selectedTable.Name == TableIncome.Name // is table income
                 && e.RowIndex > -1 && e.RowIndex < 5 && e.ColumnIndex > 1 && e.ColumnIndex != 5 // is correct cell
@@ -740,12 +742,82 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         private void btnSave_Click(object sender, EventArgs e) // this button located in top of the table budget
         {
-            FindTotal(TableBudget, TableBudget.Rows[2], new List<byte> { 1, 2, 3, 4 }, new List<short> { 0, 1 }, 0);
+            bool updateTables = false;
 
-            if (TableIncome.Rows.Count == 3)
+            if (TableBudget.Rows.Count == 3)
             {
-
+                if (!commenMethods.ReturnListHasError(commenMethods.SQLRead(String.Format(
+                    "SELECT Capital,Recurrent FROM AllocationBudget WHERE Year='{0}'",
+                    btnSelectedYear.Text), "Capital Recurrent")))
+                {
+                    if (!commenMethods.ReturnListHasError(commenMethods.SQLRead(String.Format(
+                        "SELECT RecurrentExpenditure,RecurrentFundReceived,CapitalFundReceived " +
+                        "FROM MonthyBudget WHERE Year='{0}' AND Month='{1}'", btnSelectedYear.Text, FindSelectedMonth()),
+                        "RecurrentExpenditure RecurrentFundReceived CapitalFundReceived")))
+                    {
+                        updateTables = true;
+                    }
+                }
             }
+
+            List<string> QueryList = null;
+
+            if (updateTables)
+            {
+                // Update database
+
+                QueryList = new List<string> 
+                { 
+                    String.Format("UPDATE AllocationBudget SET " +
+                    "Capital='{0}',Recurrent='{1}' WHERE Year='{2}'",
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[1].Value.ToString()),
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[1].Value.ToString()),
+                    btnSelectedYear.Text),
+
+                    String.Format("UPDATE MonthyBudget SET " +
+                    "RecurrentExpenditure='{0}',RecurrentFundReceived='{1}',CapitalFundReceived='{2}' " +
+                    "WHERE Year='{3}' AND Month='{4}'",
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[2].Value.ToString()),
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[4].Value.ToString()),
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[4].Value.ToString()),
+                    btnSelectedYear.Text, FindSelectedMonth())
+                };
+            }
+            else
+            {
+                // Insert new record
+
+                QueryList = new List<string>
+                {
+                    String.Format("UPDATE AllocationBudget SET " +
+                    "Capital='{0}',Recurrent='{1}' WHERE Year='{2}'",
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[1].Value.ToString()),
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[1].Value.ToString()),
+                    btnSelectedYear.Text),
+
+                    String.Format("INSERT INTO AllocationBudget (Year,Capital,Recurrent) VALUES ('{0}','{1}','{2}')",
+                    btnSelectedYear.Text,
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[1].Value.ToString()),
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[1].Value.ToString())),
+
+                    String.Format("INSERT INTO MonthyBudget " +
+                    "(Year,Month,RecurrentExpenditure,RecurrentFundReceived,CapitalFundReceived) " +
+                    "VALUES ('{0}','{1}','{2}','{3}','{4}')",
+                    btnSelectedYear.Text, FindSelectedMonth(),
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[2].Value.ToString()),
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[4].Value.ToString()),
+                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[4].Value.ToString()))
+                };
+            }
+
+            foreach (string Query in QueryList)
+            {
+                commenMethods.ExecuteSQL(Query);
+            }
+
+            MessageBox.Show("Database Updated Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            FillTables(new List<bool> { false, true, false, false });
         }
 
         private void TableExpenditure_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -809,9 +881,17 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            commenMethods.ExecuteSQL("CREATE TABLE [dbo].[AllocationBudget]([Year] INT NOT NULL PRIMARY KEY,[Capital] FLOAT NULL,[Recurrent] FLOAT NULL)");
-            commenMethods.ExecuteSQL("CREATE TABLE [dbo].[MonthyBudget]([Year] INT NOT NULL,[Month] INT NOT NULL,[RecurrentExpenditure] FLOAT NULL,[RecurrentFundReceived] FLOAT NULL,[CapitalFundReceived] FLOAT NULL,PRIMARY KEY([Year], [Month]), CONSTRAINT[FK_Table_AllocationBudget] FOREIGN KEY([Year]) REFERENCES[AllocationBudget]([Year]))");
+            exportForm.availabilityOfTables.Clear();
+            exportForm.tableList.Clear();
 
+            for (byte i = 0; i < 4; i++)
+            {
+                exportForm.availabilityOfTables.Add(tableList[i].Tag.ToString(), checkBoxList[i].Checked);
+                exportForm.tableList.Add(tableList[i].Tag.ToString(), tableList[i]);
+            }
+
+            exportForm.selectedMonth = btnSelectMonth.Text;
+            exportForm.ShowDialog();
         }
     }
 }

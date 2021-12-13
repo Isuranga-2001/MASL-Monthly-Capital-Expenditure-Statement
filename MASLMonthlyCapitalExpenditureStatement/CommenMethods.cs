@@ -326,10 +326,12 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     "FROM ExpenditureMonth,ActivityCode,MainActivity " +
                     "WHERE ExpenditureMonth.ActivityCodeID=ActivityCode.ActivityCodeID " +
                     "AND MainActivity.ActivityID=ActivityCode.ActivityID " +
-                    "AND MainActivity.BudgectCode='{0}' " +
-                    "AND MainActivity.ActivityID='{1}' " +
-                    "AND MainActivity.Year='{2}'",
-                    BudgetCode, ItemNoParts[0], selectedYear);
+                    "AND MainActivity.Year='{0}'", selectedYear);
+
+            if (BudgetCode != "" || ItemNoParts[0] != "") 
+            {
+                Query += String.Format(" AND MainActivity.BudgectCode='{0}' AND MainActivity.ActivityID='{1}'", BudgetCode, ItemNoParts[0]);
+            }
 
             if (ItemNoParts.Length >= 2)
             {

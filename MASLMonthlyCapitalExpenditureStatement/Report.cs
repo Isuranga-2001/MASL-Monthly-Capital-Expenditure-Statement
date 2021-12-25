@@ -182,33 +182,33 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
                 if (!commenMethods.ReturnListHasError(returnValue_BudgetDetails))
                 {
-                    TableBudget.Rows[0].Cells[1].Value = returnValue_BudgetDetails[0];
-                    TableBudget.Rows[1].Cells[1].Value = returnValue_BudgetDetails[1];
+                    TableBudget.Rows[0].Cells[1].Value = SetAsNumber(returnValue_BudgetDetails[0]);
+                    TableBudget.Rows[1].Cells[1].Value = SetAsNumber(returnValue_BudgetDetails[1]);
 
                     if (!commenMethods.ReturnListHasError(returnValue_CumExpend))
                     {
-                        TableBudget.Rows[0].Cells[3].Value = returnValue_CumExpend[0];
+                        TableBudget.Rows[0].Cells[3].Value = SetAsNumber(returnValue_CumExpend[0]);
                     }
 
                     if (!commenMethods.ReturnListHasError(returnValue_CumExpend))
                     {
-                        TableBudget.Rows[0].Cells[2].Value = returnValue_Expend[0];
+                        TableBudget.Rows[0].Cells[2].Value = SetAsNumber(returnValue_Expend[0]);
                     }
                     
                     if (!commenMethods.ReturnListHasError(returnValue_CumRecurrentExpend))
                     {
-                        TableBudget.Rows[1].Cells[3].Value = returnValue_CumRecurrentExpend[0];
+                        TableBudget.Rows[1].Cells[3].Value = SetAsNumber(returnValue_CumRecurrentExpend[0]);
                     }
 
                     if (!commenMethods.ReturnListHasError(returnValue_RecurrentExpend))
                     {
-                        TableBudget.Rows[1].Cells[2].Value = returnValue_RecurrentExpend[0];
+                        TableBudget.Rows[1].Cells[2].Value = SetAsNumber(returnValue_RecurrentExpend[0]);
                     }
 
                     if (!commenMethods.ReturnListHasError(returnValue_FundReceived))
                     {
-                        TableBudget.Rows[0].Cells[4].Value = returnValue_FundReceived[0];
-                        TableBudget.Rows[1].Cells[4].Value = returnValue_FundReceived[1];
+                        TableBudget.Rows[0].Cells[4].Value = SetAsNumber(returnValue_FundReceived[0]);
+                        TableBudget.Rows[1].Cells[4].Value = SetAsNumber(returnValue_FundReceived[1]);
                     }
                 }
 
@@ -496,6 +496,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     {
                         dataGridViewRow.Cells[3].Value = dataRow.ItemArray[3]; // set allocation
                         dataGridViewRow.Cells[6].Value = dataRow.ItemArray[4]; // set commitment
+
+                        dataGridViewRow.DefaultCellStyle.BackColor = Color.FromArgb(158, 216, 238);
+
                     }
                 }
             }
@@ -789,17 +792,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
                 QueryList = new List<string>
                 {
-                    String.Format("UPDATE AllocationBudget SET " +
-                    "Capital='{0}',Recurrent='{1}' WHERE Year='{2}'",
-                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[1].Value.ToString()),
-                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[1].Value.ToString()),
-                    btnSelectedYear.Text),
-
-                    String.Format("INSERT INTO AllocationBudget (Year,Capital,Recurrent) VALUES ('{0}','{1}','{2}')",
-                    btnSelectedYear.Text,
-                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[1].Value.ToString()),
-                    commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[1].Value.ToString())),
-
                     String.Format("INSERT INTO MonthyBudget " +
                     "(Year,Month,RecurrentExpenditure,RecurrentFundReceived,CapitalFundReceived) " +
                     "VALUES ('{0}','{1}','{2}','{3}','{4}')",
@@ -808,6 +800,49 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[4].Value.ToString()),
                     commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[4].Value.ToString()))
                 };
+
+                List<string> returnValue = commenMethods.SQLRead(String.Format(
+                    "SELECT Capital,Recurrent FROM AllocationBudget WHERE Year='{0}'",
+                    btnSelectedYear.Text), "Capital Recurrent");
+
+                if (returnValue != null)
+                {
+                    if (returnValue.Count > 0)
+                    {
+                        // now avaiable on database
+                        AddToQueryList(true);
+                    }
+                    else
+                    {
+                        // currently unavaiable on database
+                        AddToQueryList(false);
+                    }
+                }
+                else
+                {
+                    // currently unavaiable on database
+                    AddToQueryList(false);
+                }
+
+                void AddToQueryList(bool IsUpdateQuery)
+                {
+                    if (IsUpdateQuery)
+                    {
+                        QueryList.Add(String.Format("UPDATE AllocationBudget SET " +
+                            "Capital='{0}',Recurrent='{1}' WHERE Year='{2}'",
+                            commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[1].Value.ToString()),
+                            commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[1].Value.ToString()),
+                            btnSelectedYear.Text));
+                    }
+                    else
+                    {
+                        QueryList.Add(
+                            String.Format("INSERT INTO AllocationBudget (Year,Capital,Recurrent) VALUES ('{0}','{1}','{2}')",
+                            btnSelectedYear.Text,
+                            commenMethods.SaveOnlyIntegers(TableBudget.Rows[0].Cells[1].Value.ToString()),
+                            commenMethods.SaveOnlyIntegers(TableBudget.Rows[1].Cells[1].Value.ToString())));
+                    }
+                }
             }
 
             foreach (string Query in QueryList)
@@ -892,6 +927,14 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
             exportForm.selectedMonth = btnSelectMonth.Text;
             exportForm.ShowDialog();
+        }
+
+        private void btnChart_Click(object sender, EventArgs e)
+        {
+            BudgetSummery form = new BudgetSummery();
+            form.selectedYear = Convert.ToInt16(btnSelectedYear.Text);
+            form.selectedMonth = Convert.ToByte(commenMethods.FindMonth(btnSelectMonth.Text));
+            form.ShowDialog();
         }
     }
 }

@@ -52,12 +52,5 @@ namespace MASLMonthlyCapitalExpenditureStatement
         {
             txtUserName.Focus();
         }
-
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
-        {
-            commenMethods.ExecuteSQL("CREATE TABLE [dbo].[AllocationBudget]([Year] INT NOT NULL PRIMARY KEY,[Capital] FLOAT NULL,[Recurrent] FLOAT NULL)");
-            commenMethods.ExecuteSQL("CREATE TABLE [dbo].[MonthyBudget]([Year] INT NOT NULL,[Month] INT NOT NULL,[RecurrentExpenditure] FLOAT NULL,[RecurrentFundReceived] FLOAT NULL,[CapitalFundReceived] FLOAT NULL,PRIMARY KEY([Year], [Month]), CONSTRAINT[FK_Table_AllocationBudget] FOREIGN KEY([Year]) REFERENCES[AllocationBudget]([Year]))");
-
-        }
     }
 }

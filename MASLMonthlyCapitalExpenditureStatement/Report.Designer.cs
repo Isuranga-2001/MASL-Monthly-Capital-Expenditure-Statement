@@ -34,25 +34,14 @@ namespace MASLMonthlyCapitalExpenditureStatement
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -62,6 +51,17 @@ namespace MASLMonthlyCapitalExpenditureStatement
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
@@ -75,38 +75,28 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnExport = new Guna.UI2.WinForms.Guna2Button();
             this.MainTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.TableMain = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BudgetForYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Expenditure = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CumulativeUpTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExpandTableMain = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.MainTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.BudgetTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnChart = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton5 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.TableBudget = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExpandTableBudget = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label3 = new System.Windows.Forms.Label();
             this.BudgetTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.IncomeTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.TableIncome = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IncomePercentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExpandTableIncome = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.IncomeTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.ExpenditureTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.TableExpenditure = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnExpandTableExpenditure = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ExpenditureTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.BtnExpandAll = new Guna.UI2.WinForms.Guna2Button();
             this.BudgetCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,11 +105,22 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.CumulativeExpenditure = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Commitment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Percentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnExpandTableExpenditure = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ExpenditureTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.BtnExpandAll = new Guna.UI2.WinForms.Guna2Button();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IncomePercentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BudgetForYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Expenditure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CumulativeUpTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.MainTableBackPanel.SuspendLayout();
@@ -536,40 +537,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableMain.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
             this.TableMain.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // Source
-            // 
-            this.Source.FillWeight = 50F;
-            this.Source.HeaderText = "Source";
-            this.Source.Name = "Source";
-            // 
-            // Type
-            // 
-            this.Type.FillWeight = 50F;
-            this.Type.HeaderText = "Type";
-            this.Type.Name = "Type";
-            // 
-            // BudgetForYear
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.BudgetForYear.DefaultCellStyle = dataGridViewCellStyle3;
-            this.BudgetForYear.FillWeight = 50F;
-            this.BudgetForYear.HeaderText = "Budget For 2020";
-            this.BudgetForYear.Name = "BudgetForYear";
-            // 
-            // Expenditure
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Expenditure.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Expenditure.HeaderText = "Expenditure For JAN";
-            this.Expenditure.Name = "Expenditure";
-            // 
-            // CumulativeUpTo
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.CumulativeUpTo.DefaultCellStyle = dataGridViewCellStyle5;
-            this.CumulativeUpTo.HeaderText = "Cumulative Up To";
-            this.CumulativeUpTo.Name = "CumulativeUpTo";
-            // 
             // btnExpandTableMain
             // 
             this.btnExpandTableMain.Animated = true;
@@ -633,6 +600,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.BudgetTableBackPanel.BorderColor = System.Drawing.Color.Silver;
             this.BudgetTableBackPanel.BorderRadius = 20;
             this.BudgetTableBackPanel.BorderThickness = 1;
+            this.BudgetTableBackPanel.Controls.Add(this.btnChart);
             this.BudgetTableBackPanel.Controls.Add(this.guna2CircleButton5);
             this.BudgetTableBackPanel.Controls.Add(this.TableBudget);
             this.BudgetTableBackPanel.Controls.Add(this.btnExpandTableBudget);
@@ -647,6 +615,35 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.BudgetTableBackPanel.ShadowDecoration.Parent = this.BudgetTableBackPanel;
             this.BudgetTableBackPanel.Size = new System.Drawing.Size(980, 220);
             this.BudgetTableBackPanel.TabIndex = 3;
+            // 
+            // btnChart
+            // 
+            this.btnChart.Animated = true;
+            this.btnChart.BackColor = System.Drawing.Color.Transparent;
+            this.btnChart.CheckedState.Parent = this.btnChart;
+            this.btnChart.CustomImages.Parent = this.btnChart;
+            this.btnChart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChart.DisabledState.Parent = this.btnChart;
+            this.btnChart.FillColor = System.Drawing.Color.Transparent;
+            this.btnChart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnChart.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnChart.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.chartWhite;
+            this.btnChart.HoverState.Parent = this.btnChart;
+            this.btnChart.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.chart;
+            this.btnChart.ImageOffset = new System.Drawing.Point(1, 1);
+            this.btnChart.ImageSize = new System.Drawing.Size(19, 19);
+            this.btnChart.Location = new System.Drawing.Point(848, 13);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnChart.ShadowDecoration.Parent = this.btnChart;
+            this.btnChart.Size = new System.Drawing.Size(32, 32);
+            this.btnChart.TabIndex = 32;
+            this.btnChart.Tag = "B";
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
             // 
             // guna2CircleButton5
             // 
@@ -757,45 +754,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableBudget.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.TableBudget.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.TableBudget.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellValueChanged);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Source";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle10.NullValue = "0.00";
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn3.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Budget";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.NullValue = "0.00";
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Expenditure For JAN";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.NullValue = "0.00";
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Cumulative Expenditure";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.NullValue = "0.00";
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Fund received";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // btnExpandTableBudget
             // 
@@ -955,53 +913,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableIncome.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.TableIncome.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.TableIncome.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellValueChanged);
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Source";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.FillWeight = 45F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Section";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.NullValue = "0.00";
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridViewTextBoxColumn8.FillWeight = 80F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Income Budget";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle19.NullValue = "0.00";
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle19;
-            this.dataGridViewTextBoxColumn10.FillWeight = 90F;
-            this.dataGridViewTextBoxColumn10.HeaderText = "Income For JAN";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle20.NullValue = "0.00";
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridViewTextBoxColumn9.FillWeight = 90F;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Cumulative Income";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // IncomePercentage
-            // 
-            dataGridViewCellStyle21.Format = "N2";
-            dataGridViewCellStyle21.NullValue = "0%";
-            this.IncomePercentage.DefaultCellStyle = dataGridViewCellStyle21;
-            this.IncomePercentage.FillWeight = 30F;
-            this.IncomePercentage.HeaderText = "%";
-            this.IncomePercentage.Name = "IncomePercentage";
             // 
             // btnExpandTableIncome
             // 
@@ -1164,67 +1075,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableExpenditure.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.TableExpenditure.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableExpenditure_CellClick);
             // 
-            // BudgetCode
-            // 
-            this.BudgetCode.FillWeight = 30F;
-            this.BudgetCode.HeaderText = "Budget Code";
-            this.BudgetCode.Name = "BudgetCode";
-            // 
-            // ItemNo
-            // 
-            this.ItemNo.FillWeight = 25F;
-            this.ItemNo.HeaderText = "Item No";
-            this.ItemNo.Name = "ItemNo";
-            // 
-            // Activity
-            // 
-            this.Activity.HeaderText = "Activity";
-            this.Activity.Name = "Activity";
-            // 
-            // Allocation
-            // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle26.NullValue = "0.00";
-            this.Allocation.DefaultCellStyle = dataGridViewCellStyle26;
-            this.Allocation.FillWeight = 60F;
-            this.Allocation.HeaderText = "Allocation  2021";
-            this.Allocation.Name = "Allocation";
-            // 
-            // ExpenditureMonth
-            // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle27.NullValue = "0.00";
-            this.ExpenditureMonth.DefaultCellStyle = dataGridViewCellStyle27;
-            this.ExpenditureMonth.FillWeight = 60F;
-            this.ExpenditureMonth.HeaderText = "Expenditure Of JAN";
-            this.ExpenditureMonth.Name = "ExpenditureMonth";
-            // 
-            // CumulativeExpenditure
-            // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle28.NullValue = "0.00";
-            this.CumulativeExpenditure.DefaultCellStyle = dataGridViewCellStyle28;
-            this.CumulativeExpenditure.FillWeight = 60F;
-            this.CumulativeExpenditure.HeaderText = "Cumulative Expenditure";
-            this.CumulativeExpenditure.Name = "CumulativeExpenditure";
-            // 
-            // Commitment
-            // 
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle29.NullValue = "0.00";
-            this.Commitment.DefaultCellStyle = dataGridViewCellStyle29;
-            this.Commitment.FillWeight = 60F;
-            this.Commitment.HeaderText = "Commitment";
-            this.Commitment.Name = "Commitment";
-            // 
-            // Percentage
-            // 
-            dataGridViewCellStyle30.NullValue = "0%";
-            this.Percentage.DefaultCellStyle = dataGridViewCellStyle30;
-            this.Percentage.FillWeight = 25F;
-            this.Percentage.HeaderText = "%";
-            this.Percentage.Name = "Percentage";
-            // 
             // btnExpandTableExpenditure
             // 
             this.btnExpandTableExpenditure.Animated = true;
@@ -1333,6 +1183,212 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.BtnExpandAll.TextOffset = new System.Drawing.Point(0, -1);
             this.BtnExpandAll.CheckedChanged += new System.EventHandler(this.BtnExpandAll_CheckedChanged);
             // 
+            // BudgetCode
+            // 
+            this.BudgetCode.FillWeight = 30F;
+            this.BudgetCode.HeaderText = "Budget Code";
+            this.BudgetCode.Name = "BudgetCode";
+            this.BudgetCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ItemNo
+            // 
+            this.ItemNo.FillWeight = 25F;
+            this.ItemNo.HeaderText = "Item No";
+            this.ItemNo.Name = "ItemNo";
+            this.ItemNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Activity
+            // 
+            this.Activity.HeaderText = "Activity";
+            this.Activity.Name = "Activity";
+            this.Activity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Allocation
+            // 
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle26.NullValue = "0.00";
+            this.Allocation.DefaultCellStyle = dataGridViewCellStyle26;
+            this.Allocation.FillWeight = 60F;
+            this.Allocation.HeaderText = "Allocation  2021";
+            this.Allocation.Name = "Allocation";
+            this.Allocation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ExpenditureMonth
+            // 
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle27.NullValue = "0.00";
+            this.ExpenditureMonth.DefaultCellStyle = dataGridViewCellStyle27;
+            this.ExpenditureMonth.FillWeight = 60F;
+            this.ExpenditureMonth.HeaderText = "Expenditure Of JAN";
+            this.ExpenditureMonth.Name = "ExpenditureMonth";
+            this.ExpenditureMonth.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // CumulativeExpenditure
+            // 
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle28.NullValue = "0.00";
+            this.CumulativeExpenditure.DefaultCellStyle = dataGridViewCellStyle28;
+            this.CumulativeExpenditure.FillWeight = 60F;
+            this.CumulativeExpenditure.HeaderText = "Cumulative Expenditure";
+            this.CumulativeExpenditure.Name = "CumulativeExpenditure";
+            this.CumulativeExpenditure.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Commitment
+            // 
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle29.NullValue = "0.00";
+            this.Commitment.DefaultCellStyle = dataGridViewCellStyle29;
+            this.Commitment.FillWeight = 60F;
+            this.Commitment.HeaderText = "Commitment";
+            this.Commitment.Name = "Commitment";
+            this.Commitment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Percentage
+            // 
+            dataGridViewCellStyle30.NullValue = "0%";
+            this.Percentage.DefaultCellStyle = dataGridViewCellStyle30;
+            this.Percentage.FillWeight = 25F;
+            this.Percentage.HeaderText = "%";
+            this.Percentage.Name = "Percentage";
+            this.Percentage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Source";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.FillWeight = 45F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Section";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.NullValue = "0.00";
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridViewTextBoxColumn8.FillWeight = 80F;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Income Budget";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle19.NullValue = "0.00";
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle19;
+            this.dataGridViewTextBoxColumn10.FillWeight = 90F;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Income For JAN";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.NullValue = "0.00";
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridViewTextBoxColumn9.FillWeight = 90F;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Cumulative Income";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // IncomePercentage
+            // 
+            dataGridViewCellStyle21.Format = "N2";
+            dataGridViewCellStyle21.NullValue = "0%";
+            this.IncomePercentage.DefaultCellStyle = dataGridViewCellStyle21;
+            this.IncomePercentage.FillWeight = 30F;
+            this.IncomePercentage.HeaderText = "%";
+            this.IncomePercentage.Name = "IncomePercentage";
+            this.IncomePercentage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Source
+            // 
+            this.Source.FillWeight = 50F;
+            this.Source.HeaderText = "Source";
+            this.Source.Name = "Source";
+            this.Source.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Type
+            // 
+            this.Type.FillWeight = 50F;
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // BudgetForYear
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.BudgetForYear.DefaultCellStyle = dataGridViewCellStyle3;
+            this.BudgetForYear.FillWeight = 50F;
+            this.BudgetForYear.HeaderText = "Budget For 2020";
+            this.BudgetForYear.Name = "BudgetForYear";
+            this.BudgetForYear.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Expenditure
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Expenditure.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Expenditure.HeaderText = "Expenditure For JAN";
+            this.Expenditure.Name = "Expenditure";
+            this.Expenditure.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // CumulativeUpTo
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CumulativeUpTo.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CumulativeUpTo.HeaderText = "Cumulative Up To";
+            this.CumulativeUpTo.Name = "CumulativeUpTo";
+            this.CumulativeUpTo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Source";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.NullValue = "0.00";
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn3.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Budget";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.NullValue = "0.00";
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Expenditure For JAN";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.NullValue = "0.00";
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Cumulative Expenditure";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.NullValue = "0.00";
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Fund received";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1409,16 +1465,18 @@ namespace MASLMonthlyCapitalExpenditureStatement
         public Guna.UI2.WinForms.Guna2Button BtnExpandAll;
         private Guna.UI2.WinForms.Guna2DataGridView TableIncome;
         private Guna.UI2.WinForms.Guna2DataGridView TableExpenditure;
+        private Guna.UI2.WinForms.Guna2CircleButton btnChart;
         private System.Windows.Forms.DataGridViewTextBoxColumn Source;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn BudgetForYear;
         private System.Windows.Forms.DataGridViewTextBoxColumn Expenditure;
         private System.Windows.Forms.DataGridViewTextBoxColumn CumulativeUpTo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IncomePercentage;
         private System.Windows.Forms.DataGridViewTextBoxColumn BudgetCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Activity;
@@ -1427,11 +1485,10 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private System.Windows.Forms.DataGridViewTextBoxColumn CumulativeExpenditure;
         private System.Windows.Forms.DataGridViewTextBoxColumn Commitment;
         private System.Windows.Forms.DataGridViewTextBoxColumn Percentage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IncomePercentage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

@@ -186,7 +186,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 {
                     try
                     {
-                        savedFilePath = Path.GetDirectoryName(sfd.FileName) + '\\' + selectedMonth + " Expenditure Report";
+                        savedFilePath = Path.GetDirectoryName(sfd.FileName) + '\\' + selectedMonth + " sExpenditure Report";
                         List<string> arraySaveFileNames = new List<string>
                             {
                                 "Table Last Month Total Expenditure", "Table Budget Details",

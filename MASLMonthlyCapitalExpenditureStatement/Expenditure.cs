@@ -455,7 +455,16 @@ namespace MASLMonthlyCapitalExpenditureStatement
                             {
                                 float Progress = ((CumulativeExpenditure + Commitment) / Allocation) * 100;
 
-                                PrecentageProgressBar.Value = Convert.ToInt32(Progress);
+                                if (Progress <= 100)
+                                {
+                                    PrecentageProgressBar.Maximum = 100;
+                                    PrecentageProgressBar.Value = Convert.ToInt32(Progress);
+                                }
+                                else
+                                {
+                                    PrecentageProgressBar.Maximum = Convert.ToInt32(Progress);
+                                    PrecentageProgressBar.Value = Convert.ToInt32(Progress);
+                                }
                             }
                         }
                     }
@@ -1002,6 +1011,11 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     }
                 }
             }
+        }
+
+        private void PrecentageProgressBar_ValueChanged(object sender, EventArgs e)
+        {
+            lblPrecentage.Text = PrecentageProgressBar.Value + "%";
         }
     }
 }

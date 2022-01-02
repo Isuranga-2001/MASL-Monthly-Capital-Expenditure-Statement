@@ -497,7 +497,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                         dataGridViewRow.Cells[3].Value = dataRow.ItemArray[3]; // set allocation
                         dataGridViewRow.Cells[6].Value = dataRow.ItemArray[4]; // set commitment
 
-                        dataGridViewRow.DefaultCellStyle.BackColor = Color.FromArgb(158, 216, 238);
+                        dataGridViewRow.DefaultCellStyle.BackColor = Color.FromArgb(144, 238, 144);
 
                     }
                 }
@@ -869,6 +869,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 expenditureSummeryform.txtCumulativeExpen.Text = selectedRow.Cells[5].Value.ToString();
                 expenditureSummeryform.txtCommitment.Text = selectedRow.Cells[6].Value.ToString();
                 expenditureSummeryform.PrecentageProgressBar.Value = Convert.ToInt32(selectedRow.Cells[7].Value.ToString().Replace("%", "").Split('.')[0]);
+                expenditureSummeryform.lblPrecentage.Text = expenditureSummeryform.PrecentageProgressBar.Value + "%";
 
                 expenditureSummeryform.ChartExpenditure.Series[0].Points.Clear();
                 expenditureSummeryform.ChartExpenditure.Series[1].Points.Clear();

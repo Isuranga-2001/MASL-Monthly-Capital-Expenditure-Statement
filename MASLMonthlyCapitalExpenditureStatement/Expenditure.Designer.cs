@@ -31,18 +31,18 @@ namespace MASLMonthlyCapitalExpenditureStatement
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expenditure));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
@@ -61,6 +61,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.label5 = new System.Windows.Forms.Label();
             this.txtActivity = new Guna.UI2.WinForms.Guna2TextBox();
             this.PrecentageProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.lblPrecentage = new Guna.UI2.WinForms.Guna2Chip();
             this.ChartExpenditure = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.TableActivities = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ItemNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +84,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.HelpToolTip = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.PrecentageProgressBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartExpenditure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TableActivities)).BeginInit();
             this.SuspendLayout();
@@ -477,6 +479,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             // 
             // PrecentageProgressBar
             // 
+            this.PrecentageProgressBar.Controls.Add(this.lblPrecentage);
             this.PrecentageProgressBar.FillColor = System.Drawing.Color.White;
             this.PrecentageProgressBar.FillThickness = 20;
             this.PrecentageProgressBar.Font = new System.Drawing.Font("Segoe UI", 20F);
@@ -493,24 +496,42 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.PrecentageProgressBar.ProgressThickness = 20;
             this.PrecentageProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.PrecentageProgressBar.ShadowDecoration.Parent = this.PrecentageProgressBar;
-            this.PrecentageProgressBar.ShowPercentage = true;
             this.PrecentageProgressBar.Size = new System.Drawing.Size(147, 147);
             this.PrecentageProgressBar.TabIndex = 12;
             this.PrecentageProgressBar.Text = "guna2CircleProgressBar1";
             this.HelpToolTip.SetToolTip(this.PrecentageProgressBar, "Precentage");
-            this.PrecentageProgressBar.Value = 65;
+            this.PrecentageProgressBar.Value = 100;
+            this.PrecentageProgressBar.ValueChanged += new System.EventHandler(this.PrecentageProgressBar_ValueChanged);
+            // 
+            // lblPrecentage
+            // 
+            this.lblPrecentage.AutoRoundedCorners = true;
+            this.lblPrecentage.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrecentage.BorderRadius = 72;
+            this.lblPrecentage.BorderThickness = 0;
+            this.lblPrecentage.FillColor = System.Drawing.Color.Transparent;
+            this.lblPrecentage.Font = new System.Drawing.Font("Segoe UI", 18F);
+            this.lblPrecentage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.lblPrecentage.IsClosable = false;
+            this.lblPrecentage.Location = new System.Drawing.Point(0, 0);
+            this.lblPrecentage.Name = "lblPrecentage";
+            this.lblPrecentage.ShadowDecoration.Parent = this.lblPrecentage;
+            this.lblPrecentage.Size = new System.Drawing.Size(147, 147);
+            this.lblPrecentage.TabIndex = 0;
+            this.lblPrecentage.Text = "250%";
+            this.lblPrecentage.UseTransparentBackground = true;
             // 
             // ChartExpenditure
             // 
-            chartArea3.AxisX.IsMarginVisible = false;
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.Name = "ChartArea1";
-            this.ChartExpenditure.ChartAreas.Add(chartArea3);
-            legend3.Alignment = System.Drawing.StringAlignment.Center;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend3.Name = "Legend1";
-            this.ChartExpenditure.Legends.Add(legend3);
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.Name = "ChartArea1";
+            this.ChartExpenditure.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Name = "Legend1";
+            this.ChartExpenditure.Legends.Add(legend1);
             this.ChartExpenditure.Location = new System.Drawing.Point(244, 290);
             this.ChartExpenditure.Name = "ChartExpenditure";
             this.ChartExpenditure.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -518,18 +539,18 @@ namespace MASLMonthlyCapitalExpenditureStatement
         System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(210)))), ((int)(((byte)(21))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))))};
-            series5.BorderWidth = 3;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "Budget";
-            series6.BorderWidth = 3;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Progress";
-            this.ChartExpenditure.Series.Add(series5);
-            this.ChartExpenditure.Series.Add(series6);
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Budget";
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Progress";
+            this.ChartExpenditure.Series.Add(series1);
+            this.ChartExpenditure.Series.Add(series2);
             this.ChartExpenditure.Size = new System.Drawing.Size(494, 360);
             this.ChartExpenditure.TabIndex = 0;
             this.ChartExpenditure.Text = "chart1";
@@ -538,53 +559,53 @@ namespace MASLMonthlyCapitalExpenditureStatement
             // TableActivities
             // 
             this.TableActivities.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            this.TableActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.TableActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.TableActivities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TableActivities.BackgroundColor = System.Drawing.Color.White;
             this.TableActivities.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TableActivities.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.TableActivities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.TableActivities.ColumnHeadersHeight = 30;
             this.TableActivities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ItemNo,
             this.ActivityName,
             this.ShowExpenditure,
             this.SearchColumn});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TableActivities.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TableActivities.DefaultCellStyle = dataGridViewCellStyle5;
             this.TableActivities.EnableHeadersVisualStyles = false;
             this.TableActivities.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.TableActivities.Location = new System.Drawing.Point(756, 396);
             this.TableActivities.MultiSelect = false;
             this.TableActivities.Name = "TableActivities";
             this.TableActivities.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableActivities.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableActivities.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.TableActivities.RowHeadersVisible = false;
             this.TableActivities.RowTemplate.Height = 25;
             this.TableActivities.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -628,10 +649,10 @@ namespace MASLMonthlyCapitalExpenditureStatement
             // 
             // ShowExpenditure
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle19.NullValue")));
-            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(1);
-            this.ShowExpenditure.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            this.ShowExpenditure.DefaultCellStyle = dataGridViewCellStyle3;
             this.ShowExpenditure.FillWeight = 5F;
             this.ShowExpenditure.HeaderText = "";
             this.ShowExpenditure.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditure;
@@ -640,10 +661,10 @@ namespace MASLMonthlyCapitalExpenditureStatement
             // 
             // SearchColumn
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle20.NullValue")));
-            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(1);
-            this.SearchColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
+            this.SearchColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.SearchColumn.FillWeight = 5F;
             this.SearchColumn.HeaderText = "";
             this.SearchColumn.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Search;
@@ -817,10 +838,10 @@ namespace MASLMonthlyCapitalExpenditureStatement
             // 
             // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle23.NullValue")));
-            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewImageColumn1.FillWeight = 5F;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditure;
@@ -830,10 +851,10 @@ namespace MASLMonthlyCapitalExpenditureStatement
             // 
             // dataGridViewImageColumn2
             // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle24.NullValue")));
-            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewImageColumn2.FillWeight = 5F;
             this.dataGridViewImageColumn2.HeaderText = "";
             this.dataGridViewImageColumn2.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Search;
@@ -983,6 +1004,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.Load += new System.EventHandler(this.Expenditure_Load);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.PrecentageProgressBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ChartExpenditure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TableActivities)).EndInit();
             this.ResumeLayout(false);
@@ -1030,5 +1052,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private Guna.UI2.WinForms.Guna2NotificationPaint NotificationPaintUpdateExpenditure;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAllocation;
         private Guna.UI2.WinForms.Guna2HtmlToolTip HelpToolTip;
+        private Guna.UI2.WinForms.Guna2Chip lblPrecentage;
     }
 }

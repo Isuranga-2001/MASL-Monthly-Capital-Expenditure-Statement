@@ -36,6 +36,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpenditureSummery));
             this.ChartExpenditure = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PrecentageProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.lblPrecentage = new Guna.UI2.WinForms.Guna2Chip();
             this.txtItemNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtBudgetCode = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSelectedYear = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ChartExpenditure)).BeginInit();
+            this.PrecentageProgressBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // ChartExpenditure
@@ -89,6 +91,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             // 
             // PrecentageProgressBar
             // 
+            this.PrecentageProgressBar.Controls.Add(this.lblPrecentage);
             this.PrecentageProgressBar.FillColor = System.Drawing.Color.White;
             this.PrecentageProgressBar.FillThickness = 20;
             this.PrecentageProgressBar.Font = new System.Drawing.Font("Segoe UI", 20F);
@@ -105,11 +108,28 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.PrecentageProgressBar.ProgressThickness = 20;
             this.PrecentageProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.PrecentageProgressBar.ShadowDecoration.Parent = this.PrecentageProgressBar;
-            this.PrecentageProgressBar.ShowPercentage = true;
             this.PrecentageProgressBar.Size = new System.Drawing.Size(154, 154);
             this.PrecentageProgressBar.TabIndex = 13;
             this.PrecentageProgressBar.Text = "guna2CircleProgressBar1";
             this.PrecentageProgressBar.Value = 65;
+            // 
+            // lblPrecentage
+            // 
+            this.lblPrecentage.AutoRoundedCorners = true;
+            this.lblPrecentage.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrecentage.BorderRadius = 76;
+            this.lblPrecentage.BorderThickness = 0;
+            this.lblPrecentage.FillColor = System.Drawing.Color.Transparent;
+            this.lblPrecentage.Font = new System.Drawing.Font("Segoe UI", 18F);
+            this.lblPrecentage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.lblPrecentage.IsClosable = false;
+            this.lblPrecentage.Location = new System.Drawing.Point(0, 0);
+            this.lblPrecentage.Name = "lblPrecentage";
+            this.lblPrecentage.ShadowDecoration.Parent = this.lblPrecentage;
+            this.lblPrecentage.Size = new System.Drawing.Size(154, 154);
+            this.lblPrecentage.TabIndex = 31;
+            this.lblPrecentage.Text = "250%";
+            this.lblPrecentage.UseTransparentBackground = true;
             // 
             // txtItemNo
             // 
@@ -419,6 +439,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Expenditure Summery";
             ((System.ComponentModel.ISupportInitialize)(this.ChartExpenditure)).EndInit();
+            this.PrecentageProgressBar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,5 +463,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private System.Windows.Forms.Label label6;
         public Guna.UI2.WinForms.Guna2TextBox txtBudgetCode;
         public Guna.UI2.WinForms.Guna2TextBox txtSelectedYear;
+        public Guna.UI2.WinForms.Guna2Chip lblPrecentage;
     }
 }

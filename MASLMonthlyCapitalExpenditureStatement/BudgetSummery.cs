@@ -31,7 +31,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private void BudgetSummery_Load(object sender, EventArgs e)
         {
             ChartBudget.Titles[0].Text = 
-                String.Format("Budget {0} {1}", selectedYear, commenMethods.MonthList[selectedMonth - 1]);
+                String.Format("Budget {0}", selectedYear);
 
             queryArray = new List<string>
             {

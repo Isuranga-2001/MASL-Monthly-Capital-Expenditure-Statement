@@ -15,6 +15,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
     {
         public short selectedYear = 2020;
         public byte selectedMonth = 1;
+        public bool isParentAllication = false;
 
         CommenMethods commenMethods = new CommenMethods();
 
@@ -30,23 +31,31 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         private void BudgetSummery_Load(object sender, EventArgs e)
         {
-            ChartBudget.Titles[0].Text = 
-                String.Format("Budget {0}", selectedYear);
-
-            queryArray = new List<string>
+            if (!isParentAllication)
             {
-                String.Format("SELECT Capital FROM AllocationBudget WHERE Year='{0}'", selectedYear),
-                String.Format("SELECT Recurrent FROM AllocationBudget WHERE Year='{0}'", selectedYear)
-            };
+                ChartBudget.Titles[0].Text =
+                    String.Format("Budget {0}", selectedYear);
 
-            returnValueArray = new List<string> { "Capital", "Recurrent" };
+                queryArray = new List<string>
+                {
+                    String.Format("SELECT Capital FROM AllocationBudget WHERE Year='{0}'", selectedYear),
+                    String.Format("SELECT Recurrent FROM AllocationBudget WHERE Year='{0}'", selectedYear)
+                };
 
-            foreach (string seriesName in arrayOfSeriesNames)
+                returnValueArray = new List<string> { "Capital", "Recurrent" };
+
+                foreach (string seriesName in arrayOfSeriesNames)
+                {
+                    ComboBoxSource.Items.Add(seriesName);
+                }
+
+                ComboBoxSource.SelectedIndex = 0;
+            }
+            else
             {
-                ComboBoxSource.Items.Add(seriesName);
+                ComboBoxSource.Visible = false;
             }
 
-            ComboBoxSource.SelectedIndex = 0;
         }
 
         private void ComboBoxSource_SelectedIndexChanged(object sender, EventArgs e)

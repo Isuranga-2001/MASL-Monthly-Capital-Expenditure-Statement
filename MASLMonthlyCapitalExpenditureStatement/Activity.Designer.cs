@@ -54,6 +54,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.HelpToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.txtActivity = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnSaveAll = new Guna.UI2.WinForms.Guna2Button();
             this.MenuSuggestBudgetCode = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.MenuTableRightClick = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.UpdateExpenditure = new System.Windows.Forms.ToolStripMenuItem();
@@ -466,7 +467,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtActivity.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtActivity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtActivity.HoverState.Parent = this.txtActivity;
-            this.txtActivity.Location = new System.Drawing.Point(244, 145);
+            this.txtActivity.Location = new System.Drawing.Point(244, 136);
             this.txtActivity.Margin = new System.Windows.Forms.Padding(4);
             this.txtActivity.Name = "txtActivity";
             this.txtActivity.PasswordChar = '\0';
@@ -478,6 +479,44 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtActivity.TextOffset = new System.Drawing.Point(10, 0);
             this.HelpToolTip.SetToolTip(this.txtActivity, "Search");
             this.txtActivity.TextChanged += new System.EventHandler(this.txtActivity_TextChanged);
+            // 
+            // btnSaveAll
+            // 
+            this.btnSaveAll.Animated = true;
+            this.btnSaveAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.btnSaveAll.BorderRadius = 17;
+            this.btnSaveAll.BorderThickness = 1;
+            this.btnSaveAll.CheckedState.Parent = this.btnSaveAll;
+            this.btnSaveAll.CustomImages.Parent = this.btnSaveAll;
+            this.btnSaveAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSaveAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSaveAll.DisabledState.Parent = this.btnSaveAll;
+            this.btnSaveAll.FillColor = System.Drawing.Color.White;
+            this.btnSaveAll.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnSaveAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
+            this.btnSaveAll.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.btnSaveAll.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSaveAll.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.SaveDataWhite;
+            this.btnSaveAll.HoverState.Parent = this.btnSaveAll;
+            this.btnSaveAll.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.SaveData;
+            this.btnSaveAll.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.btnSaveAll.ImageSize = new System.Drawing.Size(17, 17);
+            this.btnSaveAll.Location = new System.Drawing.Point(1069, 604);
+            this.btnSaveAll.Name = "btnSaveAll";
+            this.btnSaveAll.ShadowDecoration.BorderRadius = 17;
+            this.btnSaveAll.ShadowDecoration.Parent = this.btnSaveAll;
+            this.btnSaveAll.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 3, 3);
+            this.btnSaveAll.Size = new System.Drawing.Size(150, 37);
+            this.btnSaveAll.TabIndex = 8;
+            this.btnSaveAll.Text = "Save All";
+            this.btnSaveAll.TextOffset = new System.Drawing.Point(2, 0);
+            this.HelpToolTip.SetToolTip(this.btnSaveAll, "Year");
+            this.btnSaveAll.UseTransparentBackground = true;
+            this.btnSaveAll.Visible = false;
+            this.btnSaveAll.Click += new System.EventHandler(this.btnSaveAll_Click);
             // 
             // MenuSuggestBudgetCode
             // 
@@ -595,6 +634,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnSaveAll);
             this.Controls.Add(this.txtActivity);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
@@ -649,5 +689,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private System.Windows.Forms.ToolStripMenuItem AddSub;
         private System.Windows.Forms.ToolStripMenuItem SaveActivity;
         private Guna.UI2.WinForms.Guna2TextBox txtActivity;
+        private Guna.UI2.WinForms.Guna2Button btnSaveAll;
     }
 }

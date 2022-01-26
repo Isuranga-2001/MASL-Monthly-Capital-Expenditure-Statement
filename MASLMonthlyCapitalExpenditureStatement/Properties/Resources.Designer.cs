@@ -123,6 +123,26 @@ namespace MASLMonthlyCapitalExpenditureStatement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Allocation_Expand {
+            get {
+                object obj = ResourceManager.GetObject("Allocation Expand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Allocation_Expand_White {
+            get {
+                object obj = ResourceManager.GetObject("Allocation Expand White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chart {
             get {
                 object obj = ResourceManager.GetObject("chart", resourceCulture);

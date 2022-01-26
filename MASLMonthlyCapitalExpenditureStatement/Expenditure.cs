@@ -20,7 +20,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         CommenMethods commenMethods = new CommenMethods();
 
-        int SelectedYear = DateTime.Now.Year;
+        public int SelectedYear = DateTime.Now.Year;
+
+        public bool ShowMessageBox = true;
 
         List<string> SavedData = new List<string> { };
 
@@ -40,15 +42,16 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
             if (txtItemNo.Text == "")
             {
-                btnSelectedYear.Text = SelectedYear.ToString();
-
                 RefreshBudgetCode();
                 ClearData();
             }
             else
             {
+                txtBudgetCode.Text = ComboBoxBudgetCode.SelectedItem.ToString();
                 btnSearch_Click(btnSearch, null);
             }
+
+            btnSelectedYear.Text = SelectedYear.ToString();
         }
 
         public void RefreshBudgetCode()
@@ -563,7 +566,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             Guna2TextBox SelectedTextBox = (Guna2TextBox)sender;
-            commenMethods.FilterOnlyInt(SelectedTextBox, 1, true, 2);
+            SelectedTextBox.Text = commenMethods.SaveOnlyIntegers(SelectedTextBox.Text);
 
             ShowUpdateNotification(SelectedTextBox);
 
@@ -811,7 +814,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     }
                 }
 
-                if (!ErrorFound)
+                if (!ErrorFound && ShowMessageBox)
                 {
                     MessageBox.Show("Activity successfully add to database", "Added Successfully",
                         MessageBoxButtons.OK, MessageBoxIcon.Information); // Complete saving
@@ -1016,6 +1019,19 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private void PrecentageProgressBar_ValueChanged(object sender, EventArgs e)
         {
             lblPrecentage.Text = PrecentageProgressBar.Value + "%";
+        }
+
+        private void btnAllocation_Click(object sender, EventArgs e)
+        {
+            Allocation form = new Allocation();
+
+            form.currentAllocation = Convert.ToDecimal(commenMethods.SaveOnlyIntegers(txtAllocation.Text));
+            form.txtAllocation.Text = txtAllocation.Text;
+            form.txtBudgetCode.Text = txtBudgetCode.Text;
+            form.txtItemNo.Text = txtItemNo.Text;
+            form.selectedYear = Convert.ToInt16(btnSelectedYear.Text);
+
+            form.ShowDialog();
         }
     }
 }

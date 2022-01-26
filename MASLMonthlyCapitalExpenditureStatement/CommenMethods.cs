@@ -133,11 +133,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         public void NavigateTo(string btnNavigationName)
         {
-            if (btnNavigationName == "Dash")
-            {
-
-            }
-            else if (btnNavigationName == "Expen") 
+            if (btnNavigationName == "Expen") 
             {
                 Expenditure form = new Expenditure();
                 form.Show();
@@ -314,6 +310,20 @@ namespace MASLMonthlyCapitalExpenditureStatement
             return DateTime.Now.Month;
         }
 
+        public string SetAsNumber(string number)
+        {
+            number = SaveOnlyIntegers(number);
+
+            if (number == "")
+            {
+                return "0.00";
+            }
+            else
+            {
+                return Convert.ToDouble(number).ToString("N2");
+            }
+        }
+
         public void UpdateErrorMessageShow()
         {
             MessageBox.Show("Something Went Wrong. Can't update Database", "Error Found",
@@ -356,7 +366,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
             {
                 ChartExpenditure.Series[0].Points.AddXY(MonthList[i - 1], CumulativeAllocation * i);
 
-                if (i <= DateTime.Now.Month)
+                if ((i <= DateTime.Now.Month && Convert.ToInt32(selectedYear) == DateTime.Now.Year) 
+                    || Convert.ToInt32(selectedYear) != DateTime.Now.Year)
                 {
                     ReturnValue = SQLRead(Query + String.Format(" AND ExpenditureMonth.Month='{0}'", i), "TotalExpenditure");
 
@@ -374,7 +385,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
                         }
                     }
 
-                    if (i < DateTime.Now.Month)
+                    if ((i < DateTime.Now.Month && Convert.ToInt32(selectedYear) == DateTime.Now.Year)
+                        || Convert.ToInt32(selectedYear) != DateTime.Now.Year)
                     {
                         ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
                     }

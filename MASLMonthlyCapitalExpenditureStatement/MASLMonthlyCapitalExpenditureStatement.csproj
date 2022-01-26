@@ -74,6 +74,12 @@
     <Compile Include="Activity.Designer.cs">
       <DependentUpon>Activity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Allocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allocation.Designer.cs">
+      <DependentUpon>Allocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="BudgetSummery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="Activity.resx">
       <DependentUpon>Activity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allocation.resx">
+      <DependentUpon>Allocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BudgetSummery.resx">
       <DependentUpon>BudgetSummery.cs</DependentUpon>
@@ -210,6 +219,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MonthlyCapitalExpenditureStatementSystemDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Allocation Expand.png" />
+    <None Include="Resources\Allocation Expand White.png" />
     <None Include="Resources\chartWhite.png" />
     <None Include="Resources\chart.png" />
     <None Include="Resources\Expand_arrow.png" />

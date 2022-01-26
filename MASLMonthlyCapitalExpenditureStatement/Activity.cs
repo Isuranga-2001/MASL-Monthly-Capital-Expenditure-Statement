@@ -36,6 +36,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         void RefreshTable(string Query)
         {
+            btnSaveAll.Visible = false;
+
             InputEnabled = false;
             commenMethods.RetrieveDataOnDataGridView(Query, TableActivities, 1, 3);
 
@@ -55,7 +57,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 "Please give permission for copy activities form previous year or any other year.",
                 "Permission Required", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
             {
-                // copy activities form previous year
+                RefreshTable("SELECT BudgectCode,ItemNo,MainActivityName FROM MainActivity WHERE Year='2021'");
+
+                btnSaveAll.Visible = true;
             }
 
             InputEnabled = true;
@@ -74,6 +78,14 @@ namespace MASLMonthlyCapitalExpenditureStatement
             }
 
             TableActivities_SelectionChanged(TableActivities, null);
+        }
+
+        private void btnSaveAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < TableActivities.RowCount - 1; i++)
+            {
+                SaveSelectedActivity(TableActivities.Rows[i], false);
+            }
         }
 
         private void btnNavigationButton_Click(object sender, EventArgs e)
@@ -142,7 +154,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 "WHERE Year='{0}' AND MainActivityName LIKE'%{1}%'", SelectedYear, txtSearch.Text.Trim()));
         }
 
-        void SaveSelectedActivity(DataGridViewRow SelectedRow)
+        void SaveSelectedActivity(DataGridViewRow SelectedRow, bool showMessagesBoxes)
         {
             string BudgetCode = SelectedRow.Cells[1].Value.ToString().Trim();
             string[] ItemNoParts = SelectedRow.Cells[2].Value.ToString().Trim().Split('.');
@@ -155,14 +167,18 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
             if (Activity == "")
             {
-                MessageBox.Show("Can't save empty activity name on database", "Input Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (showMessagesBoxes)
+                {
+                    MessageBox.Show("Can't save empty activity name on database", "Input Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (!IsCurrentlyAvaiableOnDatabase()) // Insert new activity into database
             {
                 Expenditure form = new Expenditure();
                 form.btnSelectedYear.Text = btnSelectedYear.Text;
                 form.txtActivity.Text = SelectedRow.Cells[3].Value.ToString().Trim();
+                form.ShowMessageBox = false;
                 form.SaveNewActivity(BudgetCode, ItemNoParts);
             }
             else // update current value of activity name
@@ -185,7 +201,11 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     else
                     {
                         Query = null;
-                        commenMethods.UpdateErrorMessageShow();
+
+                        if (showMessagesBoxes)
+                        {
+                            commenMethods.UpdateErrorMessageShow();
+                        }
                     }
                 }
 
@@ -193,12 +213,18 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 {
                     if (commenMethods.ExecuteSQL(Query))
                     {
-                        MessageBox.Show("Updated Successfully", "Updated", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                        if (showMessagesBoxes)
+                        {
+                            MessageBox.Show("Updated Successfully", "Updated", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
-                        commenMethods.UpdateErrorMessageShow();
+                        if (showMessagesBoxes)
+                        {
+                            commenMethods.UpdateErrorMessageShow();
+                        }
                     }
                 }
             }
@@ -269,10 +295,12 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
             Expenditure form = new Expenditure();
 
+            form.SelectedYear = Convert.ToInt32(btnSelectedYear.Text);
             form.btnSelectedYear.Text = btnSelectedYear.Text;
             form.txtItemNo.Text = SelectedRow.Cells[2].Value.ToString();
             form.RefreshBudgetCode();
             form.ComboBoxBudgetCode.SelectedItem = SelectedRow.Cells[1].Value.ToString();
+            form.txtBudgetCode.Text = SelectedRow.Cells[1].Value.ToString();
 
             form.Show();
             this.Close();
@@ -292,8 +320,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
                             "ActivityCode.INSub2,SubActivity.ActivityName FROM MainActivity,ActivityCode,SubActivity " +
                             "WHERE MainActivity.ActivityID=ActivityCode.ActivityID AND " +
                             "ActivityCode.ActivityCodeID=SubActivity.ActivityCodeID AND " +
-                            "MainActivity.BudgectCode='{0}' AND MainActivity.ItemNo='{1}' AND ActivityCode.INSub1<>'0'",
-                            SelectedRow.Cells[1].Value.ToString().Trim(), SelectedRow.Cells[2].Value.ToString().Trim()), false);
+                            "MainActivity.BudgectCode='{0}' AND MainActivity.ItemNo='{1}' AND ActivityCode.INSub1<>'0' AND MainActivity.Year='{2}'",
+                            SelectedRow.Cells[1].Value.ToString().Trim(), SelectedRow.Cells[2].Value.ToString().Trim(), SelectedYear), false);
 
                         TableActivities.Rows[TableActivities.RowCount - 1].Cells[0].Value = Properties.Resources.Empty;
                     }
@@ -324,8 +352,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
                                         "ActivityCode.INSub2,SubActivity.ActivityName FROM MainActivity,ActivityCode,SubActivity " +
                                         "WHERE MainActivity.ActivityID=ActivityCode.ActivityID AND " +
                                         "ActivityCode.ActivityCodeID=SubActivity.ActivityCodeID AND " +
-                                        "MainActivity.BudgectCode='{0}' AND MainActivity.ItemNo='{1}' AND ActivityCode.INSub1='{2}'",
-                                        SelectedRow.Cells[1].Value.ToString().Trim(), ItemNo[0], ItemNo[1]), true);
+                                        "MainActivity.BudgectCode='{0}' AND MainActivity.ItemNo='{1}' AND ActivityCode.INSub1='{2}' AND MainActivity.Year='{3}'",
+                                        SelectedRow.Cells[1].Value.ToString().Trim(), ItemNo[0], ItemNo[1], SelectedYear), true);
 
                                     TableActivities.Rows.RemoveAt(1);
 
@@ -345,7 +373,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 }
                 else if (e.ColumnIndex == 4)
                 {
-                    SaveSelectedActivity(TableActivities.Rows[e.RowIndex]);
+                    SaveSelectedActivity(TableActivities.Rows[e.RowIndex], true);
                 }
                 else if (e.ColumnIndex == 1)
                 {
@@ -392,7 +420,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             {
                 case "Save":
                     {
-                        SaveSelectedActivity(TableActivities.Rows[Convert.ToInt32(MenuTableRightClick.Tag)]);
+                        SaveSelectedActivity(TableActivities.Rows[Convert.ToInt32(MenuTableRightClick.Tag)], true);
                         break;
                     }
                 case "Details":
@@ -433,8 +461,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
                             "ActivityCode.INSub2,SubActivity.ActivityName FROM MainActivity,ActivityCode,SubActivity " +
                             "WHERE MainActivity.ActivityID=ActivityCode.ActivityID AND " +
                             "ActivityCode.ActivityCodeID=SubActivity.ActivityCodeID AND " +
-                            "MainActivity.BudgectCode='{0}' AND MainActivity.ItemNo='{1}' AND ActivityCode.INSub1='{2}'",
-                            SelectedRow.Cells[1].Value.ToString().Trim(), ItemNo[0], ItemNo[1]), true);
+                            "MainActivity.BudgectCode='{0}' AND MainActivity.ItemNo='{1}' AND ActivityCode.INSub1='{2}' AND MainActivity.Year='{3}'",
+                            SelectedRow.Cells[1].Value.ToString().Trim(), ItemNo[0], ItemNo[1], SelectedYear), true);
 
                         TableActivities.Rows.RemoveAt(1);
 

@@ -89,7 +89,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 query += String.Format(" AND ActivityCode.INSub2='{0}'", itemNoParts[2]);
             }
 
-            List<string> arrayOfAllocationDetails = commenMethods.SQLRead(query, "Allocation Quarter QuarterAllocation");
+            List<string> arrayOfAllocationDetails = commenMethods.SQLRead(query + " ORDER BY Allocation.Quarter", "Allocation Quarter QuarterAllocation");
 
             if (!commenMethods.ReturnListHasError(arrayOfAllocationDetails))
             {
@@ -231,6 +231,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     {
                         MessageBox.Show("Database Updated Successfully", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+
+                    this.Close();
                 }
                 catch
                 {
@@ -255,16 +257,16 @@ namespace MASLMonthlyCapitalExpenditureStatement
             chartform.ChartBudget.Series[0].ChartType = SeriesChartType.Line;
             chartform.ChartBudget.Series[0].BorderWidth = 3;
 
-            decimal cumulativeBudget = 0;
+            decimal cumulativeAllocation = 0;
 
             for (byte i = 0; i < 12; i++)
             {
                 if (i % 3 == 0)
                 {
-                    cumulativeBudget += Convert.ToDecimal(arrayOfAllocationTextBoxes[i / 3].Text);
+                    cumulativeAllocation += Convert.ToDecimal(arrayOfAllocationTextBoxes[i / 3].Text);
                 }
 
-                chartform.ChartBudget.Series[0].Points.AddXY(commenMethods.MonthList[i], cumulativeBudget);
+                chartform.ChartBudget.Series[0].Points.AddXY(commenMethods.MonthList[i], cumulativeAllocation);
             }
 
             chartform.ShowDialog();

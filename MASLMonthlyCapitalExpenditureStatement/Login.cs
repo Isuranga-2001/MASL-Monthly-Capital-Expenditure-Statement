@@ -52,5 +52,17 @@ namespace MASLMonthlyCapitalExpenditureStatement
         {
             txtUserName.Focus();
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+            if (commenMethods.ExecuteSQL("CREATE TABLE [dbo].[Allocation] ([ActivityCodeID] INT NOT NULL,[Quarter] INT NOT NULL,[QuarterAllocation] FLOAT NOT NULL,PRIMARY KEY CLUSTERED([ActivityCodeID], [Quarter]), CONSTRAINT[FK_Allocation_SubActivity] FOREIGN KEY([ActivityCodeID]) REFERENCES[SubActivity]([ActivityCodeID])); "))
+            {
+                MessageBox.Show("Yes");
+            }
+            else
+            {
+                MessageBox.Show("No");
+            }
+        }
     }
 }

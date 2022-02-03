@@ -139,7 +139,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                                 }                                
                             }
 
-                            FillTable(ActivityCodeIDList[0], ItemNoParts[0], ItemNoParts);
+                            FillTable(ItemNoParts[0], ItemNoParts);
                         }
                     }
                     else
@@ -155,7 +155,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                                 txtExpenditure.Text = SavedExpenditure = ExpenditureList[0];
                             }
 
-                            FillTable(ActivityCodeIDList[0], null, ItemNoParts);
+                            FillTable(null, ItemNoParts);
                         }
                     }                    
                 }
@@ -173,7 +173,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         }
 
-        void FillTable(string ActivityCodeID, string MainActivityID, string[] ItemNoParts)
+        void FillTable(string MainActivityID, string[] ItemNoParts)
         {
             List<string> ExpenditureOFMouth;
 
@@ -186,9 +186,10 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 {
                     ExpenditureOFMouth = commenMethods.SQLRead(String.Format(
                         "SELECT SUM(ExpenditureMonth.Expenditure) AS TotalExpenditure " +
-                        "FROM ExpenditureMonth,ActivityCode " +
+                        "FROM ExpenditureMonth,ActivityCode,MainActivity " +
                         "WHERE ExpenditureMonth.ActivityCodeID=ActivityCode.ActivityCodeID " +
-                        "AND ExpenditureMonth.Month='{0}' AND ActivityCode.ActivityID='{1}'", i, MainActivityID),
+                        "AND MainActivity.ActivityID=ActivityCode.ActivityID " +
+                        "AND MainActivity.Year='{0}' AND ExpenditureMonth.Month='{1}'", btnSelectedYear.Text, i),
                         "TotalExpenditure");
                 }
                 else

@@ -574,6 +574,24 @@ namespace MASLMonthlyCapitalExpenditureStatement
             {
                 lblAllocation.Text = "<b><font color='red'> Allocation  ! <font>";
             }
+
+            if (SelectedTextBox.Name == txtAllocation.Name) 
+            {
+                btnAllocation.Enabled = true;
+
+                if (txtAllocation.Text == "")
+                {
+                    btnAllocation.Enabled = false;
+                }              
+                else if (Convert.ToInt32(txtAllocation.Text) == 0)
+                {
+                    btnAllocation.Enabled = false;
+                }
+                else if (NotificationPaintNeedUpdate.Visible)
+                {
+                    btnAllocation.Enabled = false;
+                }
+            }
         }
 
         private void txtActivity_TextChanged(object sender, EventArgs e)
@@ -1032,6 +1050,39 @@ namespace MASLMonthlyCapitalExpenditureStatement
             form.selectedYear = Convert.ToInt16(btnSelectedYear.Text);
 
             form.ShowDialog();
+        }
+
+        private void TableActivities_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            btnAllocation.Enabled = true;
+            string[] ItemNoParts = txtItemNo.Text.Split('.');
+
+            if (txtAllocation.Text == "")
+            {
+                btnAllocation.Enabled = false;
+            }
+            else if (Convert.ToInt32(txtAllocation.Text) == 0)
+            {
+                btnAllocation.Enabled = false;
+            }            
+            else if (TableActivities.Rows.Count > 2 && ItemNoParts.Length <= 2)
+            {
+                btnAllocation.Enabled = false;
+            }
+        }
+
+        private void btnReportQ_Click(object sender, EventArgs e)
+        {
+            QuarterWiseReport QReport = new QuarterWiseReport();
+
+            QReport.txtSelectedYear.Text = btnSelectedYear.Text;
+            QReport.txtBudgetCode.Text = txtBudgetCode.Text;
+            QReport.txtItemNo.Text = txtItemNo.Text;
+            QReport.txtActivity.Text = txtActivity.Text;
+
+            QReport.arrayOfBtnSelectedQuarter[Convert.ToByte(DateTime.Now.Month / 4)].Checked = true;
+
+            QReport.ShowDialog();
         }
     }
 }

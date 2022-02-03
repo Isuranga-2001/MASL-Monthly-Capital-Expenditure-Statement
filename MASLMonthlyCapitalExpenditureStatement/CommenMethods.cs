@@ -332,6 +332,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         public void UpdateChart(string[] ItemNoParts, string BudgetCode, string selectedYear, string Allocation, Chart ChartExpenditure, Guna2NotificationPaint NotificationPaintUpdateExpenditure)
         {
+            // expenditure
             string Query = String.Format("SELECT SUM(ExpenditureMonth.Expenditure) AS TotalExpenditure " +
                     "FROM ExpenditureMonth,ActivityCode,MainActivity " +
                     "WHERE ExpenditureMonth.ActivityCodeID=ActivityCode.ActivityCodeID " +
@@ -353,51 +354,82 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 Query += String.Format(" AND ActivityCode.INSub2='{0}'", ItemNoParts[2]);
             }
 
-            float CumulativeExpenditure = 0, CumulativeAllocation = 0;
-
-            if (Allocation.Trim() != "")
-            {
-                CumulativeAllocation = float.Parse(Allocation.Trim().Replace(",", "")) / 12;
-            }
-
+            float CumulativeExpenditure = 0;
             List<string> ReturnValue;
 
-            for (int i = 1; i <= 12; i++)
+            for (int i = 1; i <= 12; i++) 
             {
-                ChartExpenditure.Series[0].Points.AddXY(MonthList[i - 1], CumulativeAllocation * i);
-
-                if ((i <= DateTime.Now.Month && Convert.ToInt32(selectedYear) == DateTime.Now.Year) 
-                    || Convert.ToInt32(selectedYear) != DateTime.Now.Year)
+                if (i % 3 == 1)
                 {
-                    ReturnValue = SQLRead(Query + String.Format(" AND ExpenditureMonth.Month='{0}'", i), "TotalExpenditure");
+                    ReturnValue = SQLRead(Query + String.Format(" AND (ExpenditureMonth.Month='{0}' OR ExpenditureMonth.Month='{1}' OR ExpenditureMonth.Month='{2}')", i, i + 1, i + 2), "TotalExpenditure");
 
-                    if (ReturnValue != null)
+                    if (!ReturnListHasError(ReturnValue))
                     {
-                        if (ReturnValue.Count > 0)
-                        {
-                            if (ReturnValue[0].Trim() != "")
-                            {
-                                CumulativeExpenditure += float.Parse(ReturnValue[0].Trim());
-                                ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
+                        CumulativeExpenditure += float.Parse(ReturnValue[0].Trim());
+                        //ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
 
-                                continue;
-                            }
-                        }
-                    }
-
-                    if ((i < DateTime.Now.Month && Convert.ToInt32(selectedYear) == DateTime.Now.Year)
-                        || Convert.ToInt32(selectedYear) != DateTime.Now.Year)
-                    {
-                        ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
-                    }
-                    else
-                    {
-                        if (NotificationPaintUpdateExpenditure != null)
-                        {
-                            NotificationPaintUpdateExpenditure.Visible = true;
-                        }
+                        //continue;
                     }
                 }
+
+                
+
+                if ((i < DateTime.Now.Month && Convert.ToInt32(selectedYear) == DateTime.Now.Year)
+                    || Convert.ToInt32(selectedYear) != DateTime.Now.Year)
+                {
+                    ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
+                }
+                else
+                {
+                    if (NotificationPaintUpdateExpenditure != null)
+                    {
+                        NotificationPaintUpdateExpenditure.Visible = true;
+                    }
+                }
+            }
+
+            // allocation
+            decimal cumulativeAllocation = 0;
+
+            string allocationQuery = String.Format("SELECT SUM(Allocation.QuarterAllocation) TotalQuarterAllocation " +
+                "FROM Allocation,SubActivity,ActivityCode,MainActivity " +
+                "WHERE MainActivity.ActivityID=ActivityCode.ActivityID " +
+                "AND ActivityCode.ActivityCodeID=SubActivity.ActivityCodeID " +
+                "AND SubActivity.ActivityCodeID=Allocation.ActivityCodeID " +
+                "AND MainActivity.Year='{0}' AND MainActivity.ItemNo='{1}'",
+                selectedYear, ItemNoParts[0]);
+
+            if (ItemNoParts.Length >= 2)
+            {
+                allocationQuery += String.Format(" AND ActivityCode.INSub1='{0}'", ItemNoParts[1]);
+            }
+            if (ItemNoParts.Length == 3)
+            {
+                allocationQuery += String.Format(" AND ActivityCode.INSub2='{0}'", ItemNoParts[2]);
+            }
+
+            allocationQuery += " GROUP BY Allocation.Quarter ORDER BY Allocation.Quarter";
+
+            List<string> arrayOfAllocationDetails = SQLRead(allocationQuery, "TotalQuarterAllocation");
+
+            if (ReturnListHasError(arrayOfAllocationDetails))
+            {
+                arrayOfAllocationDetails = new List<string> { };
+
+                for (int i = 1; i <= 12; i++)
+                {
+                    arrayOfAllocationDetails.Add((Convert.ToDecimal(Allocation) / 12).ToString());
+                }
+            }
+
+            for (byte i = 0; i < 12; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    cumulativeAllocation += Convert.ToDecimal(arrayOfAllocationDetails[i / 3]);
+                }
+
+                ChartExpenditure.Series[0].Points.AddXY(MonthList[i], cumulativeAllocation);
             }
         }
 

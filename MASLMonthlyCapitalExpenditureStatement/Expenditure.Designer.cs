@@ -70,6 +70,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.HelpToolTip = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnReportQ = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnExpenditure = new Guna.UI2.WinForms.Guna2Button();
             this.ShowExpenditure = new System.Windows.Forms.DataGridViewImageColumn();
@@ -92,16 +93,21 @@ namespace MASLMonthlyCapitalExpenditureStatement
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Controls.Add(this.guna2Button6);
             this.guna2Panel1.Controls.Add(this.guna2Button5);
             this.guna2Panel1.Controls.Add(this.guna2Button4);
             this.guna2Panel1.Controls.Add(this.guna2Button3);
             this.guna2Panel1.Controls.Add(this.guna2Button2);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel1.CustomizableEdges.BottomLeft = false;
+            this.guna2Panel1.CustomizableEdges.TopLeft = false;
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.BorderRadius = 20;
+            this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.DimGray;
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(210, 681);
             this.guna2Panel1.TabIndex = 1;
@@ -171,6 +177,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnSelectedYear.Size = new System.Drawing.Size(136, 36);
             this.btnSelectedYear.TabIndex = 5;
             this.btnSelectedYear.Text = "2020";
+            this.HelpToolTip.SetToolTip(this.btnSelectedYear, "Year");
             this.btnSelectedYear.Click += new System.EventHandler(this.btnSelectMonth_Click);
             // 
             // label2
@@ -218,6 +225,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ComboBoxBudgetCode.Size = new System.Drawing.Size(180, 36);
             this.ComboBoxBudgetCode.TabIndex = 8;
             this.ComboBoxBudgetCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.HelpToolTip.SetToolTip(this.ComboBoxBudgetCode, "Budget Code");
             this.ComboBoxBudgetCode.SelectedIndexChanged += new System.EventHandler(this.ComboBoxBudgetCode_SelectedIndexChanged);
             // 
             // txtItemNo
@@ -246,6 +254,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtItemNo.Size = new System.Drawing.Size(153, 36);
             this.txtItemNo.TabIndex = 9;
             this.txtItemNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.HelpToolTip.SetToolTip(this.txtItemNo, "Item No");
             this.txtItemNo.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
             // 
             // label4
@@ -294,9 +303,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.label5.Location = new System.Drawing.Point(294, 171);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 20);
+            this.label5.Size = new System.Drawing.Size(102, 20);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Activity";
+            this.label5.Text = "Activity Name";
             // 
             // txtActivity
             // 
@@ -326,6 +335,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtActivity.TabIndex = 11;
             this.txtActivity.Tag = "0";
             this.txtActivity.TextOffset = new System.Drawing.Point(5, 0);
+            this.HelpToolTip.SetToolTip(this.txtActivity, "Activity Name");
             this.txtActivity.TextChanged += new System.EventHandler(this.txtActivity_TextChanged);
             // 
             // PrecentageProgressBar
@@ -370,6 +380,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.lblPrecentage.Size = new System.Drawing.Size(147, 147);
             this.lblPrecentage.TabIndex = 0;
             this.lblPrecentage.Text = "250%";
+            this.HelpToolTip.SetToolTip(this.lblPrecentage, "Progress");
             this.lblPrecentage.UseTransparentBackground = true;
             // 
             // ChartExpenditure
@@ -405,7 +416,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ChartExpenditure.Size = new System.Drawing.Size(494, 360);
             this.ChartExpenditure.TabIndex = 0;
             this.ChartExpenditure.Text = "chart1";
-            this.HelpToolTip.SetToolTip(this.ChartExpenditure, "Variation of Budget and Progress");
+            this.HelpToolTip.SetToolTip(this.ChartExpenditure, "Quarter wise Variation of Budget and Progress");
             // 
             // TableActivities
             // 
@@ -485,7 +496,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableActivities.ThemeStyle.RowsStyle.Height = 25;
             this.TableActivities.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
             this.TableActivities.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.HelpToolTip.SetToolTip(this.TableActivities, "Activities");
             this.TableActivities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableActivities_CellClick);
+            this.TableActivities.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.TableActivities_RowsAdded);
             // 
             // ItemNo
             // 
@@ -616,7 +629,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewImageColumn1.FillWeight = 5F;
             this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditure;
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 19;
@@ -629,10 +642,43 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewImageColumn2.FillWeight = 5F;
             this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Search;
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 18;
+            // 
+            // btnReportQ
+            // 
+            this.btnReportQ.Animated = true;
+            this.btnReportQ.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportQ.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.btnReportQ.BorderRadius = 17;
+            this.btnReportQ.BorderThickness = 1;
+            this.btnReportQ.CheckedState.Parent = this.btnReportQ;
+            this.btnReportQ.CustomImages.Parent = this.btnReportQ;
+            this.btnReportQ.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.btnReportQ.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportQ.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.btnReportQ.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReportQ.DisabledState.Parent = this.btnReportQ;
+            this.btnReportQ.FillColor = System.Drawing.Color.White;
+            this.btnReportQ.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnReportQ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
+            this.btnReportQ.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnReportQ.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnReportQ.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.QReport_White;
+            this.btnReportQ.HoverState.Parent = this.btnReportQ;
+            this.btnReportQ.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.QReport;
+            this.btnReportQ.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnReportQ.Location = new System.Drawing.Point(855, 112);
+            this.btnReportQ.Name = "btnReportQ";
+            this.btnReportQ.ShadowDecoration.BorderRadius = 17;
+            this.btnReportQ.ShadowDecoration.Parent = this.btnReportQ;
+            this.btnReportQ.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 3, 3);
+            this.btnReportQ.Size = new System.Drawing.Size(55, 36);
+            this.btnReportQ.TabIndex = 17;
+            this.HelpToolTip.SetToolTip(this.btnReportQ, "Quarter wise Budget & Progress");
+            this.btnReportQ.Click += new System.EventHandler(this.btnReportQ_Click);
             // 
             // btnUpdate
             // 
@@ -657,14 +703,14 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
             this.btnUpdate.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.update;
             this.btnUpdate.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnUpdate.Location = new System.Drawing.Point(855, 112);
+            this.btnUpdate.Location = new System.Drawing.Point(916, 112);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.BorderRadius = 17;
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 3, 3);
             this.btnUpdate.Size = new System.Drawing.Size(55, 36);
             this.btnUpdate.TabIndex = 15;
-            this.HelpToolTip.SetToolTip(this.btnUpdate, "Update");
+            this.HelpToolTip.SetToolTip(this.btnUpdate, "Update Activity");
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExpenditure
@@ -696,7 +742,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnExpenditure.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 3, 3);
             this.btnExpenditure.Size = new System.Drawing.Size(55, 36);
             this.btnExpenditure.TabIndex = 14;
-            this.HelpToolTip.SetToolTip(this.btnExpenditure, "Expenditure");
+            this.HelpToolTip.SetToolTip(this.btnExpenditure, "Update Expenditure (Budget)");
             this.btnExpenditure.Click += new System.EventHandler(this.btnExpenditure_Click);
             // 
             // ShowExpenditure
@@ -707,7 +753,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ShowExpenditure.DefaultCellStyle = dataGridViewCellStyle11;
             this.ShowExpenditure.FillWeight = 5F;
             this.ShowExpenditure.HeaderText = "";
-            this.ShowExpenditure.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditure;
+            this.ShowExpenditure.Image = ((System.Drawing.Image)(resources.GetObject("ShowExpenditure.Image")));
             this.ShowExpenditure.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.ShowExpenditure.Name = "ShowExpenditure";
             // 
@@ -719,7 +765,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.SearchColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.SearchColumn.FillWeight = 5F;
             this.SearchColumn.HeaderText = "";
-            this.SearchColumn.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Search;
+            this.SearchColumn.Image = ((System.Drawing.Image)(resources.GetObject("SearchColumn.Image")));
             this.SearchColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.SearchColumn.Name = "SearchColumn";
             // 
@@ -734,9 +780,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnAllocation.CustomImages.Parent = this.btnAllocation;
             this.btnAllocation.CustomizableEdges.BottomLeft = false;
             this.btnAllocation.CustomizableEdges.TopLeft = false;
-            this.btnAllocation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.btnAllocation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.btnAllocation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAllocation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.btnAllocation.DisabledState.FillColor = System.Drawing.Color.White;
             this.btnAllocation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAllocation.DisabledState.Parent = this.btnAllocation;
             this.btnAllocation.FillColor = System.Drawing.Color.White;
@@ -744,9 +790,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnAllocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.btnAllocation.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnAllocation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnAllocation.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Allocation_Expand_White;
+            this.btnAllocation.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.btnAllocation.HoverState.Parent = this.btnAllocation;
-            this.btnAllocation.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Allocation_Expand;
+            this.btnAllocation.Image = ((System.Drawing.Image)(resources.GetObject("btnAllocation.Image")));
             this.btnAllocation.ImageSize = new System.Drawing.Size(17, 17);
             this.btnAllocation.Location = new System.Drawing.Point(956, 326);
             this.btnAllocation.Name = "btnAllocation";
@@ -755,6 +801,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnAllocation.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 3, 3);
             this.btnAllocation.Size = new System.Drawing.Size(43, 36);
             this.btnAllocation.TabIndex = 5;
+            this.HelpToolTip.SetToolTip(this.btnAllocation, "Allocation Per Quarters");
             this.btnAllocation.Click += new System.EventHandler(this.btnAllocation_Click);
             // 
             // btnDelete
@@ -786,7 +833,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnDelete.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 3, 3);
             this.btnDelete.Size = new System.Drawing.Size(55, 36);
             this.btnDelete.TabIndex = 5;
-            this.HelpToolTip.SetToolTip(this.btnDelete, "Remove");
+            this.HelpToolTip.SetToolTip(this.btnDelete, "Remove Activity");
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
@@ -808,10 +855,10 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.btnSave.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnSave.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.AddToDatabaseWhite;
+            this.btnSave.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.AddToDatabase;
-            this.btnSave.Location = new System.Drawing.Point(916, 112);
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Location = new System.Drawing.Point(977, 70);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.BorderRadius = 17;
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
@@ -819,6 +866,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnSave.Size = new System.Drawing.Size(55, 36);
             this.btnSave.TabIndex = 5;
             this.HelpToolTip.SetToolTip(this.btnSave, "Add");
+            this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnSearch
@@ -870,9 +918,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.guna2Button5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button5.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.reportWhite;
+            this.guna2Button5.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.report;
+            this.guna2Button5.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.Image")));
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.ImageOffset = new System.Drawing.Point(5, 0);
             this.guna2Button5.Location = new System.Drawing.Point(15, 416);
@@ -903,7 +951,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button4.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.incomeWhite;
+            this.guna2Button4.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
             this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -925,7 +973,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Button3.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.guna2Button3.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button3.CheckedState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditureWhite;
+            this.guna2Button3.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.guna2Button3.CheckedState.Parent = this.guna2Button3;
             this.guna2Button3.CustomImages.Parent = this.guna2Button3;
             this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -938,9 +986,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button3.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditureWhite;
+            this.guna2Button3.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditure;
+            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageOffset = new System.Drawing.Point(5, 0);
             this.guna2Button3.Location = new System.Drawing.Point(15, 314);
@@ -959,7 +1007,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Button2.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.guna2Button2.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button2.CheckedState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.activityWhite;
+            this.guna2Button2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.guna2Button2.CheckedState.Parent = this.guna2Button2;
             this.guna2Button2.CustomImages.Parent = this.guna2Button2;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -972,9 +1020,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button2.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.activityWhite;
+            this.guna2Button2.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.activity;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageOffset = new System.Drawing.Point(5, 0);
             this.guna2Button2.Location = new System.Drawing.Point(15, 263);
@@ -1009,6 +1057,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnReportQ);
             this.Controls.Add(this.lblAllocation);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnExpenditure);
@@ -1092,5 +1141,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private Guna.UI2.WinForms.Guna2HtmlToolTip HelpToolTip;
         private Guna.UI2.WinForms.Guna2Chip lblPrecentage;
         private Guna.UI2.WinForms.Guna2Button btnAllocation;
+        private Guna.UI2.WinForms.Guna2Button btnReportQ;
     }
 }

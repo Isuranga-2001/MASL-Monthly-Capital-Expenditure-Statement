@@ -341,7 +341,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
             if (BudgetCode != "" || ItemNoParts[0] != "") 
             {
-                Query += String.Format(" AND MainActivity.BudgectCode='{0}' AND MainActivity.ActivityID='{1}'", BudgetCode, ItemNoParts[0]);
+                Query += String.Format(" AND MainActivity.BudgectCode='{0}' AND MainActivity.ItemNo='{1}'", BudgetCode, ItemNoParts[0]);
             }
 
             if (ItemNoParts.Length >= 2)
@@ -372,16 +372,14 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     }
                 }
 
-                
-
-                if ((i < DateTime.Now.Month && Convert.ToInt32(selectedYear) == DateTime.Now.Year)
+                if ((i <= DateTime.Now.Month && Convert.ToInt32(selectedYear) == DateTime.Now.Year)
                     || Convert.ToInt32(selectedYear) != DateTime.Now.Year)
                 {
                     ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
                 }
                 else
                 {
-                    if (NotificationPaintUpdateExpenditure != null)
+                    if (NotificationPaintUpdateExpenditure != null && i + 1 == DateTime.Now.Month) 
                     {
                         NotificationPaintUpdateExpenditure.Visible = true;
                     }
@@ -412,25 +410,28 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
             List<string> arrayOfAllocationDetails = SQLRead(allocationQuery, "TotalQuarterAllocation");
 
-            if (ReturnListHasError(arrayOfAllocationDetails))
+            if (Allocation.Trim() != "")
             {
-                arrayOfAllocationDetails = new List<string> { };
-
-                for (int i = 1; i <= 12; i++)
+                if (ReturnListHasError(arrayOfAllocationDetails))
                 {
-                    arrayOfAllocationDetails.Add((Convert.ToDecimal(Allocation) / 12).ToString());
-                }
-            }
+                    arrayOfAllocationDetails = new List<string> { };
 
-            for (byte i = 0; i < 12; i++)
-            {
-                if (i % 3 == 0)
-                {
-                    cumulativeAllocation += Convert.ToDecimal(arrayOfAllocationDetails[i / 3]);
+                    for (int i = 1; i <= 12; i++)
+                    {
+                        arrayOfAllocationDetails.Add((Convert.ToDecimal(Allocation) / 12).ToString());
+                    }
                 }
 
-                ChartExpenditure.Series[0].Points.AddXY(MonthList[i], cumulativeAllocation);
-            }
+                for (byte i = 0; i < 12; i++)
+                {
+                    if (i % 3 == 0)
+                    {
+                        cumulativeAllocation += Convert.ToDecimal(arrayOfAllocationDetails[i / 3]);
+                    }
+
+                    ChartExpenditure.Series[0].Points.AddXY(MonthList[i], cumulativeAllocation);
+                }
+            }            
         }
 
     }

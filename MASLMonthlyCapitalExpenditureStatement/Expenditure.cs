@@ -423,7 +423,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     "WHERE ExpenditureMonth.ActivityCodeID=ActivityCode.ActivityCodeID " +
                     "AND MainActivity.ActivityID=ActivityCode.ActivityID " +
                     "AND MainActivity.BudgectCode='{0}' " +
-                    "AND MainActivity.ActivityID='{1}' " +
+                    "AND MainActivity.ItemNo='{1}' " +
                     "AND MainActivity.Year='{2}'",
                     BudgetCode, ItemNoParts[0], btnSelectedYear.Text);
 
@@ -582,12 +582,12 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 if (txtAllocation.Text == "")
                 {
                     btnAllocation.Enabled = false;
-                }              
+                }
                 else if (Convert.ToInt32(txtAllocation.Text) == 0)
                 {
                     btnAllocation.Enabled = false;
                 }
-                else if (NotificationPaintNeedUpdate.Visible)
+                else if (NotificationPaintNeedUpdate.Visible && SavedData.Count > 0)
                 {
                     btnAllocation.Enabled = false;
                 }
@@ -632,6 +632,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 {
                     UpdateDatabase();
                 }
+
+                btnSearch_Click(btnSearch, null);
             }
             else
             {
@@ -1079,6 +1081,11 @@ namespace MASLMonthlyCapitalExpenditureStatement
             QReport.txtBudgetCode.Text = txtBudgetCode.Text;
             QReport.txtItemNo.Text = txtItemNo.Text;
             QReport.txtActivity.Text = txtActivity.Text;
+            QReport.ActivityProgressBar.Maximum = PrecentageProgressBar.Maximum;
+            QReport.ActivityProgressBar.Value = PrecentageProgressBar.Value;
+            QReport.txtAllocation.Text = txtAllocation.Text;
+            QReport.btnAllocation.Enabled = btnAllocation.Enabled;
+            QReport.selectedYear = Convert.ToInt16(SelectedYear);
 
             QReport.arrayOfBtnSelectedQuarter[Convert.ToByte(DateTime.Now.Month / 4)].Checked = true;
 

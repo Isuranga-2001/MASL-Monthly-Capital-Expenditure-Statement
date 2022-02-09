@@ -36,11 +36,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.label2 = new System.Windows.Forms.Label();
             this.txtBudgetCode = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblPercentageQ1 = new Guna.UI2.WinForms.Guna2Chip();
-            this.TrackBarQ1 = new Guna.UI2.WinForms.Guna2TrackBar();
-            this.txtAllocationQ1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Chip2 = new Guna.UI2.WinForms.Guna2Chip();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -60,10 +55,15 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnOK = new Guna.UI2.WinForms.Guna2Button();
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.btnChart = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel3.SuspendLayout();
+            this.txtAllocationQ1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TrackBarQ1 = new Guna.UI2.WinForms.Guna2TrackBar();
+            this.lblPercentageQ1 = new Guna.UI2.WinForms.Guna2Chip();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -179,103 +179,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Budget Code";
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Panel3.BorderRadius = 20;
-            this.guna2Panel3.Controls.Add(this.lblPercentageQ1);
-            this.guna2Panel3.Controls.Add(this.TrackBarQ1);
-            this.guna2Panel3.Controls.Add(this.txtAllocationQ1);
-            this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(23, 176);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.ShadowDecoration.BorderRadius = 20;
-            this.guna2Panel3.ShadowDecoration.Enabled = true;
-            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 2, 2);
-            this.guna2Panel3.Size = new System.Drawing.Size(192, 211);
-            this.guna2Panel3.TabIndex = 12;
-            // 
-            // lblPercentageQ1
-            // 
-            this.lblPercentageQ1.AutoRoundedCorners = true;
-            this.lblPercentageQ1.BorderColor = System.Drawing.Color.Transparent;
-            this.lblPercentageQ1.BorderRadius = 23;
-            this.lblPercentageQ1.BorderThickness = 0;
-            this.lblPercentageQ1.FillColor = System.Drawing.Color.Transparent;
-            this.lblPercentageQ1.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.lblPercentageQ1.ForeColor = System.Drawing.Color.Black;
-            this.lblPercentageQ1.IsClosable = false;
-            this.lblPercentageQ1.Location = new System.Drawing.Point(20, 92);
-            this.lblPercentageQ1.Name = "lblPercentageQ1";
-            this.lblPercentageQ1.ShadowDecoration.Parent = this.lblPercentageQ1;
-            this.lblPercentageQ1.Size = new System.Drawing.Size(154, 49);
-            this.lblPercentageQ1.TabIndex = 6;
-            this.lblPercentageQ1.Text = "25%";
-            this.lblPercentageQ1.TextChanged += new System.EventHandler(this.PercentageLabel_TextChanged);
-            // 
-            // TrackBarQ1
-            // 
-            this.TrackBarQ1.HoverState.Parent = this.TrackBarQ1;
-            this.TrackBarQ1.Location = new System.Drawing.Point(20, 155);
-            this.TrackBarQ1.Name = "TrackBarQ1";
-            this.TrackBarQ1.Size = new System.Drawing.Size(154, 23);
-            this.TrackBarQ1.TabIndex = 5;
-            this.TrackBarQ1.Tag = "1";
-            this.TrackBarQ1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
-            this.TrackBarQ1.ValueChanged += new System.EventHandler(this.TrackBar_ValueChanged);
-            // 
-            // txtAllocationQ1
-            // 
-            this.txtAllocationQ1.BorderRadius = 17;
-            this.txtAllocationQ1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAllocationQ1.DefaultText = "";
-            this.txtAllocationQ1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAllocationQ1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAllocationQ1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAllocationQ1.DisabledState.Parent = this.txtAllocationQ1;
-            this.txtAllocationQ1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAllocationQ1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAllocationQ1.FocusedState.Parent = this.txtAllocationQ1;
-            this.txtAllocationQ1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtAllocationQ1.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAllocationQ1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAllocationQ1.HoverState.Parent = this.txtAllocationQ1;
-            this.txtAllocationQ1.Location = new System.Drawing.Point(20, 47);
-            this.txtAllocationQ1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtAllocationQ1.Name = "txtAllocationQ1";
-            this.txtAllocationQ1.PasswordChar = '\0';
-            this.txtAllocationQ1.PlaceholderText = "";
-            this.txtAllocationQ1.SelectedText = "";
-            this.txtAllocationQ1.ShadowDecoration.Parent = this.txtAllocationQ1;
-            this.txtAllocationQ1.Size = new System.Drawing.Size(154, 36);
-            this.txtAllocationQ1.TabIndex = 4;
-            this.txtAllocationQ1.Tag = "1";
-            this.txtAllocationQ1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtAllocationQ1.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            // 
-            // guna2Chip1
-            // 
-            this.guna2Chip1.AutoRoundedCorners = true;
-            this.guna2Chip1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Chip1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Chip1.BorderRadius = 18;
-            this.guna2Chip1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Chip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.guna2Chip1.ForeColor = System.Drawing.Color.White;
-            this.guna2Chip1.IsClosable = false;
-            this.guna2Chip1.Location = new System.Drawing.Point(53, 152);
-            this.guna2Chip1.Name = "guna2Chip1";
-            this.guna2Chip1.ShadowDecoration.BorderRadius = 18;
-            this.guna2Chip1.ShadowDecoration.Enabled = true;
-            this.guna2Chip1.ShadowDecoration.Parent = this.guna2Chip1;
-            this.guna2Chip1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 2, 2);
-            this.guna2Chip1.Size = new System.Drawing.Size(130, 38);
-            this.guna2Chip1.TabIndex = 8;
-            this.guna2Chip1.Text = "Quarter 1";
-            this.guna2Chip1.UseTransparentBackground = true;
             // 
             // label4
             // 
@@ -680,6 +583,103 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnChart.TextOffset = new System.Drawing.Point(0, -1);
             this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
             // 
+            // txtAllocationQ1
+            // 
+            this.txtAllocationQ1.BorderRadius = 17;
+            this.txtAllocationQ1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAllocationQ1.DefaultText = "";
+            this.txtAllocationQ1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAllocationQ1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAllocationQ1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAllocationQ1.DisabledState.Parent = this.txtAllocationQ1;
+            this.txtAllocationQ1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAllocationQ1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAllocationQ1.FocusedState.Parent = this.txtAllocationQ1;
+            this.txtAllocationQ1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtAllocationQ1.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAllocationQ1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAllocationQ1.HoverState.Parent = this.txtAllocationQ1;
+            this.txtAllocationQ1.Location = new System.Drawing.Point(20, 47);
+            this.txtAllocationQ1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAllocationQ1.Name = "txtAllocationQ1";
+            this.txtAllocationQ1.PasswordChar = '\0';
+            this.txtAllocationQ1.PlaceholderText = "";
+            this.txtAllocationQ1.SelectedText = "";
+            this.txtAllocationQ1.ShadowDecoration.Parent = this.txtAllocationQ1;
+            this.txtAllocationQ1.Size = new System.Drawing.Size(154, 36);
+            this.txtAllocationQ1.TabIndex = 4;
+            this.txtAllocationQ1.Tag = "1";
+            this.txtAllocationQ1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAllocationQ1.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            // 
+            // TrackBarQ1
+            // 
+            this.TrackBarQ1.HoverState.Parent = this.TrackBarQ1;
+            this.TrackBarQ1.Location = new System.Drawing.Point(20, 155);
+            this.TrackBarQ1.Name = "TrackBarQ1";
+            this.TrackBarQ1.Size = new System.Drawing.Size(154, 23);
+            this.TrackBarQ1.TabIndex = 5;
+            this.TrackBarQ1.Tag = "1";
+            this.TrackBarQ1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.TrackBarQ1.ValueChanged += new System.EventHandler(this.TrackBar_ValueChanged);
+            // 
+            // lblPercentageQ1
+            // 
+            this.lblPercentageQ1.AutoRoundedCorners = true;
+            this.lblPercentageQ1.BorderColor = System.Drawing.Color.Transparent;
+            this.lblPercentageQ1.BorderRadius = 23;
+            this.lblPercentageQ1.BorderThickness = 0;
+            this.lblPercentageQ1.FillColor = System.Drawing.Color.Transparent;
+            this.lblPercentageQ1.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.lblPercentageQ1.ForeColor = System.Drawing.Color.Black;
+            this.lblPercentageQ1.IsClosable = false;
+            this.lblPercentageQ1.Location = new System.Drawing.Point(20, 92);
+            this.lblPercentageQ1.Name = "lblPercentageQ1";
+            this.lblPercentageQ1.ShadowDecoration.Parent = this.lblPercentageQ1;
+            this.lblPercentageQ1.Size = new System.Drawing.Size(154, 49);
+            this.lblPercentageQ1.TabIndex = 6;
+            this.lblPercentageQ1.Text = "25%";
+            this.lblPercentageQ1.TextChanged += new System.EventHandler(this.PercentageLabel_TextChanged);
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Panel3.BorderRadius = 20;
+            this.guna2Panel3.Controls.Add(this.lblPercentageQ1);
+            this.guna2Panel3.Controls.Add(this.TrackBarQ1);
+            this.guna2Panel3.Controls.Add(this.txtAllocationQ1);
+            this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.guna2Panel3.Location = new System.Drawing.Point(23, 176);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.ShadowDecoration.BorderRadius = 20;
+            this.guna2Panel3.ShadowDecoration.Enabled = true;
+            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
+            this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 2, 2);
+            this.guna2Panel3.Size = new System.Drawing.Size(192, 211);
+            this.guna2Panel3.TabIndex = 12;
+            // 
+            // guna2Chip1
+            // 
+            this.guna2Chip1.AutoRoundedCorners = true;
+            this.guna2Chip1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Chip1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Chip1.BorderRadius = 18;
+            this.guna2Chip1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Chip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.guna2Chip1.ForeColor = System.Drawing.Color.White;
+            this.guna2Chip1.IsClosable = false;
+            this.guna2Chip1.Location = new System.Drawing.Point(53, 152);
+            this.guna2Chip1.Name = "guna2Chip1";
+            this.guna2Chip1.ShadowDecoration.BorderRadius = 18;
+            this.guna2Chip1.ShadowDecoration.Enabled = true;
+            this.guna2Chip1.ShadowDecoration.Parent = this.guna2Chip1;
+            this.guna2Chip1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 1, 2, 2);
+            this.guna2Chip1.Size = new System.Drawing.Size(130, 38);
+            this.guna2Chip1.TabIndex = 8;
+            this.guna2Chip1.Text = "Quarter 1";
+            this.guna2Chip1.UseTransparentBackground = true;
+            // 
             // Allocation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -712,10 +712,10 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Allocation";
             this.Load += new System.EventHandler(this.Allocation_Load);
-            this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -729,10 +729,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private System.Windows.Forms.Label label2;
         public Guna.UI2.WinForms.Guna2TextBox txtBudgetCode;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Chip guna2Chip1;
-        private Guna.UI2.WinForms.Guna2TrackBar TrackBarQ1;
-        private Guna.UI2.WinForms.Guna2TextBox txtAllocationQ1;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -746,12 +742,16 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2TrackBar TrackBarQ3;
         private Guna.UI2.WinForms.Guna2TextBox txtAllocationQ3;
-        private Guna.UI2.WinForms.Guna2Chip lblPercentageQ1;
         private Guna.UI2.WinForms.Guna2Chip lblPercentageQ2;
         private Guna.UI2.WinForms.Guna2Chip lblPercentageQ4;
         private Guna.UI2.WinForms.Guna2Chip lblPercentageQ3;
         public Guna.UI2.WinForms.Guna2Button btnOK;
         public Guna.UI2.WinForms.Guna2Button btnReset;
         public Guna.UI2.WinForms.Guna2Button btnChart;
+        private Guna.UI2.WinForms.Guna2TextBox txtAllocationQ1;
+        private Guna.UI2.WinForms.Guna2TrackBar TrackBarQ1;
+        private Guna.UI2.WinForms.Guna2Chip lblPercentageQ1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Chip guna2Chip1;
     }
 }

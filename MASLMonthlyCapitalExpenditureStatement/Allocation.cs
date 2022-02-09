@@ -105,11 +105,11 @@ namespace MASLMonthlyCapitalExpenditureStatement
                         quarterIndex = Convert.ToByte(Convert.ToByte(arrayOfAllocationDetails[i + 1]) - 1);
                         quarterAllocation = arrayOfAllocationDetails[i + 2];
 
-                        arrayOfAllocationTextBoxes[quarterIndex].Text = commenMethods.SetAsNumber(quarterAllocation);
-
                         arrayOfTrackBars[quarterIndex].Value = Convert.ToInt32(Convert.ToInt32(quarterAllocation) * 100 / Convert.ToInt32(arrayOfAllocationDetails[0]));
 
-                        arrayOfAllocationPercentageLabels[quarterIndex].Text = arrayOfTrackBars[quarterIndex].Value.ToString() + "%";
+                        arrayOfAllocationTextBoxes[quarterIndex].Text = commenMethods.SetAsNumber(quarterAllocation);
+
+                        arrayOfAllocationPercentageLabels[quarterIndex].Text = Math.Round(Convert.ToDecimal(Convert.ToInt32(quarterAllocation) * 100 / Convert.ToInt32(arrayOfAllocationDetails[0])), 1) + "%";
                     }
                 }
                 else
@@ -145,22 +145,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         private void PercentageLabel_TextChanged(object sender, EventArgs e)
         {
-            byte totalPercentage = 0;
-
-            for (byte i = 0; i < 4; i++)
-            {
-                totalPercentage += 
-                    Convert.ToByte(arrayOfAllocationPercentageLabels[i].Text.Remove(arrayOfAllocationPercentageLabels[i].Text.Length - 1));
-            }
-
-            if (totalPercentage != 100 || errorFound)
-            {
-                btnOK.Enabled = btnChart.Enabled = false;
-            }
-            else
-            {
-                btnOK.Enabled = btnChart.Enabled = true;
-            }
+            
         }
 
         private void TextBox_TextChanged(object sender, EventArgs e)
@@ -168,17 +153,44 @@ namespace MASLMonthlyCapitalExpenditureStatement
             Guna2TextBox selectedTextBox = (Guna2TextBox)sender;
             byte selectedQuarterIndex = (byte)(Convert.ToByte(selectedTextBox.Tag.ToString()) - 1);
 
-            if (Convert.ToDecimal(commenMethods.SaveOnlyIntegers(selectedTextBox.Text)) <= currentAllocation)
+            if (selectedTextBox.Text != "")
             {
-                editFromText = true;
-                arrayOfTrackBars[selectedQuarterIndex].Value = Convert.ToByte(Convert.ToDecimal(commenMethods.SaveOnlyIntegers(selectedTextBox.Text)) * 100 / currentAllocation);
-                editFromText = false;
+                if (Convert.ToDecimal(commenMethods.SaveOnlyIntegers(selectedTextBox.Text)) <= currentAllocation)
+                {
+                    editFromText = true;
+                    arrayOfTrackBars[selectedQuarterIndex].Value = Convert.ToByte(Convert.ToDecimal(commenMethods.SaveOnlyIntegers(selectedTextBox.Text)) * 100 / currentAllocation);
+                    editFromText = false;
+                }
+                else
+                {
+                    selectedTextBox.Text = currentAllocation.ToString();
+                }
             }
             else
             {
-                selectedTextBox.Text = currentAllocation.ToString();
+                editFromText = true;
+                arrayOfTrackBars[selectedQuarterIndex].Value = 0;
+                editFromText = false;
             }
 
+            decimal totalAllocation = 0;
+
+            for (byte i = 0; i < 4; i++)
+            {
+                if (arrayOfAllocationTextBoxes[i].Text.Trim() != "")
+                {
+                    totalAllocation += Convert.ToDecimal(commenMethods.SaveOnlyIntegers(arrayOfAllocationTextBoxes[i].Text));
+                }
+            }
+
+            if (totalAllocation != currentAllocation || errorFound)
+            {
+                btnOK.Enabled = btnChart.Enabled = false;
+            }
+            else
+            {
+                btnOK.Enabled = btnChart.Enabled = true;
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)

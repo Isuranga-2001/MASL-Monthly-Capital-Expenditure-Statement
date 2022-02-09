@@ -25,7 +25,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private void MonthlyExpenditure_Load(object sender, EventArgs e)
         {
             ChangeExpenditureValues();
-            CleanTable();
+            TableActivities.Rows.Clear();
 
             if (txtItemNo.Text != "" && ComboBoxBudgetCode.SelectedIndex >= 0)
             {
@@ -75,194 +75,87 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 btnSelectedYear.Text = form.txtSelectedYear.Text;
 
                 if (txtItemNo.Text.Trim() != "")
-                    ShowDetails();
+                    ShowActivityDetails();
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            ShowDetails();
+            ShowActivityDetails();
             SavedExpenditure = txtExpenditure.Text;
         }
 
-        void ShowDetails()
+        void ShowActivityDetails()
         {
             ChangeExpenditureValues();
-            CleanTable();
+            TableActivities.Rows.Clear();
 
-            string[] ItemNoParts = txtItemNo.Text.Split('.');
-
-            string QueryFindActivityCodID = String.Format("SELECT ActivityCode.ActivityCodeID " +
-                "FROM ActivityCode,MainActivity " +
-                "WHERE MainActivity.ActivityID=ActivityCode.ActivityID " +
-                "AND MainActivity.Year='{0}' " +
-                "AND MainActivity.BudgectCode='{1}' " +
-                "AND MainActivity.ItemNo='{2}'",
-                btnSelectedYear.Text, ComboBoxBudgetCode.SelectedItem.ToString(), ItemNoParts[0]);
+            string[] itemNoParts = txtItemNo.Text.Split('.');
 
             txtExpenditure.Clear();
             txtCulmulativeExpenditure.Clear();
 
             SavedExpenditure = "";
 
-            if (ItemNoParts.Length == 2)
+            string query = String.Format(
+                "SELECT ExpenditureMonth.Month,SUM(ExpenditureMonth.Expenditure) AS CumulativeExpenditure " +
+                "FROM ActivityCode,MainActivity,ExpenditureMonth " +
+                "WHERE MainActivity.ActivityID=ActivityCode.ActivityID " +
+                "AND ExpenditureMonth.ActivityCodeID=ActivityCode.ActivityCodeID " +
+                "AND MainActivity.Year='{0}' AND MainActivity.ItemNo='{1}'",
+                btnSelectedYear.Text, itemNoParts[0]);
+
+            if (itemNoParts.Length >= 2)
             {
-                QueryFindActivityCodID +=
-                    String.Format(" AND ActivityCode.INSub1='{0}' AND (ActivityCode.INSub2 IS NULL)", ItemNoParts[1]);
+                query += String.Format(" AND ActivityCode.INSub1='{0}'", itemNoParts[1]);
             }
-            else if(ItemNoParts.Length == 3)
+            if (itemNoParts.Length == 3)
             {
-                QueryFindActivityCodID +=
-                    String.Format(" AND ActivityCode.INSub1='{0}' AND ActivityCode.INSub2='{1}'", ItemNoParts[1], ItemNoParts[2]);
+                query += String.Format(" AND ActivityCode.INSub2='{0}'", itemNoParts[2]);
             }
 
-            List<string> ActivityCodeIDList = commenMethods.SQLRead(QueryFindActivityCodID, "ActivityCodeID");
+            List<string> arrayOfExpenditureDetails = 
+                commenMethods.SQLRead(query + " GROUP BY ExpenditureMonth.Month ORDER BY ExpenditureMonth.Month", "Month CumulativeExpenditure");
 
-            if (ActivityCodeIDList != null)
+            if (!commenMethods.ReturnListHasError(arrayOfExpenditureDetails))
             {
-                if (ActivityCodeIDList.Count > 0)
+                SortedDictionary<byte, decimal> arrayOFExpenditureAndMonth = new SortedDictionary<byte, decimal> { };
+
+                for (byte j = 0; j < arrayOfExpenditureDetails.Count; j += 2)
                 {
-                    if (ItemNoParts.Length == 1)
+                    arrayOFExpenditureAndMonth.Add(Convert.ToByte(arrayOfExpenditureDetails[j]), Convert.ToDecimal(arrayOfExpenditureDetails[j + 1]));
+                }
+
+                decimal CumulativeExpenditure = 0;
+                byte rowIndex = 0;
+
+                for (byte i = 1; i <= 12; i++)
+                {
+                    rowIndex = Convert.ToByte(TableActivities.Rows.Add());
+
+                    TableActivities.Rows[rowIndex].Cells[0].Value = commenMethods.MonthList[i - 1];
+
+                    try
                     {
-                        txtExpenditure.Text = SavedExpenditure = "0";
-                        foreach (string ActivityCodeIDListIndex in ActivityCodeIDList)
-                        {
-                            List<string> ExpenditureList =
-                                commenMethods.SQLRead(String.Format("SELECT Expenditure FROM ExpenditureMonth " +
-                                "WHERE Month='{0}' AND ActivityCodeID='{1}'", SelectedMonth, ActivityCodeIDListIndex), "Expenditure");
-
-                            if (ExpenditureList != null)
-                            {
-                                if (ExpenditureList.Count > 0)
-                                {
-                                    txtExpenditure.Text = SavedExpenditure = (float.Parse(txtExpenditure.Text.Trim()) + float.Parse(ExpenditureList[0].Trim())).ToString();
-                                }                                
-                            }
-
-                            FillTable(ItemNoParts[0], ItemNoParts);
-                        }
+                        TableActivities.Rows[rowIndex].Cells[1].Value = arrayOFExpenditureAndMonth[i];
+                        CumulativeExpenditure += arrayOFExpenditureAndMonth[i];
                     }
-                    else
+                    catch
                     {
-                        List<string> ExpenditureList =
-                            commenMethods.SQLRead(String.Format("SELECT Expenditure FROM ExpenditureMonth " +
-                            "WHERE Month='{0}' AND ActivityCodeID='{1}'", SelectedMonth, ActivityCodeIDList[0]), "Expenditure");
+                        TableActivities.Rows[rowIndex].Cells[1].Value = 0;
+                    }
 
-                        if (ExpenditureList != null)
-                        {
-                            if (ExpenditureList.Count > 0)
-                            {
-                                txtExpenditure.Text = SavedExpenditure = ExpenditureList[0];
-                            }
+                    TableActivities.Rows[rowIndex].Cells[2].Value = CumulativeExpenditure;
+                }
 
-                            FillTable(null, ItemNoParts);
-                        }
-                    }                    
-                }
-                else
-                {
-                    MessageBox.Show("Can't Find Activities for your search", "Something went wrong",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                TableActivities.Rows[SelectedMonth - 1].Selected = true;
             }
             else
             {
-                MessageBox.Show("Something went wrong", "Error Found",
+                MessageBox.Show("Can't Find Activities for your search", "Something went wrong",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-        }
-
-        void FillTable(string MainActivityID, string[] ItemNoParts)
-        {
-            List<string> ExpenditureOFMouth;
-
-            double Expenditure;
-            double CumulativeExpenditure = 0;
-
-            for (int i = 1; i <= 12; i++)
-            {
-                if (MainActivityID != null)
-                {
-                    ExpenditureOFMouth = commenMethods.SQLRead(String.Format(
-                        "SELECT SUM(ExpenditureMonth.Expenditure) AS TotalExpenditure " +
-                        "FROM ExpenditureMonth,ActivityCode,MainActivity " +
-                        "WHERE ExpenditureMonth.ActivityCodeID=ActivityCode.ActivityCodeID " +
-                        "AND MainActivity.ActivityID=ActivityCode.ActivityID " +
-                        "AND MainActivity.Year='{0}' AND ExpenditureMonth.Month='{1}'", btnSelectedYear.Text, i),
-                        "TotalExpenditure");
-                }
-                else
-                {
-                    string query = String.Format(
-                        "SELECT ExpenditureMonth.Expenditure " +
-                        "FROM ExpenditureMonth,ActivityCode,MainActivity " +
-                        "WHERE MainActivity.ActivityID=ActivityCode.ActivityID " +
-                        "AND ExpenditureMonth.ActivityCodeID=ActivityCode.ActivityCodeID " +
-                        "AND ExpenditureMonth.Month='{0}' AND MainActivity.Year='{1}' " +
-                        "AND MainActivity.BudgectCode='{2}' AND MainActivity.ItemNo='{3}' AND ActivityCode.INSub1='{4}'",
-                        i, btnSelectedYear.Text, ComboBoxBudgetCode.SelectedItem.ToString(),
-                        ItemNoParts[0], ItemNoParts[1]);
-
-                    if (ItemNoParts.Length == 3)
-                    {
-                        query += String.Format(" AND ActivityCode.INSub2='{0}'", ItemNoParts[2]);
-                    }
-
-                    ExpenditureOFMouth = commenMethods.SQLRead(query, "Expenditure");
-
-                    /*
-                    ExpenditureOFMouth = commenMethods.SQLRead(String.Format("SELECT Expenditure FROM ExpenditureMonth " +
-                        "WHERE Month='{0}' AND ActivityCodeID='{1}'", i, ActivityCodeID), "Expenditure");*/
-                }                
-
-                if (ExpenditureOFMouth != null)
-                {
-                    if (ExpenditureOFMouth.Count > 0)
-                    {
-                        if (ExpenditureOFMouth[0] != "")
-                        {
-                            Expenditure = Convert.ToDouble(ExpenditureOFMouth[0].Trim());
-                            CumulativeExpenditure += Expenditure;
-
-                            ChangetxtCumulativeExpenditureValue(i - 1, Expenditure);
-
-                            TableActivities.Rows[i - 1].Cells[1].Value = Expenditure;
-                            TableActivities.Rows[i - 1].Cells[2].Value = CumulativeExpenditure;
-
-                            continue;
-                        }                        
-                    }
-                }
-
-                TableActivities.Rows[i - 1].Cells[1].Value = 0;
-                TableActivities.Rows[i - 1].Cells[2].Value = CumulativeExpenditure;
-
-                ChangetxtCumulativeExpenditureValue(i - 1, 0);
-            }
-
-            void ChangetxtCumulativeExpenditureValue(int RowNo, double CurrentExpenditureValue)
-            {
-                if (btnSelectMonth.Text == TableActivities.Rows[RowNo].Cells[0].Value.ToString().Trim())
-                {
-                    txtCulmulativeExpenditure.Text = CumulativeExpenditure.ToString();
-                    TableActivities.Rows[RowNo].DefaultCellStyle.BackColor = Color.FromArgb(58, 190, 240);
-                }
-            }
-        }
-
-        void CleanTable()
-        {
-            TableActivities.Rows.Clear();
-            int n;
-
-            foreach (string MonthName in commenMethods.MonthList)
-            {
-                n = TableActivities.Rows.Add();
-
-                TableActivities.Rows[n].Cells[0].Value = MonthName;
-            }
-        }
+        }   
 
         private void txt_TextChanged(object sender, EventArgs e)
         {

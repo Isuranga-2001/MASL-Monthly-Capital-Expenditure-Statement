@@ -47,11 +47,11 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Chip2 = new Guna.UI2.WinForms.Guna2Chip();
-            this.guna2ProgressBar2 = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.ProgressBarCumuExpenditureQ = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.txtCumulativeExpenditureQ = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
-            this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.ProgressBarAllocationQ = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.txtAllocationQ = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtAllocation = new Guna.UI2.WinForms.Guna2TextBox();
@@ -436,7 +436,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.Controls.Add(this.guna2Chip2);
-            this.guna2Panel2.Controls.Add(this.guna2ProgressBar2);
+            this.guna2Panel2.Controls.Add(this.ProgressBarCumuExpenditureQ);
             this.guna2Panel2.Controls.Add(this.txtCumulativeExpenditureQ);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.guna2Panel2.Location = new System.Drawing.Point(458, 42);
@@ -471,24 +471,24 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Chip2.Text = "Quarter wise Cum. Expenditure";
             this.guna2Chip2.UseTransparentBackground = true;
             // 
-            // guna2ProgressBar2
+            // ProgressBarCumuExpenditureQ
             // 
-            this.guna2ProgressBar2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2ProgressBar2.BorderRadius = 17;
-            this.guna2ProgressBar2.BorderThickness = 1;
-            this.guna2ProgressBar2.FillColor = System.Drawing.Color.White;
-            this.guna2ProgressBar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.guna2ProgressBar2.Location = new System.Drawing.Point(15, 112);
-            this.guna2ProgressBar2.Name = "guna2ProgressBar2";
-            this.guna2ProgressBar2.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
-            this.guna2ProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2ProgressBar2.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2ProgressBar2.ShadowDecoration.Parent = this.guna2ProgressBar2;
-            this.guna2ProgressBar2.ShowPercentage = true;
-            this.guna2ProgressBar2.Size = new System.Drawing.Size(195, 32);
-            this.guna2ProgressBar2.TabIndex = 47;
-            this.guna2ProgressBar2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.guna2ProgressBar2.Value = 75;
+            this.ProgressBarCumuExpenditureQ.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.ProgressBarCumuExpenditureQ.BorderRadius = 17;
+            this.ProgressBarCumuExpenditureQ.BorderThickness = 1;
+            this.ProgressBarCumuExpenditureQ.FillColor = System.Drawing.Color.White;
+            this.ProgressBarCumuExpenditureQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.ProgressBarCumuExpenditureQ.Location = new System.Drawing.Point(15, 112);
+            this.ProgressBarCumuExpenditureQ.Name = "ProgressBarCumuExpenditureQ";
+            this.ProgressBarCumuExpenditureQ.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
+            this.ProgressBarCumuExpenditureQ.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.ProgressBarCumuExpenditureQ.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.ProgressBarCumuExpenditureQ.ShadowDecoration.Parent = this.ProgressBarCumuExpenditureQ;
+            this.ProgressBarCumuExpenditureQ.ShowPercentage = true;
+            this.ProgressBarCumuExpenditureQ.Size = new System.Drawing.Size(195, 32);
+            this.ProgressBarCumuExpenditureQ.TabIndex = 47;
+            this.ProgressBarCumuExpenditureQ.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ProgressBarCumuExpenditureQ.Value = 75;
             // 
             // txtCumulativeExpenditureQ
             // 
@@ -525,7 +525,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.Controls.Add(this.guna2Chip1);
-            this.guna2Panel1.Controls.Add(this.guna2ProgressBar1);
+            this.guna2Panel1.Controls.Add(this.ProgressBarAllocationQ);
             this.guna2Panel1.Controls.Add(this.txtAllocationQ);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.guna2Panel1.Location = new System.Drawing.Point(214, 42);
@@ -560,24 +560,24 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Chip1.Text = "Quarter wise Allocation";
             this.guna2Chip1.UseTransparentBackground = true;
             // 
-            // guna2ProgressBar1
+            // ProgressBarAllocationQ
             // 
-            this.guna2ProgressBar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2ProgressBar1.BorderRadius = 17;
-            this.guna2ProgressBar1.BorderThickness = 1;
-            this.guna2ProgressBar1.FillColor = System.Drawing.Color.White;
-            this.guna2ProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.guna2ProgressBar1.Location = new System.Drawing.Point(15, 112);
-            this.guna2ProgressBar1.Name = "guna2ProgressBar1";
-            this.guna2ProgressBar1.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
-            this.guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2ProgressBar1.ShadowDecoration.Parent = this.guna2ProgressBar1;
-            this.guna2ProgressBar1.ShowPercentage = true;
-            this.guna2ProgressBar1.Size = new System.Drawing.Size(195, 32);
-            this.guna2ProgressBar1.TabIndex = 47;
-            this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.guna2ProgressBar1.Value = 75;
+            this.ProgressBarAllocationQ.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.ProgressBarAllocationQ.BorderRadius = 17;
+            this.ProgressBarAllocationQ.BorderThickness = 1;
+            this.ProgressBarAllocationQ.FillColor = System.Drawing.Color.White;
+            this.ProgressBarAllocationQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.ProgressBarAllocationQ.Location = new System.Drawing.Point(15, 112);
+            this.ProgressBarAllocationQ.Name = "ProgressBarAllocationQ";
+            this.ProgressBarAllocationQ.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
+            this.ProgressBarAllocationQ.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.ProgressBarAllocationQ.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.ProgressBarAllocationQ.ShadowDecoration.Parent = this.ProgressBarAllocationQ;
+            this.ProgressBarAllocationQ.ShowPercentage = true;
+            this.ProgressBarAllocationQ.Size = new System.Drawing.Size(195, 32);
+            this.ProgressBarAllocationQ.TabIndex = 47;
+            this.ProgressBarAllocationQ.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ProgressBarAllocationQ.Value = 75;
             // 
             // txtAllocationQ
             // 
@@ -693,7 +693,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ActivityProgressBar.BorderThickness = 1;
             this.ActivityProgressBar.FillColor = System.Drawing.Color.White;
             this.ActivityProgressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.ActivityProgressBar.ForeColor = System.Drawing.Color.White;
+            this.ActivityProgressBar.ForeColor = System.Drawing.Color.Black;
             this.ActivityProgressBar.Location = new System.Drawing.Point(505, 49);
             this.ActivityProgressBar.Name = "ActivityProgressBar";
             this.ActivityProgressBar.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
@@ -703,9 +703,11 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ActivityProgressBar.ShowPercentage = true;
             this.ActivityProgressBar.Size = new System.Drawing.Size(224, 36);
             this.ActivityProgressBar.TabIndex = 46;
+            this.ActivityProgressBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ActivityProgressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.ToolTipHelp.SetToolTip(this.ActivityProgressBar, "Activity Progress");
-            this.ActivityProgressBar.Value = 75;
+            this.ActivityProgressBar.Value = 82;
+            this.ActivityProgressBar.ValueChanged += new System.EventHandler(this.ActivityProgressBar_ValueChanged);
             // 
             // label7
             // 
@@ -870,11 +872,11 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private Guna.UI2.WinForms.Guna2Button btnCumulativeExpenditure;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        public Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
+        public Guna.UI2.WinForms.Guna2ProgressBar ProgressBarAllocationQ;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip2;
-        public Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar2;
+        public Guna.UI2.WinForms.Guna2ProgressBar ProgressBarCumuExpenditureQ;
         private Guna.UI2.WinForms.Guna2TextBox txtCumulativeExpenditureQ;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip1;
         private Guna.UI2.WinForms.Guna2HtmlToolTip ToolTipHelp;

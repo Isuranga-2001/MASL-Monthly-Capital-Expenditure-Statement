@@ -372,10 +372,12 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     }
                 }
 
+                ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
+
                 if ((i <= DateTime.Now.Month && Convert.ToInt32(selectedYear) == DateTime.Now.Year)
                     || Convert.ToInt32(selectedYear) != DateTime.Now.Year)
                 {
-                    ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
+                    //ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
                 }
                 else
                 {

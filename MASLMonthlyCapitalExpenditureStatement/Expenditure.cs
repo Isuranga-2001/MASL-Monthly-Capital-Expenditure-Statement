@@ -1086,8 +1086,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             QReport.txtAllocation.Text = txtAllocation.Text;
             QReport.btnAllocation.Enabled = btnAllocation.Enabled;
             QReport.selectedYear = Convert.ToInt16(SelectedYear);
-
-            QReport.arrayOfBtnSelectedQuarter[Convert.ToByte(DateTime.Now.Month / 4)].Checked = true;
+            QReport.commitment = Convert.ToDecimal(commenMethods.SaveOnlyIntegers(txtCommitment.Text));
 
             QReport.ShowDialog();
         }

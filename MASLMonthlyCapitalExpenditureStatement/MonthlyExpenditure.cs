@@ -148,7 +148,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     TableActivities.Rows[rowIndex].Cells[2].Value = CumulativeExpenditure;
                 }
 
-                TableActivities.Rows[SelectedMonth - 1].Selected = true;
+                TableActivities.Rows[SelectedMonth - 1].DefaultCellStyle.BackColor = Color.FromArgb(58, 190, 240);
             }
             else
             {

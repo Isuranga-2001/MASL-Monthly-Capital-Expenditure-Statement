@@ -366,9 +366,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     if (!ReturnListHasError(ReturnValue))
                     {
                         CumulativeExpenditure += float.Parse(ReturnValue[0].Trim());
-                        //ChartExpenditure.Series[1].Points.AddXY(MonthList[i - 1], CumulativeExpenditure);
-
-                        //continue;
                     }
                 }
 

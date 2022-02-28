@@ -125,6 +125,12 @@
     <Compile Include="Income.Designer.cs">
       <DependentUpon>Income.cs</DependentUpon>
     </Compile>
+    <Compile Include="IncomeSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomeSource.Designer.cs">
+      <DependentUpon>IncomeSource.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Income.resx">
       <DependentUpon>Income.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeSource.resx">
+      <DependentUpon>IncomeSource.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -243,6 +252,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MonthlyCapitalExpenditureStatementSystemDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\EditWhite.png" />
+    <None Include="Resources\Edit.png" />
     <None Include="Resources\QReport.png" />
     <None Include="Resources\QReport White.png" />
     <None Include="Resources\Allocation Expand.png" />

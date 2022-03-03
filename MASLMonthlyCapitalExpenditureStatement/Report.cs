@@ -286,7 +286,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
                             TableIncome.Rows[i / 4].Cells[4].Value = "0"; // set cumulative income as zero
                     }
 
-                    FindTotal(TableIncome, TableIncome.Rows[4], new List<byte> { 2, 3, 4 }, new List<short> { 0, 1, 2, 3 }, 0);
+                    //FindTotal(TableIncome, TableIncome.Rows[4], new List<byte> { 2, 3, 4 }, new List<short> { 0, 1, 2, 3 }, 0);
 
                     FindTableIncomePercentage();
                 }

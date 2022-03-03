@@ -52,6 +52,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
             }
 
             btnSelectedYear.Text = SelectedYear.ToString();
+
+            DisableOrEnableControlButtons();
         }
 
         public void RefreshBudgetCode()
@@ -512,10 +514,26 @@ namespace MASLMonthlyCapitalExpenditureStatement
             if (textBox.Name == txtItemNo.Name)
             {
                 commenMethods.FilterOnlyInt(txtItemNo, 2, false, 0);
+
+                DisableOrEnableControlButtons();
             }
             else if (textBox.Name == txtBudgetCode.Name)
             {
                 commenMethods.FilterOnlyInt(txtBudgetCode, 0, false, 0);
+            }
+        }
+
+        void DisableOrEnableControlButtons()
+        {
+            if (txtItemNo.Text.Trim() == "")
+            {
+                btnSearch.Enabled = btnReportQ.Enabled = btnUpdate.Enabled =
+                    btnExpenditure.Enabled = btnDelete.Enabled = false;
+            }
+            else
+            {
+                btnSearch.Enabled = btnReportQ.Enabled = btnUpdate.Enabled =
+                    btnExpenditure.Enabled = btnDelete.Enabled = true;
             }
         }
 

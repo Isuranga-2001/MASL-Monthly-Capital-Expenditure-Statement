@@ -62,6 +62,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnCumulativeExpenditure = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.ToolTipHelp = new Guna.UI2.WinForms.Guna2HtmlToolTip();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -122,6 +124,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtBudgetCode.Size = new System.Drawing.Size(178, 36);
             this.txtBudgetCode.TabIndex = 37;
             this.txtBudgetCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ToolTipHelp.SetToolTip(this.txtBudgetCode, "Budget Code");
             // 
             // label5
             // 
@@ -162,6 +165,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtActivity.Size = new System.Drawing.Size(703, 39);
             this.txtActivity.TabIndex = 35;
             this.txtActivity.TextOffset = new System.Drawing.Point(10, 0);
+            this.ToolTipHelp.SetToolTip(this.txtActivity, "Activrty Name");
             // 
             // txtItemNo
             // 
@@ -190,6 +194,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtItemNo.Size = new System.Drawing.Size(132, 36);
             this.txtItemNo.TabIndex = 34;
             this.txtItemNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ToolTipHelp.SetToolTip(this.txtItemNo, "Item No");
             // 
             // label4
             // 
@@ -246,6 +251,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.PrecentageProgressBar.Size = new System.Drawing.Size(147, 147);
             this.PrecentageProgressBar.TabIndex = 39;
             this.PrecentageProgressBar.Text = "Progress of Selected Quarter";
+            this.ToolTipHelp.SetToolTip(this.PrecentageProgressBar, "Progress in quarter");
             this.PrecentageProgressBar.Value = 50;
             // 
             // btnQ1
@@ -435,6 +441,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Panel2.BorderRadius = 20;
+            this.guna2Panel2.Controls.Add(this.label10);
             this.guna2Panel2.Controls.Add(this.guna2Chip2);
             this.guna2Panel2.Controls.Add(this.ProgressBarCumuExpenditureQ);
             this.guna2Panel2.Controls.Add(this.txtCumulativeExpenditureQ);
@@ -478,7 +485,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ProgressBarCumuExpenditureQ.BorderThickness = 1;
             this.ProgressBarCumuExpenditureQ.FillColor = System.Drawing.Color.White;
             this.ProgressBarCumuExpenditureQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.ProgressBarCumuExpenditureQ.Location = new System.Drawing.Point(15, 112);
+            this.ProgressBarCumuExpenditureQ.Location = new System.Drawing.Point(15, 107);
             this.ProgressBarCumuExpenditureQ.Name = "ProgressBarCumuExpenditureQ";
             this.ProgressBarCumuExpenditureQ.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
             this.ProgressBarCumuExpenditureQ.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
@@ -488,6 +495,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ProgressBarCumuExpenditureQ.Size = new System.Drawing.Size(195, 32);
             this.ProgressBarCumuExpenditureQ.TabIndex = 47;
             this.ProgressBarCumuExpenditureQ.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ToolTipHelp.SetToolTip(this.ProgressBarCumuExpenditureQ, "Percentagr of quarter wise cumulative expenditure to total cumulatuve expenditure" +
+        "");
             this.ProgressBarCumuExpenditureQ.Value = 75;
             // 
             // txtCumulativeExpenditureQ
@@ -506,7 +515,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtCumulativeExpenditureQ.ForeColor = System.Drawing.Color.DimGray;
             this.txtCumulativeExpenditureQ.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCumulativeExpenditureQ.HoverState.Parent = this.txtCumulativeExpenditureQ;
-            this.txtCumulativeExpenditureQ.Location = new System.Drawing.Point(15, 58);
+            this.txtCumulativeExpenditureQ.Location = new System.Drawing.Point(15, 56);
             this.txtCumulativeExpenditureQ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCumulativeExpenditureQ.Name = "txtCumulativeExpenditureQ";
             this.txtCumulativeExpenditureQ.PasswordChar = '\0';
@@ -518,12 +527,14 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtCumulativeExpenditureQ.TabIndex = 4;
             this.txtCumulativeExpenditureQ.Tag = "1";
             this.txtCumulativeExpenditureQ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ToolTipHelp.SetToolTip(this.txtCumulativeExpenditureQ, "Cumulative expenditure for selected quarter");
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.label9);
             this.guna2Panel1.Controls.Add(this.guna2Chip1);
             this.guna2Panel1.Controls.Add(this.ProgressBarAllocationQ);
             this.guna2Panel1.Controls.Add(this.txtAllocationQ);
@@ -567,7 +578,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ProgressBarAllocationQ.BorderThickness = 1;
             this.ProgressBarAllocationQ.FillColor = System.Drawing.Color.White;
             this.ProgressBarAllocationQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.ProgressBarAllocationQ.Location = new System.Drawing.Point(15, 112);
+            this.ProgressBarAllocationQ.Location = new System.Drawing.Point(15, 107);
             this.ProgressBarAllocationQ.Name = "ProgressBarAllocationQ";
             this.ProgressBarAllocationQ.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
             this.ProgressBarAllocationQ.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
@@ -577,6 +588,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ProgressBarAllocationQ.Size = new System.Drawing.Size(195, 32);
             this.ProgressBarAllocationQ.TabIndex = 47;
             this.ProgressBarAllocationQ.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ToolTipHelp.SetToolTip(this.ProgressBarAllocationQ, "Percentagr of quarter wise allocation to total allocation");
             this.ProgressBarAllocationQ.Value = 75;
             // 
             // txtAllocationQ
@@ -595,7 +607,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtAllocationQ.ForeColor = System.Drawing.Color.DimGray;
             this.txtAllocationQ.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAllocationQ.HoverState.Parent = this.txtAllocationQ;
-            this.txtAllocationQ.Location = new System.Drawing.Point(15, 58);
+            this.txtAllocationQ.Location = new System.Drawing.Point(15, 56);
             this.txtAllocationQ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAllocationQ.Name = "txtAllocationQ";
             this.txtAllocationQ.PasswordChar = '\0';
@@ -607,6 +619,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtAllocationQ.TabIndex = 4;
             this.txtAllocationQ.Tag = "1";
             this.txtAllocationQ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ToolTipHelp.SetToolTip(this.txtAllocationQ, "allocation for selected quarter");
             // 
             // label6
             // 
@@ -650,6 +663,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtAllocation.TabIndex = 45;
             this.txtAllocation.Tag = "1";
             this.txtAllocation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ToolTipHelp.SetToolTip(this.txtAllocation, "Total Allocation");
             // 
             // btnAllocation
             // 
@@ -705,7 +719,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ActivityProgressBar.TabIndex = 46;
             this.ActivityProgressBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ActivityProgressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.ToolTipHelp.SetToolTip(this.ActivityProgressBar, "Activity Progress");
+            this.ToolTipHelp.SetToolTip(this.ActivityProgressBar, "Current Activity Progress");
             this.ActivityProgressBar.Value = 82;
             this.ActivityProgressBar.ValueChanged += new System.EventHandler(this.ActivityProgressBar_ValueChanged);
             // 
@@ -751,6 +765,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.txtCumulativeExpenditure.TabIndex = 50;
             this.txtCumulativeExpenditure.Tag = "1";
             this.txtCumulativeExpenditure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ToolTipHelp.SetToolTip(this.txtCumulativeExpenditure, "Total Cumulative Expenditure");
             // 
             // btnCumulativeExpenditure
             // 
@@ -784,7 +799,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.btnCumulativeExpenditure.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 3, 3);
             this.btnCumulativeExpenditure.Size = new System.Drawing.Size(43, 36);
             this.btnCumulativeExpenditure.TabIndex = 49;
-            this.ToolTipHelp.SetToolTip(this.btnCumulativeExpenditure, "Change Cumulative Expenditure");
+            this.ToolTipHelp.SetToolTip(this.btnCumulativeExpenditure, "Change Expenditure");
             this.btnCumulativeExpenditure.Click += new System.EventHandler(this.btnCumulativeExpenditure_Click);
             // 
             // label8
@@ -802,6 +817,28 @@ namespace MASLMonthlyCapitalExpenditureStatement
             // 
             this.ToolTipHelp.AllowLinksHandling = true;
             this.ToolTipHelp.MaximumSize = new System.Drawing.Size(0, 0);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
+            this.label9.Location = new System.Drawing.Point(58, 142);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 15);
+            this.label9.TabIndex = 49;
+            this.label9.Text = "Of Total Allocation";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
+            this.label10.Location = new System.Drawing.Point(25, 142);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(178, 15);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "Of Total Cumulative Expenditure";
             // 
             // QuarterWiseReport
             // 
@@ -840,7 +877,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -880,5 +919,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
         private Guna.UI2.WinForms.Guna2TextBox txtCumulativeExpenditureQ;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip1;
         private Guna.UI2.WinForms.Guna2HtmlToolTip ToolTipHelp;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

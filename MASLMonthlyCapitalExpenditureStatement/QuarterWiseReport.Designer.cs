@@ -495,7 +495,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ProgressBarCumuExpenditureQ.Size = new System.Drawing.Size(195, 32);
             this.ProgressBarCumuExpenditureQ.TabIndex = 47;
             this.ProgressBarCumuExpenditureQ.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.ToolTipHelp.SetToolTip(this.ProgressBarCumuExpenditureQ, "Percentagr of quarter wise cumulative expenditure to total cumulatuve expenditure" +
+            this.ToolTipHelp.SetToolTip(this.ProgressBarCumuExpenditureQ, "Percentage of quarter wise cumulative expenditure to total cumulatuve expenditure" +
         "");
             this.ProgressBarCumuExpenditureQ.Value = 75;
             // 
@@ -588,7 +588,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ProgressBarAllocationQ.Size = new System.Drawing.Size(195, 32);
             this.ProgressBarAllocationQ.TabIndex = 47;
             this.ProgressBarAllocationQ.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.ToolTipHelp.SetToolTip(this.ProgressBarAllocationQ, "Percentagr of quarter wise allocation to total allocation");
+            this.ToolTipHelp.SetToolTip(this.ProgressBarAllocationQ, "Percentage of quarter wise allocation to total allocation");
             this.ProgressBarAllocationQ.Value = 75;
             // 
             // txtAllocationQ

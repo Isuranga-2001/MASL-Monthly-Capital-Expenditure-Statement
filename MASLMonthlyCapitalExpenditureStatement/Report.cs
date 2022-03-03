@@ -857,9 +857,14 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         private void TableExpenditure_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < TableExpenditure.RowCount && e.RowIndex >= 0) 
+            ShowSummery(TableExpenditure, e.RowIndex);
+        }
+
+        public void ShowSummery(Guna2DataGridView SelectedTableExpenditure, int index)
+        {
+            if (index < SelectedTableExpenditure.RowCount && index >= 0)
             {
-                DataGridViewRow selectedRow = TableExpenditure.Rows[e.RowIndex];
+                DataGridViewRow selectedRow = SelectedTableExpenditure.Rows[index];
 
                 expenditureSummeryform.txtSelectedYear.Text = btnSelectedYear.Text;
                 expenditureSummeryform.txtBudgetCode.Text = selectedRow.Cells[0].Value.ToString();
@@ -884,7 +889,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
                 expenditureSummeryform.ShowDialog();
             }
-            
         }
 
         private void btnNavigation_Click(object sender, EventArgs e)
@@ -935,6 +939,36 @@ namespace MASLMonthlyCapitalExpenditureStatement
             BudgetSummery form = new BudgetSummery();
             form.selectedYear = Convert.ToInt16(btnSelectedYear.Text);
             form.selectedMonth = Convert.ToByte(commenMethods.FindMonth(btnSelectMonth.Text));
+            form.ShowDialog();
+        }
+
+        private void MaximizedTableExpenditure_Click(object sender, EventArgs e)
+        {
+            MaximizedReportOFTableExpenditure form = new MaximizedReportOFTableExpenditure();
+            form.report = this;
+
+            int index = 0;
+
+            foreach (DataGridViewRow selectedRow in TableExpenditure.Rows)
+            {
+                if (form.TableExpenditure.RowCount == TableExpenditure.RowCount) 
+                {
+                    index += 1;
+                    form.TableExpenditure.Rows[index].ReadOnly = true;
+                }
+                else
+                {
+                    index = form.TableExpenditure.Rows.Add();
+                }
+
+                for (byte i = 0; i < selectedRow.Cells.Count; i++)
+                {
+                    form.TableExpenditure.Rows[index].Cells[i].Value = selectedRow.Cells[i].Value;
+                }
+
+                form.TableExpenditure.Rows[index].DefaultCellStyle.BackColor = selectedRow.DefaultCellStyle.BackColor;
+            }
+
             form.ShowDialog();
         }
     }

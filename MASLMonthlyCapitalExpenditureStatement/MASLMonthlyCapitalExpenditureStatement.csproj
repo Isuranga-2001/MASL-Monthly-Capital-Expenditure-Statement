@@ -137,6 +137,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaximizedReportOFTableExpenditure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaximizedReportOFTableExpenditure.Designer.cs">
+      <DependentUpon>MaximizedReportOFTableExpenditure.cs</DependentUpon>
+    </Compile>
     <Compile Include="MonthlyCapitalExpenditureStatementSystemDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaximizedReportOFTableExpenditure.resx">
+      <DependentUpon>MaximizedReportOFTableExpenditure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MonthlyExpenditure.resx">
       <DependentUpon>MonthlyExpenditure.cs</DependentUpon>

@@ -24,7 +24,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
         }
 
-        private void TableExpenditure_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void TableExpenditure_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             report.ShowSummery(TableExpenditure, e.RowIndex);
         }

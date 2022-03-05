@@ -29,6 +29,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -61,10 +62,14 @@ namespace MASLMonthlyCapitalExpenditureStatement
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnSelectedYear = new Guna.UI2.WinForms.Guna2Button();
             this.btnSelectMonth = new Guna.UI2.WinForms.Guna2Button();
             this.btnExport = new Guna.UI2.WinForms.Guna2Button();
@@ -75,15 +80,19 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.BudgetForYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Expenditure = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CumulativeUpTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExpandTableMain = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.MainTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.BudgetTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnChart = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton5 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.TableBudget = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExpandTableBudget = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label3 = new System.Windows.Forms.Label();
             this.BudgetTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.IncomeTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -94,9 +103,11 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IncomePercentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExpandTableIncome = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.IncomeTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.ExpenditureTableBackPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.MaximizedTableExpenditure = new Guna.UI2.WinForms.Guna2CircleButton();
             this.TableExpenditure = new Guna.UI2.WinForms.Guna2DataGridView();
             this.BudgetCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,23 +117,13 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.CumulativeExpenditure = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Commitment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Percentage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExpandTableExpenditure = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.ExpenditureTableCheckBox = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.BtnExpandAll = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExpandTableMain = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnChart = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton5 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnExpandTableBudget = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnExpandTableIncome = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnExpandTableExpenditure = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.MaximizedTableExpenditure = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.MainTableBackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TableMain)).BeginInit();
             this.BudgetTableBackPanel.SuspendLayout();
@@ -132,7 +133,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ExpenditureTableBackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TableExpenditure)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -187,6 +187,161 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.guna2Button6.Tag = "Login";
             this.guna2Button6.Text = "Sign Out";
             this.guna2Button6.Click += new System.EventHandler(this.btnNavigation_Click);
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.BorderRadius = 15;
+            this.guna2Button5.Checked = true;
+            this.guna2Button5.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Button5.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button5.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.guna2Button5.CheckedState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.reportWhite;
+            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
+            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.DisabledState.Parent = this.guna2Button5;
+            this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
+            this.guna2Button5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.guna2Button5.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.reportWhite;
+            this.guna2Button5.HoverState.Parent = this.guna2Button5;
+            this.guna2Button5.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.report;
+            this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button5.ImageOffset = new System.Drawing.Point(5, 0);
+            this.guna2Button5.Location = new System.Drawing.Point(15, 416);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
+            this.guna2Button5.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button5.TabIndex = 5;
+            this.guna2Button5.Tag = "Re";
+            this.guna2Button5.Text = "Report";
+            this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button5.TextOffset = new System.Drawing.Point(7, 0);
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.Animated = true;
+            this.guna2Button4.BorderRadius = 15;
+            this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Button4.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button4.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.guna2Button4.CheckedState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.incomeWhite;
+            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
+            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.DisabledState.Parent = this.guna2Button4;
+            this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
+            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.guna2Button4.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.incomeWhite;
+            this.guna2Button4.HoverState.Parent = this.guna2Button4;
+            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
+            this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button4.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Button4.Location = new System.Drawing.Point(15, 365);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
+            this.guna2Button4.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button4.TabIndex = 4;
+            this.guna2Button4.Tag = "Inc";
+            this.guna2Button4.Text = "Income";
+            this.guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button4.Click += new System.EventHandler(this.btnNavigationButton_Click);
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.Animated = true;
+            this.guna2Button3.BorderRadius = 15;
+            this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Button3.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
+            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.DisabledState.Parent = this.guna2Button3;
+            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
+            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.guna2Button3.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditureWhite;
+            this.guna2Button3.HoverState.Parent = this.guna2Button3;
+            this.guna2Button3.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditure;
+            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button3.ImageOffset = new System.Drawing.Point(5, 0);
+            this.guna2Button3.Location = new System.Drawing.Point(15, 314);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
+            this.guna2Button3.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button3.TabIndex = 3;
+            this.guna2Button3.Tag = "Expen";
+            this.guna2Button3.Text = "Expenditure";
+            this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button3.TextOffset = new System.Drawing.Point(7, 0);
+            this.guna2Button3.Click += new System.EventHandler(this.btnNavigationButton_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.BorderRadius = 15;
+            this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Button2.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button2.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.guna2Button2.CheckedState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.activityWhite;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.DisabledState.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
+            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
+            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.guna2Button2.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.activityWhite;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.activity;
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.ImageOffset = new System.Drawing.Point(5, 0);
+            this.guna2Button2.Location = new System.Drawing.Point(15, 263);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button2.TabIndex = 2;
+            this.guna2Button2.Tag = "Act";
+            this.guna2Button2.Text = "Activity";
+            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.TextOffset = new System.Drawing.Point(7, 0);
+            this.guna2Button2.Click += new System.EventHandler(this.btnNavigationButton_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.ErrorImage = null;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(68, 35);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(75, 75);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // btnSelectedYear
             // 
@@ -422,6 +577,32 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.CumulativeUpTo.Name = "CumulativeUpTo";
             this.CumulativeUpTo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // btnExpandTableMain
+            // 
+            this.btnExpandTableMain.Animated = true;
+            this.btnExpandTableMain.BackColor = System.Drawing.Color.Transparent;
+            this.btnExpandTableMain.CheckedState.Parent = this.btnExpandTableMain;
+            this.btnExpandTableMain.CustomImages.Parent = this.btnExpandTableMain;
+            this.btnExpandTableMain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpandTableMain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpandTableMain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExpandTableMain.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExpandTableMain.DisabledState.Parent = this.btnExpandTableMain;
+            this.btnExpandTableMain.FillColor = System.Drawing.Color.Transparent;
+            this.btnExpandTableMain.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExpandTableMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnExpandTableMain.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnExpandTableMain.HoverState.Parent = this.btnExpandTableMain;
+            this.btnExpandTableMain.Image = ((System.Drawing.Image)(resources.GetObject("btnExpandTableMain.Image")));
+            this.btnExpandTableMain.Location = new System.Drawing.Point(925, 13);
+            this.btnExpandTableMain.Name = "btnExpandTableMain";
+            this.btnExpandTableMain.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnExpandTableMain.ShadowDecoration.Parent = this.btnExpandTableMain;
+            this.btnExpandTableMain.Size = new System.Drawing.Size(32, 32);
+            this.btnExpandTableMain.TabIndex = 2;
+            this.btnExpandTableMain.Tag = "M";
+            this.btnExpandTableMain.Click += new System.EventHandler(this.btnDownArrow_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -474,6 +655,64 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.BudgetTableBackPanel.ShadowDecoration.Parent = this.BudgetTableBackPanel;
             this.BudgetTableBackPanel.Size = new System.Drawing.Size(980, 220);
             this.BudgetTableBackPanel.TabIndex = 3;
+            // 
+            // btnChart
+            // 
+            this.btnChart.Animated = true;
+            this.btnChart.BackColor = System.Drawing.Color.Transparent;
+            this.btnChart.CheckedState.Parent = this.btnChart;
+            this.btnChart.CustomImages.Parent = this.btnChart;
+            this.btnChart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChart.DisabledState.Parent = this.btnChart;
+            this.btnChart.FillColor = System.Drawing.Color.Transparent;
+            this.btnChart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnChart.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnChart.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.chartWhite;
+            this.btnChart.HoverState.Parent = this.btnChart;
+            this.btnChart.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.chart;
+            this.btnChart.ImageOffset = new System.Drawing.Point(1, 1);
+            this.btnChart.ImageSize = new System.Drawing.Size(19, 19);
+            this.btnChart.Location = new System.Drawing.Point(848, 13);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnChart.ShadowDecoration.Parent = this.btnChart;
+            this.btnChart.Size = new System.Drawing.Size(32, 32);
+            this.btnChart.TabIndex = 32;
+            this.btnChart.Tag = "B";
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
+            // 
+            // guna2CircleButton5
+            // 
+            this.guna2CircleButton5.Animated = true;
+            this.guna2CircleButton5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton5.CheckedState.Parent = this.guna2CircleButton5;
+            this.guna2CircleButton5.CustomImages.Parent = this.guna2CircleButton5;
+            this.guna2CircleButton5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton5.DisabledState.Parent = this.guna2CircleButton5;
+            this.guna2CircleButton5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.guna2CircleButton5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.guna2CircleButton5.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.SaveDataWhite;
+            this.guna2CircleButton5.HoverState.Parent = this.guna2CircleButton5;
+            this.guna2CircleButton5.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.SaveData;
+            this.guna2CircleButton5.ImageOffset = new System.Drawing.Point(1, 1);
+            this.guna2CircleButton5.ImageSize = new System.Drawing.Size(19, 19);
+            this.guna2CircleButton5.Location = new System.Drawing.Point(886, 13);
+            this.guna2CircleButton5.Name = "guna2CircleButton5";
+            this.guna2CircleButton5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton5.ShadowDecoration.Parent = this.guna2CircleButton5;
+            this.guna2CircleButton5.Size = new System.Drawing.Size(32, 32);
+            this.guna2CircleButton5.TabIndex = 31;
+            this.guna2CircleButton5.Tag = "B";
+            this.guna2CircleButton5.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // TableBudget
             // 
@@ -600,6 +839,32 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.dataGridViewTextBoxColumn2.HeaderText = "Fund received";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // btnExpandTableBudget
+            // 
+            this.btnExpandTableBudget.Animated = true;
+            this.btnExpandTableBudget.BackColor = System.Drawing.Color.Transparent;
+            this.btnExpandTableBudget.CheckedState.Parent = this.btnExpandTableBudget;
+            this.btnExpandTableBudget.CustomImages.Parent = this.btnExpandTableBudget;
+            this.btnExpandTableBudget.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpandTableBudget.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpandTableBudget.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExpandTableBudget.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExpandTableBudget.DisabledState.Parent = this.btnExpandTableBudget;
+            this.btnExpandTableBudget.FillColor = System.Drawing.Color.Transparent;
+            this.btnExpandTableBudget.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExpandTableBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnExpandTableBudget.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnExpandTableBudget.HoverState.Parent = this.btnExpandTableBudget;
+            this.btnExpandTableBudget.Image = ((System.Drawing.Image)(resources.GetObject("btnExpandTableBudget.Image")));
+            this.btnExpandTableBudget.Location = new System.Drawing.Point(925, 13);
+            this.btnExpandTableBudget.Name = "btnExpandTableBudget";
+            this.btnExpandTableBudget.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnExpandTableBudget.ShadowDecoration.Parent = this.btnExpandTableBudget;
+            this.btnExpandTableBudget.Size = new System.Drawing.Size(32, 32);
+            this.btnExpandTableBudget.TabIndex = 2;
+            this.btnExpandTableBudget.Tag = "B";
+            this.btnExpandTableBudget.Click += new System.EventHandler(this.btnDownArrow_Click);
             // 
             // label3
             // 
@@ -787,6 +1052,32 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.IncomePercentage.Name = "IncomePercentage";
             this.IncomePercentage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // btnExpandTableIncome
+            // 
+            this.btnExpandTableIncome.Animated = true;
+            this.btnExpandTableIncome.BackColor = System.Drawing.Color.Transparent;
+            this.btnExpandTableIncome.CheckedState.Parent = this.btnExpandTableIncome;
+            this.btnExpandTableIncome.CustomImages.Parent = this.btnExpandTableIncome;
+            this.btnExpandTableIncome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpandTableIncome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpandTableIncome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExpandTableIncome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExpandTableIncome.DisabledState.Parent = this.btnExpandTableIncome;
+            this.btnExpandTableIncome.FillColor = System.Drawing.Color.Transparent;
+            this.btnExpandTableIncome.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExpandTableIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnExpandTableIncome.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnExpandTableIncome.HoverState.Parent = this.btnExpandTableIncome;
+            this.btnExpandTableIncome.Image = ((System.Drawing.Image)(resources.GetObject("btnExpandTableIncome.Image")));
+            this.btnExpandTableIncome.Location = new System.Drawing.Point(925, 13);
+            this.btnExpandTableIncome.Name = "btnExpandTableIncome";
+            this.btnExpandTableIncome.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnExpandTableIncome.ShadowDecoration.Parent = this.btnExpandTableIncome;
+            this.btnExpandTableIncome.Size = new System.Drawing.Size(32, 32);
+            this.btnExpandTableIncome.TabIndex = 2;
+            this.btnExpandTableIncome.Tag = "I";
+            this.btnExpandTableIncome.Click += new System.EventHandler(this.btnDownArrow_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -838,6 +1129,34 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ExpenditureTableBackPanel.ShadowDecoration.Parent = this.ExpenditureTableBackPanel;
             this.ExpenditureTableBackPanel.Size = new System.Drawing.Size(980, 496);
             this.ExpenditureTableBackPanel.TabIndex = 3;
+            // 
+            // MaximizedTableExpenditure
+            // 
+            this.MaximizedTableExpenditure.Animated = true;
+            this.MaximizedTableExpenditure.BackColor = System.Drawing.Color.Transparent;
+            this.MaximizedTableExpenditure.CheckedState.Parent = this.MaximizedTableExpenditure;
+            this.MaximizedTableExpenditure.CustomImages.Parent = this.MaximizedTableExpenditure;
+            this.MaximizedTableExpenditure.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.MaximizedTableExpenditure.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.MaximizedTableExpenditure.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.MaximizedTableExpenditure.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.MaximizedTableExpenditure.DisabledState.Parent = this.MaximizedTableExpenditure;
+            this.MaximizedTableExpenditure.FillColor = System.Drawing.Color.Transparent;
+            this.MaximizedTableExpenditure.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.MaximizedTableExpenditure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.MaximizedTableExpenditure.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.MaximizedTableExpenditure.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Allocation_Expand_White;
+            this.MaximizedTableExpenditure.HoverState.Parent = this.MaximizedTableExpenditure;
+            this.MaximizedTableExpenditure.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Allocation_Expand;
+            this.MaximizedTableExpenditure.ImageSize = new System.Drawing.Size(16, 16);
+            this.MaximizedTableExpenditure.Location = new System.Drawing.Point(888, 13);
+            this.MaximizedTableExpenditure.Name = "MaximizedTableExpenditure";
+            this.MaximizedTableExpenditure.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.MaximizedTableExpenditure.ShadowDecoration.Parent = this.MaximizedTableExpenditure;
+            this.MaximizedTableExpenditure.Size = new System.Drawing.Size(30, 30);
+            this.MaximizedTableExpenditure.TabIndex = 35;
+            this.MaximizedTableExpenditure.Tag = "E";
+            this.MaximizedTableExpenditure.Click += new System.EventHandler(this.MaximizedTableExpenditure_Click);
             // 
             // TableExpenditure
             // 
@@ -992,6 +1311,32 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.Percentage.Name = "Percentage";
             this.Percentage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // btnExpandTableExpenditure
+            // 
+            this.btnExpandTableExpenditure.Animated = true;
+            this.btnExpandTableExpenditure.BackColor = System.Drawing.Color.Transparent;
+            this.btnExpandTableExpenditure.CheckedState.Parent = this.btnExpandTableExpenditure;
+            this.btnExpandTableExpenditure.CustomImages.Parent = this.btnExpandTableExpenditure;
+            this.btnExpandTableExpenditure.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpandTableExpenditure.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExpandTableExpenditure.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExpandTableExpenditure.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExpandTableExpenditure.DisabledState.Parent = this.btnExpandTableExpenditure;
+            this.btnExpandTableExpenditure.FillColor = System.Drawing.Color.Transparent;
+            this.btnExpandTableExpenditure.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExpandTableExpenditure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnExpandTableExpenditure.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnExpandTableExpenditure.HoverState.Parent = this.btnExpandTableExpenditure;
+            this.btnExpandTableExpenditure.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Expand_arrow;
+            this.btnExpandTableExpenditure.Location = new System.Drawing.Point(924, 13);
+            this.btnExpandTableExpenditure.Name = "btnExpandTableExpenditure";
+            this.btnExpandTableExpenditure.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnExpandTableExpenditure.ShadowDecoration.Parent = this.btnExpandTableExpenditure;
+            this.btnExpandTableExpenditure.Size = new System.Drawing.Size(30, 30);
+            this.btnExpandTableExpenditure.TabIndex = 2;
+            this.btnExpandTableExpenditure.Tag = "E";
+            this.btnExpandTableExpenditure.Click += new System.EventHandler(this.btnDownArrow_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -1074,351 +1419,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.BtnExpandAll.TextOffset = new System.Drawing.Point(0, -1);
             this.BtnExpandAll.CheckedChanged += new System.EventHandler(this.BtnExpandAll_CheckedChanged);
             // 
-            // btnExpandTableMain
-            // 
-            this.btnExpandTableMain.Animated = true;
-            this.btnExpandTableMain.BackColor = System.Drawing.Color.Transparent;
-            this.btnExpandTableMain.CheckedState.Parent = this.btnExpandTableMain;
-            this.btnExpandTableMain.CustomImages.Parent = this.btnExpandTableMain;
-            this.btnExpandTableMain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExpandTableMain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExpandTableMain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExpandTableMain.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExpandTableMain.DisabledState.Parent = this.btnExpandTableMain;
-            this.btnExpandTableMain.FillColor = System.Drawing.Color.Transparent;
-            this.btnExpandTableMain.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExpandTableMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnExpandTableMain.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnExpandTableMain.HoverState.Parent = this.btnExpandTableMain;
-            this.btnExpandTableMain.Image = ((System.Drawing.Image)(resources.GetObject("btnExpandTableMain.Image")));
-            this.btnExpandTableMain.Location = new System.Drawing.Point(925, 13);
-            this.btnExpandTableMain.Name = "btnExpandTableMain";
-            this.btnExpandTableMain.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnExpandTableMain.ShadowDecoration.Parent = this.btnExpandTableMain;
-            this.btnExpandTableMain.Size = new System.Drawing.Size(32, 32);
-            this.btnExpandTableMain.TabIndex = 2;
-            this.btnExpandTableMain.Tag = "M";
-            this.btnExpandTableMain.Click += new System.EventHandler(this.btnDownArrow_Click);
-            // 
-            // btnChart
-            // 
-            this.btnChart.Animated = true;
-            this.btnChart.BackColor = System.Drawing.Color.Transparent;
-            this.btnChart.CheckedState.Parent = this.btnChart;
-            this.btnChart.CustomImages.Parent = this.btnChart;
-            this.btnChart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChart.DisabledState.Parent = this.btnChart;
-            this.btnChart.FillColor = System.Drawing.Color.Transparent;
-            this.btnChart.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnChart.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnChart.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.chartWhite;
-            this.btnChart.HoverState.Parent = this.btnChart;
-            this.btnChart.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.chart;
-            this.btnChart.ImageOffset = new System.Drawing.Point(1, 1);
-            this.btnChart.ImageSize = new System.Drawing.Size(19, 19);
-            this.btnChart.Location = new System.Drawing.Point(848, 13);
-            this.btnChart.Name = "btnChart";
-            this.btnChart.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnChart.ShadowDecoration.Parent = this.btnChart;
-            this.btnChart.Size = new System.Drawing.Size(32, 32);
-            this.btnChart.TabIndex = 32;
-            this.btnChart.Tag = "B";
-            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
-            // 
-            // guna2CircleButton5
-            // 
-            this.guna2CircleButton5.Animated = true;
-            this.guna2CircleButton5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton5.CheckedState.Parent = this.guna2CircleButton5;
-            this.guna2CircleButton5.CustomImages.Parent = this.guna2CircleButton5;
-            this.guna2CircleButton5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton5.DisabledState.Parent = this.guna2CircleButton5;
-            this.guna2CircleButton5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CircleButton5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.guna2CircleButton5.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.SaveDataWhite;
-            this.guna2CircleButton5.HoverState.Parent = this.guna2CircleButton5;
-            this.guna2CircleButton5.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.SaveData;
-            this.guna2CircleButton5.ImageOffset = new System.Drawing.Point(1, 1);
-            this.guna2CircleButton5.ImageSize = new System.Drawing.Size(19, 19);
-            this.guna2CircleButton5.Location = new System.Drawing.Point(886, 13);
-            this.guna2CircleButton5.Name = "guna2CircleButton5";
-            this.guna2CircleButton5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton5.ShadowDecoration.Parent = this.guna2CircleButton5;
-            this.guna2CircleButton5.Size = new System.Drawing.Size(32, 32);
-            this.guna2CircleButton5.TabIndex = 31;
-            this.guna2CircleButton5.Tag = "B";
-            this.guna2CircleButton5.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnExpandTableBudget
-            // 
-            this.btnExpandTableBudget.Animated = true;
-            this.btnExpandTableBudget.BackColor = System.Drawing.Color.Transparent;
-            this.btnExpandTableBudget.CheckedState.Parent = this.btnExpandTableBudget;
-            this.btnExpandTableBudget.CustomImages.Parent = this.btnExpandTableBudget;
-            this.btnExpandTableBudget.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExpandTableBudget.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExpandTableBudget.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExpandTableBudget.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExpandTableBudget.DisabledState.Parent = this.btnExpandTableBudget;
-            this.btnExpandTableBudget.FillColor = System.Drawing.Color.Transparent;
-            this.btnExpandTableBudget.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExpandTableBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnExpandTableBudget.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnExpandTableBudget.HoverState.Parent = this.btnExpandTableBudget;
-            this.btnExpandTableBudget.Image = ((System.Drawing.Image)(resources.GetObject("btnExpandTableBudget.Image")));
-            this.btnExpandTableBudget.Location = new System.Drawing.Point(925, 13);
-            this.btnExpandTableBudget.Name = "btnExpandTableBudget";
-            this.btnExpandTableBudget.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnExpandTableBudget.ShadowDecoration.Parent = this.btnExpandTableBudget;
-            this.btnExpandTableBudget.Size = new System.Drawing.Size(32, 32);
-            this.btnExpandTableBudget.TabIndex = 2;
-            this.btnExpandTableBudget.Tag = "B";
-            this.btnExpandTableBudget.Click += new System.EventHandler(this.btnDownArrow_Click);
-            // 
-            // btnExpandTableIncome
-            // 
-            this.btnExpandTableIncome.Animated = true;
-            this.btnExpandTableIncome.BackColor = System.Drawing.Color.Transparent;
-            this.btnExpandTableIncome.CheckedState.Parent = this.btnExpandTableIncome;
-            this.btnExpandTableIncome.CustomImages.Parent = this.btnExpandTableIncome;
-            this.btnExpandTableIncome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExpandTableIncome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExpandTableIncome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExpandTableIncome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExpandTableIncome.DisabledState.Parent = this.btnExpandTableIncome;
-            this.btnExpandTableIncome.FillColor = System.Drawing.Color.Transparent;
-            this.btnExpandTableIncome.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExpandTableIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnExpandTableIncome.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnExpandTableIncome.HoverState.Parent = this.btnExpandTableIncome;
-            this.btnExpandTableIncome.Image = ((System.Drawing.Image)(resources.GetObject("btnExpandTableIncome.Image")));
-            this.btnExpandTableIncome.Location = new System.Drawing.Point(925, 13);
-            this.btnExpandTableIncome.Name = "btnExpandTableIncome";
-            this.btnExpandTableIncome.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnExpandTableIncome.ShadowDecoration.Parent = this.btnExpandTableIncome;
-            this.btnExpandTableIncome.Size = new System.Drawing.Size(32, 32);
-            this.btnExpandTableIncome.TabIndex = 2;
-            this.btnExpandTableIncome.Tag = "I";
-            this.btnExpandTableIncome.Click += new System.EventHandler(this.btnDownArrow_Click);
-            // 
-            // btnExpandTableExpenditure
-            // 
-            this.btnExpandTableExpenditure.Animated = true;
-            this.btnExpandTableExpenditure.BackColor = System.Drawing.Color.Transparent;
-            this.btnExpandTableExpenditure.CheckedState.Parent = this.btnExpandTableExpenditure;
-            this.btnExpandTableExpenditure.CustomImages.Parent = this.btnExpandTableExpenditure;
-            this.btnExpandTableExpenditure.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExpandTableExpenditure.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExpandTableExpenditure.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExpandTableExpenditure.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExpandTableExpenditure.DisabledState.Parent = this.btnExpandTableExpenditure;
-            this.btnExpandTableExpenditure.FillColor = System.Drawing.Color.Transparent;
-            this.btnExpandTableExpenditure.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExpandTableExpenditure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnExpandTableExpenditure.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnExpandTableExpenditure.HoverState.Parent = this.btnExpandTableExpenditure;
-            this.btnExpandTableExpenditure.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Expand_arrow;
-            this.btnExpandTableExpenditure.Location = new System.Drawing.Point(924, 13);
-            this.btnExpandTableExpenditure.Name = "btnExpandTableExpenditure";
-            this.btnExpandTableExpenditure.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnExpandTableExpenditure.ShadowDecoration.Parent = this.btnExpandTableExpenditure;
-            this.btnExpandTableExpenditure.Size = new System.Drawing.Size(30, 30);
-            this.btnExpandTableExpenditure.TabIndex = 2;
-            this.btnExpandTableExpenditure.Tag = "E";
-            this.btnExpandTableExpenditure.Click += new System.EventHandler(this.btnDownArrow_Click);
-            // 
-            // guna2Button5
-            // 
-            this.guna2Button5.BorderRadius = 15;
-            this.guna2Button5.Checked = true;
-            this.guna2Button5.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Button5.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button5.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button5.CheckedState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.reportWhite;
-            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
-            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.DisabledState.Parent = this.guna2Button5;
-            this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
-            this.guna2Button5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button5.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.reportWhite;
-            this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.report;
-            this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button5.ImageOffset = new System.Drawing.Point(5, 0);
-            this.guna2Button5.Location = new System.Drawing.Point(15, 416);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button5.TabIndex = 5;
-            this.guna2Button5.Tag = "Re";
-            this.guna2Button5.Text = "Report";
-            this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button5.TextOffset = new System.Drawing.Point(7, 0);
-            // 
-            // guna2Button4
-            // 
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.BorderRadius = 15;
-            this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Button4.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button4.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button4.CheckedState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.incomeWhite;
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.DisabledState.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
-            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button4.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.incomeWhite;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button4.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button4.Location = new System.Drawing.Point(15, 365);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button4.TabIndex = 4;
-            this.guna2Button4.Tag = "Inc";
-            this.guna2Button4.Text = "Income";
-            this.guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button4.Click += new System.EventHandler(this.btnNavigationButton_Click);
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BorderRadius = 15;
-            this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Button3.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.DisabledState.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button3.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditureWhite;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.expenditure;
-            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.ImageOffset = new System.Drawing.Point(5, 0);
-            this.guna2Button3.Location = new System.Drawing.Point(15, 314);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button3.TabIndex = 3;
-            this.guna2Button3.Tag = "Expen";
-            this.guna2Button3.Text = "Expenditure";
-            this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.TextOffset = new System.Drawing.Point(7, 0);
-            this.guna2Button3.Click += new System.EventHandler(this.btnNavigationButton_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BorderRadius = 15;
-            this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Button2.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button2.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button2.CheckedState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.activityWhite;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.DisabledState.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(120)))));
-            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.guna2Button2.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.activityWhite;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.activity;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.ImageOffset = new System.Drawing.Point(5, 0);
-            this.guna2Button2.Location = new System.Drawing.Point(15, 263);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button2.TabIndex = 2;
-            this.guna2Button2.Tag = "Act";
-            this.guna2Button2.Text = "Activity";
-            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.TextOffset = new System.Drawing.Point(7, 0);
-            this.guna2Button2.Click += new System.EventHandler(this.btnNavigationButton_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.ErrorImage = null;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(68, 35);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(75, 75);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // MaximizedTableExpenditure
-            // 
-            this.MaximizedTableExpenditure.Animated = true;
-            this.MaximizedTableExpenditure.BackColor = System.Drawing.Color.Transparent;
-            this.MaximizedTableExpenditure.CheckedState.Parent = this.MaximizedTableExpenditure;
-            this.MaximizedTableExpenditure.CustomImages.Parent = this.MaximizedTableExpenditure;
-            this.MaximizedTableExpenditure.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.MaximizedTableExpenditure.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.MaximizedTableExpenditure.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.MaximizedTableExpenditure.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.MaximizedTableExpenditure.DisabledState.Parent = this.MaximizedTableExpenditure;
-            this.MaximizedTableExpenditure.FillColor = System.Drawing.Color.Transparent;
-            this.MaximizedTableExpenditure.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.MaximizedTableExpenditure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.MaximizedTableExpenditure.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.MaximizedTableExpenditure.HoverState.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Allocation_Expand_White;
-            this.MaximizedTableExpenditure.HoverState.Parent = this.MaximizedTableExpenditure;
-            this.MaximizedTableExpenditure.Image = global::MASLMonthlyCapitalExpenditureStatement.Properties.Resources.Allocation_Expand;
-            this.MaximizedTableExpenditure.ImageSize = new System.Drawing.Size(18, 18);
-            this.MaximizedTableExpenditure.Location = new System.Drawing.Point(888, 13);
-            this.MaximizedTableExpenditure.Name = "MaximizedTableExpenditure";
-            this.MaximizedTableExpenditure.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.MaximizedTableExpenditure.ShadowDecoration.Parent = this.MaximizedTableExpenditure;
-            this.MaximizedTableExpenditure.Size = new System.Drawing.Size(30, 30);
-            this.MaximizedTableExpenditure.TabIndex = 35;
-            this.MaximizedTableExpenditure.Tag = "E";
-            this.MaximizedTableExpenditure.Click += new System.EventHandler(this.MaximizedTableExpenditure_Click);
-            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1440,6 +1440,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.Text = "MASL - Monthly Capital Expenditure Statement System - Report";
             this.Load += new System.EventHandler(this.Report_Load);
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.MainTableBackPanel.ResumeLayout(false);
             this.MainTableBackPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TableMain)).EndInit();
@@ -1453,7 +1454,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.ExpenditureTableBackPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TableExpenditure)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

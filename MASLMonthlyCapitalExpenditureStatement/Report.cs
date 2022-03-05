@@ -966,7 +966,9 @@ namespace MASLMonthlyCapitalExpenditureStatement
                     form.TableExpenditure.Rows[index].Cells[i].Value = selectedRow.Cells[i].Value;
                 }
 
-                form.TableExpenditure.Rows[index].DefaultCellStyle.BackColor = selectedRow.DefaultCellStyle.BackColor;
+                form.TableExpenditure.Rows[index].DefaultCellStyle.SelectionBackColor = 
+                    form.TableExpenditure.Rows[index].DefaultCellStyle.BackColor = 
+                    selectedRow.DefaultCellStyle.BackColor;
             }
 
             form.ShowDialog();

@@ -134,7 +134,7 @@ namespace MASLMonthlyCapitalExpenditureStatement
             this.TableExpenditure.ThemeStyle.RowsStyle.Height = 25;
             this.TableExpenditure.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.TableExpenditure.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.TableExpenditure.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableExpenditure_CellContentClick);
+            this.TableExpenditure.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableExpenditure_CellClick);
             // 
             // BudgetCode
             // 

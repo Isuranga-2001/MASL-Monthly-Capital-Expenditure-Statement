@@ -109,6 +109,8 @@ namespace MASLMonthlyCapitalExpenditureStatement
 
             lblStatus.Text = "Perpairing Data ...";
             await PerpairingExportData(arrayOfOutputStrings, checkBoxList, tableList, ProgressBarStatusOfExportProcess);
+            
+            lblStatus.Text = "Saving Data ...";
 
             // create save file
             SaveFileDialog sfd = new SaveFileDialog();
@@ -230,10 +232,12 @@ namespace MASLMonthlyCapitalExpenditureStatement
                             MessageBoxIcon.Error);
                     }
                 }
-            }    
-            
+            }
+
             void OpenExportedFile()
             {
+                lblStatus.Text = "Saved";
+
                 // Open Exported file
                 if (MessageBox.Show("Data Exported Successfully! Do You Want To Open It?",
                     "Information", MessageBoxButtons.YesNo,

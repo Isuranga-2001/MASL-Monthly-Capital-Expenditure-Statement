@@ -105,27 +105,63 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 "AND MainActivity.Year='{0}' AND MainActivity.ItemNo='{1}'",
                 btnSelectedYear.Text, itemNoParts[0]);
 
-            if (itemNoParts.Length >= 2)
-            {
-                query += String.Format(" AND ActivityCode.INSub1='{0}'", itemNoParts[1]);
-            }
-            if (itemNoParts.Length == 3)
-            {
-                query += String.Format(" AND ActivityCode.INSub2='{0}'", itemNoParts[2]);
-            }
+            AddSubItemNoPartsToQueryString();
 
             List<string> arrayOfExpenditureDetails = 
                 commenMethods.SQLRead(query + " GROUP BY ExpenditureMonth.Month ORDER BY ExpenditureMonth.Month", "Month CumulativeExpenditure");
 
+            SortedDictionary<byte, decimal> arrayOFExpenditureAndMonth = new SortedDictionary<byte, decimal> { };
+
             if (!commenMethods.ReturnListHasError(arrayOfExpenditureDetails))
             {
-                SortedDictionary<byte, decimal> arrayOFExpenditureAndMonth = new SortedDictionary<byte, decimal> { };
-
                 for (byte j = 0; j < arrayOfExpenditureDetails.Count; j += 2)
                 {
                     arrayOFExpenditureAndMonth.Add(Convert.ToByte(arrayOfExpenditureDetails[j]), Convert.ToDecimal(arrayOfExpenditureDetails[j + 1]));
                 }
 
+                AddDataToTable();
+            }
+            else
+            {
+                query = String.Format("SELECT COUNT(ActivityCode.ActivityCodeID) AS NoOFActivities " +
+                    "FROM ActivityCode, MainActivity " +
+                    "WHERE MainActivity.ActivityID = ActivityCode.ActivityID " +
+                    "AND MainActivity.Year = '{0}' AND MainActivity.ItemNo = '{1}'",
+                    btnSelectedYear.Text, itemNoParts[0]);
+
+                AddSubItemNoPartsToQueryString();
+
+                if (Convert.ToInt32(commenMethods.SQLRead(query, "NoOFActivities")[0]) > 0)
+                {
+                    for (byte j = 0; j < 12; j++)
+                    {
+                        arrayOFExpenditureAndMonth.Add(j, 0);
+                    }
+
+                    AddDataToTable();
+                }
+                else
+                {
+                    MessageBox.Show("Can't Find Activities for your search", "Something went wrong",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            void AddSubItemNoPartsToQueryString()
+            {
+                if (itemNoParts.Length >= 2)
+                {
+                    query += String.Format(" AND ActivityCode.INSub1='{0}'", itemNoParts[1]);
+                }
+
+                if (itemNoParts.Length == 3)
+                {
+                    query += String.Format(" AND ActivityCode.INSub2='{0}'", itemNoParts[2]);
+                }
+            }
+
+            void AddDataToTable()
+            {
                 decimal CumulativeExpenditure = 0;
                 byte rowIndex = 0;
 
@@ -149,11 +185,6 @@ namespace MASLMonthlyCapitalExpenditureStatement
                 }
 
                 TableActivities.Rows[SelectedMonth - 1].DefaultCellStyle.BackColor = Color.FromArgb(58, 190, 240);
-            }
-            else
-            {
-                MessageBox.Show("Can't Find Activities for your search", "Something went wrong",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }   
 
